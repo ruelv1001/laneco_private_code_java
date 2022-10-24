@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+C:\New Read and Bill Project\Read and Bill Project\.metadata\.plugins\org.eclipse.jdt.core
+564945612.index
+2576733281.index
+1575179980.index
+3852662562.index

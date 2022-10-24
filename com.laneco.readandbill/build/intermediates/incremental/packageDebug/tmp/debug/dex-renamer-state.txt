@@ -1,0 +1,4 @@
+#Mon Oct 24 17:30:22 SGT 2022
+base.0=D\:\\android codes\\laneco code\\new codes oct242022\\New Read and Bill Project\\Read and Bill Project\\com.laneco.readandbill\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

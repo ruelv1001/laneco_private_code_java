@@ -1,0 +1,167 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+MERGED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-18:12
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:1-59:12
+	package
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:3:5-37
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:5:5-30
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:2:5-51
+	xmlns:android
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:4:5-28
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+uses-sdk
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+MERGED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:9:9-38
+	android:minSdkVersion
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:8:9-34
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:11:5-68
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-68
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:11:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:5-74
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-74
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:22-71
+application
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:74-57:19
+MERGED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-16:19
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-21:19
+MERGED from [:com.androidapp.mytools] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-21:19
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:114-146
+	android:icon
+		ADDED from [:com.generic.readandbill] D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-53
+	android:allowBackup
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:87-113
+	android:theme
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:12:147-178
+activity#com.laneco.readandbill.SplashScreen
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:14:9-19:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:14:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:14:54-104
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:15:13-18:29
+action#android.intent.action.MAIN
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:17:27-74
+activity#com.laneco.readandbill.MyReadingEntry
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:20:9-25:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:20:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:20:52-104
+intent-filter#action:name:android.intent.action.READINGENTRY+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:21:13-24:29
+action#android.intent.action.READINGENTRY
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:22:25-74
+category#android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:23:17-76
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:23:27-73
+activity#com.laneco.readandbill.MyFieldFindingEntry
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:26:9-31:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:26:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:26:52-109
+intent-filter#action:name:android.intent.action.FIELDFINDINGENTRY+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:27:13-30:29
+action#android.intent.action.FIELDFINDINGENTRY
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:28:17-82
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:28:25-79
+activity#com.laneco.readandbill.MyConsumerList
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:32:9-37:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:32:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:32:52-104
+intent-filter#action:name:android.intent.action.CONSUMERLIST+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:33:13-36:29
+action#android.intent.action.CONSUMERLIST
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:34:17-77
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:34:25-74
+activity#com.laneco.readandbill.SummaryList
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:38:9-43:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:38:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:38:52-101
+intent-filter#action:name:android.intent.action.SUMMARY+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:39:13-42:29
+action#android.intent.action.SUMMARY
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:40:17-72
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:40:25-69
+activity#com.lamerman.FileDialog
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:44:9-49:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:44:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:44:52-90
+intent-filter#action:name:android.intent.action.FILEDIALOG+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:45:13-48:29
+action#android.intent.action.FILEDIALOG
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:46:17-75
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:46:25-72
+activity#com.generic.readandbill.BatchPrintingSOA
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:50:9-55:20
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:50:19-51
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:50:52-107
+intent-filter#action:name:android.intent.action.BATCHPRINTINGSOA+category:name:android.intent.category.DEFAULT
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:51:13-54:29
+action#android.intent.action.BATCHPRINTINGSOA
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:52:17-81
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:52:25-78
+activity#com.androidapp.mytools.AppPreferenceActivity
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:56:9-81
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.laneco.readandbill\AndroidManifest.xml:56:19-78

@@ -1,0 +1,3 @@
+include ':com.laneco.readandbill'
+include ':com.androidapp.mytools'
+include ':com.generic.readandbill'

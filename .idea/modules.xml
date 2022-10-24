@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Read_and_Bill_Project.iml" filepath="$PROJECT_DIR$/.idea/modules/Read_and_Bill_Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/Read_and_Bill_Project.com.androidapp.mytools.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/Read_and_Bill_Project.com.generic.readandbill.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/Read_and_Bill_Project.com.laneco.readandbill.unitTest.iml" />
+    </modules>
+  </component>
+</project>

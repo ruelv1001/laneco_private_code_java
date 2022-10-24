@@ -1,0 +1,7 @@
+com.androidapp.mytools
+drawable ic_launcher
+string app_name
+style AppBaseTheme
+style AppTheme
+xml preference
+xml preference_readandbill

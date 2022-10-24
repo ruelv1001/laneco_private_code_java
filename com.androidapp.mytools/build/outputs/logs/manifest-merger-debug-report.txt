@@ -1,0 +1,49 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:1-22:12
+	package
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:3:5-37
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:5:5-30
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:4:5-28
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+uses-sdk
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:9:9-38
+	android:minSdkVersion
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:8:9-34
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:11:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:12:22-71
+application
+ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:14:5-20:19
+	android:label
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:16:9-41
+	android:allowBackup
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:15:9-35
+	android:theme
+		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.androidapp.mytools\AndroidManifest.xml:17:9-40
