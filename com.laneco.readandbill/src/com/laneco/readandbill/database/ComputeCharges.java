@@ -55,18 +55,6 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	        if (!lanecoConsumer.getRateCode().equals("R")) {
 	            return 0.0d;
 	        }
-	        if (kilowattHour < 15.0d) {
-	            return 0.25d;
-	        }
-	        if (kilowattHour == 16.0d && kilowattHour <= 16.0d) {
-	            return 0.2d;
-	        }
-	        if (kilowattHour == 17.0d && kilowattHour <= 17.0d) {
-	            return 0.1d;
-	        }
-	        if (kilowattHour == 18.0d || kilowattHour <= 19.0d) {
-	            return 0.05d;
-	        }
 	        return 0.00d;
 	    }
 
@@ -119,7 +107,7 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 	    
 	    public Double lifelineDiscSubs() {
-	        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getLifeLineSubsidy()));
+	        return DoubleManager.rRound(Double.valueOf(getKilowatthour()));
 	    }
 
 	    public Double powerActRateRed2() {

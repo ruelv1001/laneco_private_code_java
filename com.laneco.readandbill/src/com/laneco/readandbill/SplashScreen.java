@@ -3,6 +3,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.format.Time;
@@ -336,7 +337,7 @@ private Consumer listToConsumer(String rawData)
 	 public void run() 
 	 			{
 	                new Builder(SplashScreen.this).setTitle("Done").setMessage("Processing Text File Complete!").setPositiveButton("Done", null).create().show();
-	                SplashScreen.this.setRequestedOrientation(1);
+	                SplashScreen.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	            }
 	        }
 
@@ -385,7 +386,7 @@ private Consumer listToConsumer(String rawData)
 
 	            public void run() {
 	                SplashScreen.this.doneDialog("Result").show();
-	                SplashScreen.this.setRequestedOrientation(1);
+	                SplashScreen.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 	            }
 	}
 }

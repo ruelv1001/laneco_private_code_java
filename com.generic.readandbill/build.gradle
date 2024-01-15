@@ -1,9 +1,9 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':com.androidapp.mytools')
-    compile project(':com.androidapp.mytools')
+
+    implementation project(':com.androidapp.mytools')
+
 }
 
 android {

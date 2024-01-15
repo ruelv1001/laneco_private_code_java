@@ -2,6 +2,7 @@ package com.androidapp.mytools.objectmanager;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.os.Handler;
 
 public class ProgressDialogMaker {
@@ -29,7 +30,7 @@ public class ProgressDialogMaker {
 	        barProgressBar.setProgress(0);
 	        barProgressBar.setMax(max);
 	        barProgressBar.setCancelable(false);
-	        activity.setRequestedOrientation(14);
+	        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
 	        return barProgressBar;
 	    }
 

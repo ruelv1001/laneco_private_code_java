@@ -127,21 +127,9 @@ public class ComputeCharges {
 	    public Double lifelineDiscSubs() {
 	        Double result = Double.valueOf(0.0d);
 	        if (!rate.getRateCode().equals("R") || getKilowatthour() > 20.0d) {
-	            result = Double.valueOf(getKilowatthour() * rate.getLifeLineSubsidy());
+	            result = Double.valueOf(getKilowatthour());
 	        } else {
-	            if (getKilowatthour() <= 20.0d && getKilowatthour() > 19.0d) {
-	                result = Double.valueOf(-0.05d);
-	            } else if (getKilowatthour() <= 19.0d && getKilowatthour() > 18.0d) {
-	                result = Double.valueOf(-0.1d);
-	            } else if (getKilowatthour() <= 18.0d && getKilowatthour() > 17.0d) {
-	                result = Double.valueOf(-0.2d);
-	            } else if (getKilowatthour() <= 17.0d && getKilowatthour() > 16.0d) {
-	                result = Double.valueOf(-0.3d);
-	            } else if (getKilowatthour() <= 16.0d && getKilowatthour() > 15.0d) {
-	                result = Double.valueOf(-0.4d);
-	            } else if (getKilowatthour() <= 15.0d) {
-	                result = Double.valueOf(-0.5d);
-	            }
+
 	            result = Double.valueOf(result.doubleValue() * totalPower().doubleValue());
 	        }
 	        return DoubleManager.rRound(result);

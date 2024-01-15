@@ -122,7 +122,7 @@ public class StatementGenerator {
         }
         if (this.compute.icera().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("ICERA", this.rate.getIcera(), this.compute.icera().doubleValue()) + "\n");
-        }             
+        }
         if (this.compute.powerActRateRed2().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), this.compute.powerActRateRed2().doubleValue()) + "\n");
         }
@@ -137,7 +137,7 @@ public class StatementGenerator {
         }
         if (this.consumer.getdaaRefund() != 0.0d) {
         	result.add(bodyLineGenerator("DAA REFUND", this.consumer.getdaaRefund()) + "\n");
-        }	
+        }
         result.add(PrinterControls.emphasized(true));
         result.add("DISTRIBUTION REVENUES\n");
         result.add(PrinterControls.emphasized(false));
@@ -165,9 +165,11 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
-        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
+      /*  if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
         }
+
+       */
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
                 result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
@@ -216,7 +218,7 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("A/R (Materials)", this.consumer.getArMats()) + "\n");
         }
         if (this.consumer.getTransformerRental() != 0.0d) {
-            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n"); 
+            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n");
         }
         if (this.compute.totalDsm() != 0.0d) {
         	result.add(bodyLineGenerator("Franchise Tax", this.consumer.gettracTax(), this.compute.FTresult()) + "\n");
@@ -227,7 +229,7 @@ public class StatementGenerator {
         if (this.compute.RptPrevTax() != 0.0d) {
         	result.add(bodyLineGenerator("RPT Previous Year", this.consumer.getrptprevTax(), this.compute.RptPrevTax()) + "\n");
         }
-        
+
         if (this.compute.totalVat() != 0.0d) {
             result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
         }

@@ -1,5 +1,6 @@
 package com.laneco.readandbill;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.os.Bundle;
@@ -77,6 +78,7 @@ public class MyReadingEntry extends com.generic.readandbill.MyReadingEntry
 		}
 	}
 
+	@SuppressLint("ResourceType")
 	protected void initControls() {
 		TextView mTransLoss = (TextView) findViewById(R.id.tvreTransLoss);
 		TextView mCMkilowatthour = (TextView) findViewById(R.id.tvreChangeMeter);
@@ -89,7 +91,7 @@ public class MyReadingEntry extends com.generic.readandbill.MyReadingEntry
 		}
 		this.consumer = this.lconsumer;
 		this.fieldFindings = this.dsfieldfinding.getAllFieldFindings();
-		ArrayAdapter<String> adapter = new ArrayAdapter(this, 17367049,
+		@SuppressLint("ResourceType") ArrayAdapter<String> adapter = new ArrayAdapter(this, 17367049,
 				setList());
 		adapter.setDropDownViewResource(17367049);
 		this.mFieldFinding.setAdapter(adapter);

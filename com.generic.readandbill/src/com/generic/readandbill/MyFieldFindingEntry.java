@@ -1,4 +1,5 @@
 package com.generic.readandbill;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,7 +85,8 @@ public class MyFieldFindingEntry extends Activity implements OnClickListener,OnF
 	        initControls();
 	    }
 
-	    protected void initControls() {
+	    @SuppressLint("ResourceType")
+		protected void initControls() {
 	        this.consumer = this.dsConsumer.getConsumer(Long.valueOf(this.extras.getLong("id")));
 	        this.reading = this.dsReading.getReading(this.consumer.getId(), 20);
 	        this.mAccountNumber = (TextView) findViewById(R.id.tvCIAccountNumber);
@@ -99,7 +101,7 @@ public class MyFieldFindingEntry extends Activity implements OnClickListener,OnF
 	        this.mName.setText(this.consumer.getName());
 	        this.mAddress.setText(this.consumer.getAddress());
 	        this.mInitialReading.setText(String.valueOf(this.consumer.getInitialReading()));
-	        ArrayAdapter<String> adapter = new ArrayAdapter(this, 17367049, setList());
+	        @SuppressLint("ResourceType") ArrayAdapter<String> adapter = new ArrayAdapter(this, 17367049, setList());
 	        adapter.setDropDownViewResource(17367049);
 	        this.mFieldFinding = (Spinner) findViewById(R.id.spnFieldFindings);
 	        this.mFieldFinding.setAdapter(adapter);

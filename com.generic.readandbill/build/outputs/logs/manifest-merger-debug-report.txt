@@ -3,24 +3,16 @@ manifest
 ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
 INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
 INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
 	package
 		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:3:5-38
 		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
 		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
 	android:versionName
 		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:5:5-30
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:11-69
 	android:versionCode
 		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:4:5-28
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
 uses-sdk
 ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
