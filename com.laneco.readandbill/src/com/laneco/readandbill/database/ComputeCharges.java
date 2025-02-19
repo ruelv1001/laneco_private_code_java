@@ -32,15 +32,15 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 
 	    public double getLifelineKilowatthourDisplay() {
 	        double result = getKilowatthour();
-	        if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
+	        if (!lanecoConsumer.getRateCode().equals("D") || result > 20.0d) {
 	            return 0.0d;
 	        }
 	        return result - (getLifelineDiscount(result) * result);
 	    }
 
 	    public double getSeniorCitizenDiscountSubsidy() {
-	        if (!lanecoConsumer.getRateCode().equals("R") || getKilowatthour() > 100.0d) {
-	            if ((!lanecoConsumer.getRateCode().equals("R") || getKilowatthour() <= 100.0d) && lanecoConsumer.getRateCode().equals("R")) {
+	        if (!lanecoConsumer.getRateCode().equals("R") || getKilowatthour() > 0.01d) {
+	            if ((!lanecoConsumer.getRateCode().equals("R") || getKilowatthour() <= 0.01d) && lanecoConsumer.getRateCode().equals("R")) {
 	                return 0.0d;
 	            }
 	            return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getSeniorCitizenSubsidy())).doubleValue();
@@ -52,8 +52,20 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 
 	    private double getLifelineDiscount(double kilowattHour) {
-	        if (!lanecoConsumer.getRateCode().equals("R")) {
-	            return 0.0d;
+	        if (!lanecoConsumer.getRateCode().equals("D")) {
+				return 0.0d;
+			}
+	        if (kilowattHour <= 15.9d) {
+	            return 0.25d;
+	        }
+	        if (kilowattHour == 16.0d && kilowattHour <= 16.9d) {
+	            return 0.2d;
+	        }
+	        if (kilowattHour == 17.0d && kilowattHour <= 17.9d) {
+	            return 0.1d;
+	        }
+	        if (kilowattHour == 18.0d || kilowattHour <= 19.0d) {
+	            return 0.05d;
 	        }
 	        return 0.00d;
 	    }
@@ -107,7 +119,7 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 	    
 	    public Double lifelineDiscSubs() {
-	        return DoubleManager.rRound(Double.valueOf(getKilowatthour()));
+	        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getLifeLineSubsidy()));
 	    }
 
 	    public Double powerActRateRed2() {

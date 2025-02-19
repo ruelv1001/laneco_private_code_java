@@ -23,6 +23,7 @@ public class Consumer {
 	        this.initialReading = 0.000d;
 	        this.multiplier = 0.0d;
 	        this.transformerRental = 0.0d;
+
 	    }
 
 	    public long getId() {

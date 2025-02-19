@@ -66,19 +66,20 @@ public class StatementGenerator {
         if (PrinterControls.btPrinter.getDeviceName().equals("SPP-R300")) {
             result.add("\u001b31");
         }
-        result.add("Ver 2.2.0.1\n");
+        result.add("Ver 2024\n");
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.centerJustify("LANAO DEL NORTE ELECTRIC COOPERATIVE, INC.", 48) + "\n");
+        result.add(StringManager.centerJustify("Proud Member of APEC Party List #43", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
         result.add(StringManager.centerJustify("Tubod, Lanao del Norte, Mindanao, Philippines", 48) + "\n");
         result.add(StringManager.centerJustify("VAT REG. TIN 000-954-478-000", 48) + "\n");
         result.add(StringManager.centerJustify("TEL. NO. (063)341-5231 FAX NO. (063)341-5210", 48) + "\n");
         result.add('\035' + StringManager.centerJustify("E-MAIL: laneco_energy@yahoo.com", 48) + "\n");
         result.add(PrinterControls.emphasized(true));
-        result.add(StringManager.centerJustify("\038 STATEMENT OF ACCOUNT", 48) + "\n");
+        result.add(StringManager.centerJustify("\03 BILLING INVOICE", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
         result.add(StringManager.centerJustify(this.userProfile.getBillingPeriod(), 48) + "\n");
-        result.add(StringManager.centerJustify("Billing Period " + this.userProfile.getInitialReadingDate() + " to " + this.userProfile.getReadingDate(), 48) + "\n");
+        result.add(StringManager.centerJustify("Binotelling Period " + this.userProfile.getInitialReadingDate() + " to " + this.userProfile.getReadingDate(), 48) + "\n");
         result.add(StringManager.leftJustify(StringManager.leftJustify(this.consumer.getAccountNumber(), 10) + StringManager.centerJustify("TYPE - " + this.consumer.getRateCode(), 14) + StringManager.leftJustify("DUE DATE: ", 10) + StringManager.rightJustify(this.userProfile.getDueDate(), 14), 48) + "\n");
         result.add(StringManager.leftJustify(StringManager.leftJustify(this.consumer.getName(), 24) + StringManager.leftJustify("Energized:", 10) + StringManager.rightJustify(this.consumer.getDateEnergized(), 14), 48) + "\n");
         result.add(StringManager.leftJustify(StringManager.leftJustify(this.consumer.getMeterSerial() + " Brand " + this.consumer.getMeterBrand(), 24) + StringManager.leftJustify("POLE No. ", 10) + StringManager.rightJustify(this.consumer.getPoleNumber(), 14), 48) + "\n");
@@ -112,6 +113,7 @@ public class StatementGenerator {
         result.add(lineBreak(48));
         result.add(StringManager.leftJustify("", 30) + StringManager.centerJustify("RATE", 7) + StringManager.centerJustify("AMOUNT", 11) + "\n");
         result.add(PrinterControls.emphasized(true));
+        result.add("KILOWATT RATE:\n");
         result.add("GENERATION AND TRANSMISSION\n");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.genSys().doubleValue() != 0.0d) {
@@ -122,7 +124,7 @@ public class StatementGenerator {
         }
         if (this.compute.icera().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("ICERA", this.rate.getIcera(), this.compute.icera().doubleValue()) + "\n");
-        }
+        }             
         if (this.compute.powerActRateRed2().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), this.compute.powerActRateRed2().doubleValue()) + "\n");
         }
@@ -137,7 +139,7 @@ public class StatementGenerator {
         }
         if (this.consumer.getdaaRefund() != 0.0d) {
         	result.add(bodyLineGenerator("DAA REFUND", this.consumer.getdaaRefund()) + "\n");
-        }
+        }	
         result.add(PrinterControls.emphasized(true));
         result.add("DISTRIBUTION REVENUES\n");
         result.add(PrinterControls.emphasized(false));
@@ -165,11 +167,9 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
-      /*  if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
+        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
         }
-
-       */
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
                 result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
@@ -218,7 +218,7 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("A/R (Materials)", this.consumer.getArMats()) + "\n");
         }
         if (this.consumer.getTransformerRental() != 0.0d) {
-            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n");
+            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n"); 
         }
         if (this.compute.totalDsm() != 0.0d) {
         	result.add(bodyLineGenerator("Franchise Tax", this.consumer.gettracTax(), this.compute.FTresult()) + "\n");
@@ -229,7 +229,7 @@ public class StatementGenerator {
         if (this.compute.RptPrevTax() != 0.0d) {
         	result.add(bodyLineGenerator("RPT Previous Year", this.consumer.getrptprevTax(), this.compute.RptPrevTax()) + "\n");
         }
-
+        
         if (this.compute.totalVat() != 0.0d) {
             result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
         }

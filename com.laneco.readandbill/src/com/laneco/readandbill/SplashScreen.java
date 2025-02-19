@@ -3,7 +3,6 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.format.Time;
@@ -83,14 +82,14 @@ private Consumer listToConsumer(String rawData)
 		        consumer.setOthersSurcharge(Double.parseDouble(data[91].trim().replace(",", "")));
 		        consumer.setdaaRefund(Double.parseDouble(data[97].replace(",", "")));
 		        consumer.setlocalFranchiseTax(Double.parseDouble(data[98].replace(",", "")));
-		        //consumer.settracTax(Double.parseDouble(data[99].trim().replace(",", "")));
+				//consumer.settracTax(Double.parseDouble(data[99].trim().replace(",", "")));
 		        consumer.setrptprevTax(Double.parseDouble(data[99].trim().replace(",", "")));
-		        // consumer.setbusinessTax(Double.parseDouble(data[99]));//.trim().replace(",", "")));
+				// consumer.setbusinessTax(Double.parseDouble(data[99]));//.trim().replace(",", "")));
 		        Rates rate = this.dsRates.getConsumerRate(consumer.getRateCode());
 		        if (rate.getId() == -1) 
 		        {
 		            rate.setScSwitch(Boolean.valueOf(consumer.isScSwitch()));
-		            rate.setRateCode(consumer.getRateCode());
+					rate.setRateCode(consumer.getRateCode());
 		            rate.setGenSys(Double.parseDouble(data[9]));
 		            rate.setHostComm(Double.parseDouble(data[REQUEST_LOAD]));
 		            rate.setIcera(Double.parseDouble(data[11].trim().replace(",", "")));
@@ -133,7 +132,7 @@ private Consumer listToConsumer(String rawData)
 		            rate.setVatSystemLossTransmission(Double.parseDouble(data[79]));
 		            rate.setUcmeRed(Double.parseDouble(data[92]));//================
 		            rate.setRealPropertyTax(Double.parseDouble(data[96]));
-		            this.dsRates.createRates(rate);
+					this.dsRates.createRates(rate);
 		        }
 		        return consumer;
 	    }
@@ -337,7 +336,7 @@ private Consumer listToConsumer(String rawData)
 	 public void run() 
 	 			{
 	                new Builder(SplashScreen.this).setTitle("Done").setMessage("Processing Text File Complete!").setPositiveButton("Done", null).create().show();
-	                SplashScreen.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	                SplashScreen.this.setRequestedOrientation(1);
 	            }
 	        }
 
@@ -386,7 +385,7 @@ private Consumer listToConsumer(String rawData)
 
 	            public void run() {
 	                SplashScreen.this.doneDialog("Result").show();
-	                SplashScreen.this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	                SplashScreen.this.setRequestedOrientation(1);
 	            }
 	}
 }

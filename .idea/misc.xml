@@ -1,19 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/activity_batch_printing.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/activity_consumer_list.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/activity_fieldfinding_entry.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/activity_summary.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/collectiondialog.xml" value="0.1" />
-        <entry key="..\:/android codes/laneco code/new codes oct242022/New Read and Bill Project/Read and Bill Project/com.generic.readandbill/res/layout/device_list.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

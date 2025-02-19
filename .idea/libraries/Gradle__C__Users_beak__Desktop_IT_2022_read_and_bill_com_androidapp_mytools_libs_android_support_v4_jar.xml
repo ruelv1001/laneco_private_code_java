@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: C./Users/beak_/Desktop/IT-2022/read_and_bill/com.androidapp.mytools/libs/android-support-v4.jar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/com.androidapp.mytools/libs/android-support-v4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

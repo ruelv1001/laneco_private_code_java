@@ -38,7 +38,7 @@ public class ConsumerDataSource extends com.generic.readandbill.database.Consume
 	    public static final String SENIORCITIZEN_DISCOUNT = "seniorcitizendiscount";
 	    public static final String TRANSFORMERLOSTTESTRESULT = "transformerlosttestresult";
 	    public static final String TRANSFORMERNUMBER = "transformernumber";
-	    private ReadandBillDatabaseHelper dbHelper;
+		private ReadandBillDatabaseHelper dbHelper;
 	    private UserProfileDataSource dsUP;
 	    private String[] lAllColumn;
 

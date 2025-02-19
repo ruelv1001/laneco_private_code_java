@@ -17,7 +17,7 @@ public class Rates {
 	    protected double scRetailCust;
 	    protected double scSupplySys;
 	    protected boolean scSwitch;
-	    protected double seniorCitizenDiscount;
+		protected double seniorCitizenDiscount;
 	    protected double seniorCitizenSubsidy;
 	    protected double systemLoss;
 	    protected double tcDemand;
@@ -44,7 +44,7 @@ public class Rates {
 	        this.mcSys = 0.0d;
 	        this.lifeLineSubsidy = 0.0d;
 	        this.scSwitch = false;
-	        this.seniorCitizenSubsidy = 0.0d;
+			this.seniorCitizenSubsidy = 0.0d;
 	        this.scKiloWattHourLimit = 0.0d;
 	        this.seniorCitizenDiscount = 0.0d;	        
 	        this.reinvestmentFundSustCapex = 0.0d;
@@ -53,7 +53,7 @@ public class Rates {
 	        this.ucme = 0.0d;
 	        this.ucsd = 0.0d;
 	        this.franchiseTax = 0.0d;
-	    }
+			}
 
 	    public double getUcsd(){
 	    	return ucsd;
@@ -201,7 +201,7 @@ public class Rates {
 	        this.scSwitch = scSwitch.booleanValue();
 	    }
 
-	    public double getScKiloWattHourLimit() {
+		public double getScKiloWattHourLimit() {
 	        return scKiloWattHourLimit;
 	    }
 

@@ -22,7 +22,7 @@ public class RateDataSource {
 	    public static final String SCRETAILCUST = "scretailcust";
 	    public static final String SCSUPPLYSYS = "scsupplysys";
 	    public static final String SCSWITCH = "scswitch";
-	    public static final String SENIORCITIZENDISCOUNT = "seniorcitizendiscount";
+		public static final String SENIORCITIZENDISCOUNT = "seniorcitizendiscount";
 	    public static final String SENIORCITIZENSUBSIDY = "seniorcitizensubsidy";
 	    public static final String FRANCHISETAX = "franchisetax";
 	    public static final String SYSTEMLOSS = "systemloss";
@@ -63,16 +63,16 @@ public class RateDataSource {
 	        rateFields.add("ucme real not null, ");
 	        rateFields.add("ucec real not null, ");
 	        rateFields.add("ucsd real not null");
-	        return rateFields;
+			return rateFields;
 	    }
 
 	    public RateDataSource(Context context) {
-	        this.allColumns = new String[]{ID, RATECODE, GENSYS, HOSTCOMM, TCDEMAND, TCSYSTEM, SYSTEMLOSS, DCDEMAND, DCSYSTEM, SCRETAILCUST, SCSUPPLYSYS, MCRETAILCUST, MCSYS, UCME, UCEC, PARR, LIFELINESUBSIDY, PREVYEARADJPOWERCOST, REINVESTMENTFUNDSUSTCAPEX, SCSWITCH, SCKILOWATTHOURLIMIT, SENIORCITIZENSUBSIDY, SENIORCITIZENDISCOUNT,UCSD,FRANCHISETAX};
+	        this.allColumns = new String[]{ID, RATECODE, GENSYS, HOSTCOMM, TCDEMAND, TCSYSTEM, SYSTEMLOSS, DCDEMAND, DCSYSTEM, SCRETAILCUST, SCSUPPLYSYS, MCRETAILCUST, MCSYS, UCME, UCEC, PARR, LIFELINESUBSIDY, PREVYEARADJPOWERCOST, REINVESTMENTFUNDSUSTCAPEX, SCSWITCH, SCKILOWATTHOURLIMIT, SENIORCITIZENSUBSIDY, SENIORCITIZENDISCOUNT,UCSD,FRANCHISETAX,};
 	        this.dbHelper = new ReadandBillDatabaseHelper(context);
 	    }
 
 	    public RateDataSource(ReadandBillDatabaseHelper dbHelper, Context context) {
-	        this.allColumns = new String[]{ID, RATECODE, GENSYS, HOSTCOMM, TCDEMAND, TCSYSTEM, SYSTEMLOSS, DCDEMAND, DCSYSTEM, SCRETAILCUST, SCSUPPLYSYS, MCRETAILCUST, MCSYS, UCME, UCEC, PARR, LIFELINESUBSIDY, PREVYEARADJPOWERCOST, REINVESTMENTFUNDSUSTCAPEX, SCSWITCH, SCKILOWATTHOURLIMIT, SENIORCITIZENSUBSIDY, SENIORCITIZENDISCOUNT,UCSD,FRANCHISETAX};
+	        this.allColumns = new String[]{ID, RATECODE, GENSYS, HOSTCOMM, TCDEMAND, TCSYSTEM, SYSTEMLOSS, DCDEMAND, DCSYSTEM, SCRETAILCUST, SCSUPPLYSYS, MCRETAILCUST, MCSYS, UCME, UCEC, PARR, LIFELINESUBSIDY, PREVYEARADJPOWERCOST, REINVESTMENTFUNDSUSTCAPEX, SCSWITCH, SCKILOWATTHOURLIMIT, SENIORCITIZENSUBSIDY, SENIORCITIZENDISCOUNT,UCSD,FRANCHISETAX,};
 	        this.dbHelper = dbHelper;
 	        if (this.dbHelper == null) {
 	            RateDataSource rateDataSource = new RateDataSource(context);
@@ -105,7 +105,7 @@ public class RateDataSource {
 	        values.put(SENIORCITIZENDISCOUNT, Double.valueOf(rate.getSeniorCitizenDiscount()));
 	        values.put(UCSD, Double.valueOf(rate.getUcsd()));
 	        values.put(FRANCHISETAX, Double.valueOf(rate.getFranchisetax()));
-	        return values;
+			return values;
 	    }
 
 	    public Rates createRate(Rates rate) {
@@ -166,7 +166,7 @@ public class RateDataSource {
 	        rate.setSeniorCitizenDiscount(cursor.getDouble(cursor.getColumnIndex(SENIORCITIZENDISCOUNT)));
 	        rate.setUcsd(cursor.getDouble(cursor.getColumnIndex(UCSD)));
 	        rate.setfranchiseTax(cursor.getDouble(cursor.getColumnIndex(FRANCHISETAX)));
-	        return rate;
+			return rate;
 	    }
 
 	    public void truncate() {

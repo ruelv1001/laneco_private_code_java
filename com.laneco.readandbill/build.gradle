@@ -5,11 +5,11 @@ dependencies {
     implementation project(':com.androidapp.mytools')
     implementation project(':com.generic.readandbill')
 
-}
+    }
 
-android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    android {
+        compileSdkVersion 34
+        buildToolsVersion "21.1.2"
 
     sourceSets {
         main {

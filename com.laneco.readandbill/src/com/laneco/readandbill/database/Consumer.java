@@ -41,7 +41,8 @@ public class Consumer extends com.generic.readandbill.database.Consumer{
 	    protected double daaRefund;
 	    protected double tracTax;
 	    protected double rptprevTax;
-	    //protected double totalDsm;
+
+		 //protected double totalDsm;
 	    protected double localFranchiseTax;
 	    // protected double businessTax;
 	   
@@ -254,11 +255,11 @@ public class Consumer extends com.generic.readandbill.database.Consumer{
 	        return scSwitch;
 	    }
 
-	    public void setScSwitch(boolean scSwitch) {
+		public void setScSwitch(boolean scSwitch) {
 	        this.scSwitch = scSwitch;
 	    }
 
-	    public double getCoreLoss() {
+		public double getCoreLoss() {
 	        return coreLoss;
 	    }
 
@@ -318,7 +319,7 @@ public class Consumer extends com.generic.readandbill.database.Consumer{
 	        return SCSwitch;
 	    }
 
-	    public void setKw(double kw) {
+		public void setKw(double kw) {
 	        this.kw = kw;
 	    }
 
