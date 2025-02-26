@@ -8,7 +8,7 @@
 7-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\AndroidManifest.xml:7:5-9:41
 8        android:minSdkVersion="1"
 8-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\AndroidManifest.xml:8:9-34
-9        android:targetSdkVersion="21" />
+9        android:targetSdkVersion="34" />
 9-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\AndroidManifest.xml:9:9-38
 10
 11    <uses-permission android:name="android.permission.BLUETOOTH" />

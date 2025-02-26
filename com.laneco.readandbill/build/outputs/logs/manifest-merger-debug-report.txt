@@ -73,8 +73,10 @@ activity#com.laneco.readandbill.SplashScreen
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:14:9-19:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:14:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:14:52-75
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:14:54-104
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:14:77-127
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:13-18:29
 action#android.intent.action.MAIN
@@ -89,8 +91,10 @@ activity#com.laneco.readandbill.MyReadingEntry
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:9-25:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:53-76
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:52-104
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:77-129
 intent-filter#action:name:android.intent.action.READINGENTRY+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:21:13-24:29
 action#android.intent.action.READINGENTRY
@@ -105,8 +109,10 @@ activity#com.laneco.readandbill.MyFieldFindingEntry
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:9-31:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:53-76
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:52-109
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:77-134
 intent-filter#action:name:android.intent.action.FIELDFINDINGENTRY+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:27:13-30:29
 action#android.intent.action.FIELDFINDINGENTRY
@@ -117,8 +123,10 @@ activity#com.laneco.readandbill.MyConsumerList
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:32:9-37:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:32:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:32:53-76
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:32:52-104
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:32:77-129
 intent-filter#action:name:android.intent.action.CONSUMERLIST+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:33:13-36:29
 action#android.intent.action.CONSUMERLIST
@@ -129,8 +137,10 @@ activity#com.laneco.readandbill.SummaryList
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:38:9-43:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:38:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:38:53-76
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:38:52-101
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:38:77-126
 intent-filter#action:name:android.intent.action.SUMMARY+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:39:13-42:29
 action#android.intent.action.SUMMARY
@@ -141,8 +151,10 @@ activity#com.lamerman.FileDialog
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:44:9-49:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:44:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:44:52-75
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:44:52-90
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:44:77-115
 intent-filter#action:name:android.intent.action.FILEDIALOG+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:45:13-48:29
 action#android.intent.action.FILEDIALOG
@@ -153,8 +165,10 @@ activity#com.generic.readandbill.BatchPrintingSOA
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:50:9-55:20
 	android:label
 		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:50:19-51
+	android:exported
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:50:52-75
 	android:name
-		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:50:52-107
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:50:76-131
 intent-filter#action:name:android.intent.action.BATCHPRINTINGSOA+category:name:android.intent.category.DEFAULT
 ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:51:13-54:29
 action#android.intent.action.BATCHPRINTINGSOA

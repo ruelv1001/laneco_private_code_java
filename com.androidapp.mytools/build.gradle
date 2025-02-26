@@ -7,8 +7,16 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 34
+    compileSdk 34
     buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    buildToolsVersion "34.0.0"
 
     sourceSets {
         main {
