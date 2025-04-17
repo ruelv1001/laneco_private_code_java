@@ -1,16 +1,23 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':com.androidapp.mytools')
-    compile project(':com.generic.readandbill')
-    compile project(':com.generic.readandbill')
-    compile project(':com.androidapp.mytools')
+
+    implementation project(':com.androidapp.mytools')
+    implementation project(':com.generic.readandbill')
+
 }
 
 android {
-    compileSdkVersion 21
+    compileSdk 34
     buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    buildToolsVersion "34.0.0"
 
     sourceSets {
         main {
@@ -24,7 +31,7 @@ android {
         }
 
         // Move the tests to tests/java, tests/res, etc...
-       // instrumentTest.setRoot('tests')
+        // instrumentTest.setRoot('tests')
 
         // Move the build types to build-types/<type>
         // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...

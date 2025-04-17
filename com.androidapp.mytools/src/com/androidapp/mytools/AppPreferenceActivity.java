@@ -11,6 +11,8 @@ import android.preference.PreferenceCategory;
 //import com.androidapp.mytools.bluetooth.BluetoothSharedPrefs;
 import com.androidapp.mytools.*;
 import com.androidapp.mytools.bluetooth.BluetoothSharedPrefs;
+
+
 public class AppPreferenceActivity extends PreferenceActivity {
 	private CheckBoxPreference checkBoxPreference;
     private Context context;

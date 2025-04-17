@@ -5,22 +5,32 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-7-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
+7-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
 8        android:minSdkVersion="1"
-8-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:8:9-34
-9        android:targetSdkVersion="21" />
-9-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:9:9-38
+8-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:8:9-34
+9        android:targetSdkVersion="34" />
+9-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:9:9-38
 10
-11    <application
-11-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:12:5-20:19
-12        android:allowBackup="true"
-12-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:13:9-35
-13        android:icon="@drawable/genericsplashscreen"
-13-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:14:9-53
-14        android:label="@string/app_name"
-14-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:15:9-41
-15        android:theme="@style/AppTheme" >
-15-->D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:16:9-40
-16    </application>
-17
-18</manifest>
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:11:5-80
+11-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:11:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:12:5-81
+12-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:12:22-78
+13    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+13-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:13:5-81
+13-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:13:22-79
+14
+15    <application
+15-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:15:5-23:19
+16        android:allowBackup="true"
+16-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:16:9-35
+17        android:icon="@drawable/genericsplashscreen"
+17-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:17:9-53
+18        android:label="@string/app_name"
+18-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:18:9-41
+19        android:theme="@style/AppTheme" >
+19-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:19:9-40
+20    </application>
+21
+22</manifest>

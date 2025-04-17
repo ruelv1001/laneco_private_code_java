@@ -187,6 +187,12 @@ public class StatementGenerator {
         if (this.compute.realPropertyTax() != 0.0d) {
             result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax())+ "\n");
         }
+        result.add("Business Tax Permit Yr. 2024\n");
+                        result.add("Business Tax Permit Yr. 2025\n");
+        result.add("Business Tax Permit Yr. 2024\n");
+                        result.add("Business Tax Permit Yr. 2025\n");
+        result.add("Business Tax Permit Yr. 2024\n");
+                result.add("Business Tax Permit Yr. 2025\n");
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
         }

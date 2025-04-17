@@ -1,43 +1,47 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:1-22:12
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:1:1-25:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:1:1-25:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:1:1-25:12
 	package
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:3:5-38
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:3:5-38
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:5:5-30
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:5:5-30
 	xmlns:android
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:1:11-69
 	android:versionCode
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:4:5-28
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:4:5-28
 uses-sdk
-ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:9:9-38
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:9:9-38
 	android:minSdkVersion
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:8:9-34
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:8:9-34
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:11:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:13:22-79
 application
-ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:12:5-20:19
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:15:5-23:19
 	android:label
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:15:9-41
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:18:9-41
 	android:icon
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:14:9-53
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:17:9-53
 	android:allowBackup
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from D:\android codes\laneco code\new codes oct242022\New Read and Bill Project\Read and Bill Project\com.generic.readandbill\AndroidManifest.xml:16:9-40
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\AndroidManifest.xml:19:9-40
