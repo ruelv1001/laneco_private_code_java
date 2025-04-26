@@ -16,7 +16,7 @@ android {
         }
     }
 
-    buildToolsVersion "34.0.0"
+    buildToolsVersion "33.0.0"
 
     sourceSets {
         main {

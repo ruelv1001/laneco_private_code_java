@@ -1,5 +1,6 @@
 package com.lamerman;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog.Builder;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -114,6 +115,7 @@ public class FileDialog extends ListActivity {
         this.lastPositions = new HashMap();
     }
 
+    @SuppressLint("WrongConstant")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setResult(0, getIntent());
@@ -168,6 +170,11 @@ public class FileDialog extends ListActivity {
             this.currentPath = ROOT;
             f = new File(this.currentPath);
             files = f.listFiles();
+
+            // If files is still null after trying the root, create an empty array
+            if (files == null) {
+                files = new File[0]; // This prevents the NullPointerException
+            }
         }
         this.myPath.setText(getText(R.string.location) + ": " + this.currentPath);
         if (!this.currentPath.equals(ROOT)) {
@@ -255,6 +262,7 @@ public class FileDialog extends ListActivity {
         this.selectButton.setEnabled(true);
     }
 
+    @SuppressLint("WrongConstant")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode != 4) {
             return super.onKeyDown(keyCode, event);
@@ -271,6 +279,7 @@ public class FileDialog extends ListActivity {
         return true;
     }
 
+    @SuppressLint("WrongConstant")
     private void setCreateVisible(View v) {
         this.layoutCreate.setVisibility(0);
         this.layoutSelect.setVisibility(8);
@@ -278,6 +287,7 @@ public class FileDialog extends ListActivity {
         this.selectButton.setEnabled(false);
     }
 
+    @SuppressLint("WrongConstant")
     private void setSelectVisible(View v) {
         this.layoutCreate.setVisibility(8);
         this.layoutSelect.setVisibility(0);

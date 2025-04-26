@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/read_and_bill.iml" filepath="$PROJECT_DIR$/.idea/modules/read_and_bill.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/read_and_bill.com.androidapp.mytools.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/read_and_bill.com.generic.readandbill.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/read_and_bill.com.laneco.readandbill.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/laneco.iml" filepath="$PROJECT_DIR$/.idea/modules/laneco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.androidapp.mytools/laneco.com.androidapp.mytools.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.generic.readandbill/laneco.com.generic.readandbill.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/com.laneco.readandbill/laneco.com.laneco.readandbill.unitTest.iml" />
     </modules>
   </component>
 </project>

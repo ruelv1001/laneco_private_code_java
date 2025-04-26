@@ -5,176 +5,190 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-7-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+7-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
 8        android:minSdkVersion="1"
-8-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:8:9-34
-9        android:targetSdkVersion="34" />
-9-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:9:9-38
+8-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:8:9-34
+9        android:targetSdkVersion="33" />
+9-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:9:9-38
 10
-11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:5-81
-11-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:22-78
-12    <uses-permission android:name="android.permission.BLUETOOTH" />
-12-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:11:5-68
-12-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:11:22-65
-13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-13-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:12:5-80
-13-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:12:22-77
-14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:5-81
-14-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:22-78
-15    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-15-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:5-74
-15-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:22-71
-16
-17    <application
-17-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:74-60:15
-18        android:allowBackup="true"
-18-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:87-113
-19        android:debuggable="true"
-20        android:icon="@drawable/genericsplashscreen"
-20-->[:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-53
-21        android:label="@string/app_name"
-21-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:114-146
-22        android:testOnly="true"
-23        android:theme="@style/AppTheme" >
-23-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:147-178
-24        <activity
-24-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:17:5-22:16
-25            android:name="com.laneco.readandbill.SplashScreen"
-25-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:17:73-123
-26            android:exported="true"
-26-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:17:48-71
-27            android:label="@string/app_name" >
-27-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:17:15-47
-28            <intent-filter>
-28-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:18:9-21:25
-29                <action android:name="android.intent.action.MAIN" />
-29-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:13-65
-29-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:21-62
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:13-73
-31-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:23-70
-32            </intent-filter>
-33        </activity>
-34        <activity
-34-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:23:5-28:16
-35            android:name="com.laneco.readandbill.MyReadingEntry"
-35-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:23:73-125
-36            android:exported="true"
-36-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:23:49-72
-37            android:label="@string/app_name" >
-37-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:23:15-47
-38            <intent-filter>
-38-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:24:9-27:25
-39                <action android:name="android.intent.action.READINGENTRY" />
-39-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:25:13-73
-39-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:25:21-70
-40
-41                <category android:name="android.intent.category.DEFAULT" />
-41-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-41-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-42            </intent-filter>
-43        </activity>
-44        <activity
-44-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:29:5-34:16
-45            android:name="com.laneco.readandbill.MyFieldFindingEntry"
-45-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:29:73-130
-46            android:exported="true"
-46-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:29:49-72
-47            android:label="@string/app_name" >
-47-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:29:15-47
-48            <intent-filter>
-48-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:30:9-33:25
-49                <action android:name="android.intent.action.FIELDFINDINGENTRY" />
-49-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:31:13-78
-49-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:31:21-75
-50
-51                <category android:name="android.intent.category.DEFAULT" />
-51-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-51-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-52            </intent-filter>
-53        </activity>
-54        <activity
-54-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:35:5-40:16
-55            android:name="com.laneco.readandbill.MyConsumerList"
-55-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:35:73-125
-56            android:exported="true"
-56-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:35:49-72
-57            android:label="@string/app_name" >
-57-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:35:15-47
-58            <intent-filter>
-58-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:36:9-39:25
-59                <action android:name="android.intent.action.CONSUMERLIST" />
-59-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:37:13-73
-59-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:37:21-70
-60
-61                <category android:name="android.intent.category.DEFAULT" />
-61-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-61-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-62            </intent-filter>
-63        </activity>
-64        <activity
-64-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:41:5-46:16
-65            android:name="com.laneco.readandbill.SummaryList"
-65-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:41:73-122
-66            android:exported="true"
-66-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:41:49-72
-67            android:label="@string/app_name" >
-67-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:41:15-47
-68            <intent-filter>
-68-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:42:9-45:25
-69                <action android:name="android.intent.action.SUMMARY" />
-69-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:43:13-68
-69-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:43:21-65
-70
-71                <category android:name="android.intent.category.DEFAULT" />
-71-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-71-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-72            </intent-filter>
-73        </activity>
-74        <activity
-74-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:47:5-52:16
-75            android:name="com.lamerman.FileDialog"
-75-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:47:73-111
-76            android:exported="true"
-76-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:47:48-71
-77            android:label="@string/app_name" >
-77-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:47:15-47
-78            <intent-filter>
-78-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:48:9-51:25
-79                <action android:name="android.intent.action.FILEDIALOG" />
-79-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:49:13-71
-79-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:49:21-68
-80
-81                <category android:name="android.intent.category.DEFAULT" />
-81-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-81-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-82            </intent-filter>
-83        </activity>
-84        <activity
-84-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:53:5-58:16
-85            android:name="com.generic.readandbill.BatchPrintingSOA"
-85-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:53:72-127
-86            android:exported="true"
-86-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:53:48-71
-87            android:label="@string/app_name" >
-87-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:53:15-47
-88            <intent-filter>
-88-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:54:9-57:25
-89                <action android:name="android.intent.action.BATCHPRINTINGSOA" />
-89-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:55:13-77
-89-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:55:21-74
-90
-91                <category android:name="android.intent.category.DEFAULT" />
-91-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:13-72
-91-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:26:23-69
-92            </intent-filter>
-93        </activity>
-94        <activity android:name="com.androidapp.mytools.AppPreferenceActivity" />
-94-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:59:5-77
-94-->C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:59:15-74
-95    </application>
-96
-97</manifest>
+11    <uses-permission
+11-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:5-80
+12        android:name="android.permission.READ_EXTERNAL_STORAGE"
+12-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:22-77
+13        android:maxSdkVersion="32" />
+13-->[:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-35
+14    <uses-permission
+14-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:5-81
+15        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+15-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:22-78
+16        android:maxSdkVersion="32" />
+16-->[:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-35
+17    <uses-permission android:name="android.permission.BLUETOOTH" />
+17-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:12:5-68
+17-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:12:22-65
+18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+18-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:5-80
+18-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:22-77
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:5-81
+19-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:22-78
+20    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+20-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:15:5-16:40
+20-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:15:22-79
+21    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+21-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:18:5-74
+21-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:18:22-71
+22
+23    <application
+23-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:5-65:15
+24        android:allowBackup="true"
+24-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:18-44
+25        android:debuggable="true"
+26        android:icon="@drawable/genericsplashscreen"
+26-->[:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-53
+27        android:label="@string/app_name"
+27-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:45-77
+28        android:requestLegacyExternalStorage="true"
+28-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:113-156
+29        android:testOnly="true"
+30        android:theme="@style/AppTheme" >
+30-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:78-109
+31        <activity
+31-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:5-27:16
+32            android:name="com.laneco.readandbill.SplashScreen"
+32-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:73-123
+33            android:exported="true"
+33-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:48-71
+34            android:label="@string/app_name" >
+34-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:15-47
+35            <intent-filter>
+35-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:23:9-26:25
+36                <action android:name="android.intent.action.MAIN" />
+36-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:24:13-65
+36-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:24:21-62
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:25:13-73
+38-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:25:23-70
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:5-33:16
+42            android:name="com.laneco.readandbill.MyReadingEntry"
+42-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:73-125
+43            android:exported="true"
+43-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:49-72
+44            android:label="@string/app_name" >
+44-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:15-47
+45            <intent-filter>
+45-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:29:9-32:25
+46                <action android:name="android.intent.action.READINGENTRY" />
+46-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:30:13-73
+46-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:30:21-70
+47
+48                <category android:name="android.intent.category.DEFAULT" />
+48-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+48-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+49            </intent-filter>
+50        </activity>
+51        <activity
+51-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:5-39:16
+52            android:name="com.laneco.readandbill.MyFieldFindingEntry"
+52-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:73-130
+53            android:exported="true"
+53-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:49-72
+54            android:label="@string/app_name" >
+54-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:15-47
+55            <intent-filter>
+55-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:35:9-38:25
+56                <action android:name="android.intent.action.FIELDFINDINGENTRY" />
+56-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:36:13-78
+56-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:36:21-75
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+58-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+59            </intent-filter>
+60        </activity>
+61        <activity
+61-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:5-45:16
+62            android:name="com.laneco.readandbill.MyConsumerList"
+62-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:73-125
+63            android:exported="true"
+63-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:49-72
+64            android:label="@string/app_name" >
+64-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:15-47
+65            <intent-filter>
+65-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:41:9-44:25
+66                <action android:name="android.intent.action.CONSUMERLIST" />
+66-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:42:13-73
+66-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:42:21-70
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+68-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+69            </intent-filter>
+70        </activity>
+71        <activity
+71-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:5-51:16
+72            android:name="com.laneco.readandbill.SummaryList"
+72-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:73-122
+73            android:exported="true"
+73-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:49-72
+74            android:label="@string/app_name" >
+74-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:15-47
+75            <intent-filter>
+75-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:47:9-50:25
+76                <action android:name="android.intent.action.SUMMARY" />
+76-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:48:13-68
+76-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:48:21-65
+77
+78                <category android:name="android.intent.category.DEFAULT" />
+78-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+78-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+79            </intent-filter>
+80        </activity>
+81        <activity
+81-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:5-57:16
+82            android:name="com.lamerman.FileDialog"
+82-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:73-111
+83            android:exported="true"
+83-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:48-71
+84            android:label="@string/app_name" >
+84-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:15-47
+85            <intent-filter>
+85-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:53:9-56:25
+86                <action android:name="android.intent.action.FILEDIALOG" />
+86-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:54:13-71
+86-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:54:21-68
+87
+88                <category android:name="android.intent.category.DEFAULT" />
+88-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+88-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+89            </intent-filter>
+90        </activity>
+91        <activity
+91-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:5-63:16
+92            android:name="com.generic.readandbill.BatchPrintingSOA"
+92-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:72-127
+93            android:exported="true"
+93-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:48-71
+94            android:label="@string/app_name" >
+94-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:15-47
+95            <intent-filter>
+95-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:59:9-62:25
+96                <action android:name="android.intent.action.BATCHPRINTINGSOA" />
+96-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:60:13-77
+96-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:60:21-74
+97
+98                <category android:name="android.intent.category.DEFAULT" />
+98-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+98-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+99            </intent-filter>
+100        </activity>
+101        <activity android:name="com.androidapp.mytools.AppPreferenceActivity" />
+101-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:64:5-77
+101-->D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:64:15-74
+102    </application>
+103
+104</manifest>
