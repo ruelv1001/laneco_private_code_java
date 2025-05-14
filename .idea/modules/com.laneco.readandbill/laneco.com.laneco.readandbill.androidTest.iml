@@ -17,7 +17,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
     <content url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/res/resValues/androidTest/debug">
-      <sourceFolder url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/res/resValues/androidTest/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/res/resValues/androidTest/debug" type="java-test-resource" generated="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/res/rs/androidTest/debug" />
     <content url="file://$MODULE_DIR$/../../../com.laneco.readandbill/build/generated/source/buildConfig/androidTest/debug">

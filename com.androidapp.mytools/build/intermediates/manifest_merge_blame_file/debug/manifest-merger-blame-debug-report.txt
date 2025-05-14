@@ -30,22 +30,48 @@
 18-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:16:22-78
 19        android:maxSdkVersion="32" />
 19-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:17:9-35
-20
-21    <application
-21-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:18:5-26:19
-22        android:allowBackup="true"
-22-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:19:9-35
-23        android:label="@string/app_name"
-23-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:20:9-41
-24        android:requestLegacyExternalStorage="true"
-24-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:21:9-52
-25        android:theme="@style/AppTheme"
-25-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:23:9-40
-26        tools:targetApi="30" >
-26-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:22:9-29
-27
-28        <!-- android:icon="@drawable/ic_launcher" -->
-29
-30    </application>
-31
-32</manifest>
+20    <uses-permission android:name="android.permission.BLUETOOTH" />
+20-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:12:5-68
+20-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:12:22-65
+21    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+21-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:13:5-74
+21-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:13:22-71
+22
+23    <!-- Required from Android 12+ -->
+24    <uses-permission
+24-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:23:5-24:35
+25        android:name="android.permission.BLUETOOTH_CONNECT"
+25-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:23:22-73
+26        android:required="false" />
+26-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:24:9-33
+27    <uses-permission
+27-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:25:5-26:35
+28        android:name="android.permission.BLUETOOTH_SCAN"
+28-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:25:22-70
+29        android:required="false" />
+29-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:26:9-33
+30
+31    <!-- Optional if you're doing device discovery -->
+32    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+32-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:29:5-78
+32-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:29:22-75
+33
+34    <!-- Needed if you want to scan for Bluetooth devices -->
+35    <application
+35-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:33:5-41:19
+36        android:allowBackup="true"
+36-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:34:9-35
+37        android:label="@string/app_name"
+37-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:35:9-41
+38        android:requestLegacyExternalStorage="true"
+38-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:36:9-52
+39        android:theme="@style/AppTheme"
+39-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:38:9-40
+40        tools:targetApi="30" >
+40-->D:\android codes\test code\laneco\com.androidapp.mytools\AndroidManifest.xml:37:9-29
+41
+42        <!-- android:icon="@drawable/ic_launcher" -->
+43
+44    </application>
+45
+46</manifest>

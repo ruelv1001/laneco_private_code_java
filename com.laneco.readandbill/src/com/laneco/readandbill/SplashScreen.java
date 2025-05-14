@@ -55,7 +55,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
 
 	// Path to the infiles directory
 	private static final String INFILES_FOLDER = "infiles";
-
+	private static final int REQUEST_BLUETOOTH_PERMISSION = 40;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.dsConsumer = new ConsumerDataSource(this);
@@ -73,7 +73,22 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
 
 		// Create infiles directory if it doesn't exist
 		createInfilesDirectory();
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // Android 12+
+			if (checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED ||
+					checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+
+				requestPermissions(
+						new String[]{
+								Manifest.permission.BLUETOOTH_CONNECT,
+								Manifest.permission.BLUETOOTH_SCAN
+						},
+						REQUEST_BLUETOOTH_PERMISSION
+				);
+			}
+		}
 	}
+
+
 
 	// Create infiles directory in internal storage
 	private void createInfilesDirectory() {
@@ -144,12 +159,23 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 		if (requestCode == REQUEST_STORAGE_PERMISSION) {
 			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				// Permission granted
 				Toast.makeText(this, "Storage permission granted", Toast.LENGTH_SHORT).show();
 				createInfilesDirectory();
 			} else {
-				// Permission denied
 				Toast.makeText(this, "Storage permission required for file operations", Toast.LENGTH_LONG).show();
+			}
+		} else if (requestCode == REQUEST_BLUETOOTH_PERMISSION) {
+			boolean granted = true;
+			for (int result : grantResults) {
+				if (result != PackageManager.PERMISSION_GRANTED) {
+					granted = false;
+					break;
+				}
+			}
+			if (granted) {
+				Toast.makeText(this, "Bluetooth permission granted", Toast.LENGTH_SHORT).show();
+			} else {
+				Toast.makeText(this, "Bluetooth permission required for scanning or connecting", Toast.LENGTH_LONG).show();
 			}
 		}
 	}
