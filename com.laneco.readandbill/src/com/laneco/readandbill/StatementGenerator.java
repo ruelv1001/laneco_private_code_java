@@ -75,7 +75,7 @@ public class StatementGenerator {
         result.add(StringManager.centerJustify("TEL. NO. (063)341-5231 FAX NO. (063)341-5210", 48) + "\n");
         result.add('\035' + StringManager.centerJustify("E-MAIL: laneco_energy@yahoo.com", 48) + "\n");
         result.add(PrinterControls.emphasized(true));
-        result.add(StringManager.centerJustify("\038 STATEMENT OF ACCOUNT", 48) + "\n");
+        result.add('\035' +StringManager.centerJustify(" BILLING INVOICE", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
         result.add(StringManager.centerJustify(this.userProfile.getBillingPeriod(), 48) + "\n");
         result.add(StringManager.centerJustify("Billing Period " + this.userProfile.getInitialReadingDate() + " to " + this.userProfile.getReadingDate(), 48) + "\n");
@@ -187,6 +187,8 @@ public class StatementGenerator {
         if (this.compute.realPropertyTax() != 0.0d) {
             result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax())+ "\n");
         }
+        result.add(bodyLineGeneratorTwo("\nBusiness Tax Yr. 2024-25:", .0057 , .0057)+ "\n");
+
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
         }
@@ -241,6 +243,10 @@ public class StatementGenerator {
     private String bodyLineGenerator(String description, double rate, double amount) {
         return "" + StringManager.leftJustify(description, 29) + StringManager.rightJustify(this.rateFormat.format(rate), 8) + StringManager.rightJustify(this.amountFormat.format(amount), 11);
     }
+    private String bodyLineGeneratorTwo(String description, double rate, double amount) {
+        return "" + StringManager.leftJustify(description, 29) + StringManager.rightJustify(this.rateFormat.format(rate), 8) +StringManager.rightJustify(this.rateFormat.format(rate), 8) ;
+    }
+
 
     private String bodyLineGenerator(String description, double amount) {
         return "" + StringManager.leftJustify(description, 34) + StringManager.rightJustify(this.totalAmountFormat.format(amount), 14);
@@ -251,14 +257,20 @@ public class StatementGenerator {
     }
 
     private List<String> amountDueDetail() {
+        double valueTax = this.compute.getKilowatthour()* 0.0057;
+        double totalWithTax = this.compute.amountAfterDue().doubleValue() + valueTax;
         List<String> result = new ArrayList();
         result.add(PrinterControls.emphasized(true));
-        result.add(footerTotalLineGenerator("TOTAL AMT DUE ON OR BEFOR DUE DATE", this.compute.totalCharge() + this.compute.totalVat()) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
+        result.add(footerTotalLineGenerator(
+                "TOTAL AMT DUE ON OR BEFOR DUE DATE",
+                this.compute.totalCharge() + this.compute.totalVat() + valueTax
+        ) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
         result.add(footerTotalLineGenerator("SERVICE FEE AND", this.compute.serviceFee()));
         result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + this.userProfile.getDueDate() + ")", this.compute.surcharge()) + "\n");
         result.add(footerTotalLineGenerator("ADD: VAT", this.compute.serviceFeeVat() + this.compute.surchargeVat()));
         result.add(lineBreak(48));
-        result.add(footerTotalLineGenerator("TOTAL AMOUNT AFTER DUE DATE", this.compute.amountAfterDue().doubleValue()) + "\n");
+
+        result.add(footerTotalLineGenerator("TOTAL AMOUNT AFTER DUE DATE", totalWithTax) + "\n");
         result.add(StringManager.rightJustify("==============", 48) + "\n");
         if (this.consumer.getArrears() != 0.0d) {
             result.add("ARREARS " + String.valueOf(this.consumer.getNumberOfArrears()) + "(surcharge & service fee " + "inclusive)\n");
