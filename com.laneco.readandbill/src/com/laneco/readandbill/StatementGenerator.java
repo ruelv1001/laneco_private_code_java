@@ -2,6 +2,7 @@ package com.laneco.readandbill;
 
 import android.content.Context;
 import android.text.format.Time;
+
 import com.androidapp.mytools.bluetooth.PrinterControls;
 import com.androidapp.mytools.objectmanager.StringManager;
 import com.laneco.readandbill.database.ComputeCharges;
@@ -11,11 +12,13 @@ import com.laneco.readandbill.database.Rates;
 import com.laneco.readandbill.database.Reading;
 import com.laneco.readandbill.database.UserProfile;
 import com.laneco.readandbill.database.UserProfileDataSource;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
 public class StatementGenerator {
-	protected DecimalFormat amountFormat;
+    protected DecimalFormat amountFormat;
     private ComputeCharges compute;
     private Consumer consumer;
     protected DecimalFormat kilowattUsed;
@@ -75,7 +78,7 @@ public class StatementGenerator {
         result.add(StringManager.centerJustify("TEL. NO. (063)341-5231 FAX NO. (063)341-5210", 48) + "\n");
         result.add('\035' + StringManager.centerJustify("E-MAIL: laneco_energy@yahoo.com", 48) + "\n");
         result.add(PrinterControls.emphasized(true));
-        result.add('\035' +StringManager.centerJustify(" BILLING INVOICE", 48) + "\n");
+        result.add('\035' + StringManager.centerJustify(" BILLING INVOICE", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
         result.add(StringManager.centerJustify(this.userProfile.getBillingPeriod(), 48) + "\n");
         result.add(StringManager.centerJustify("Billing Period " + this.userProfile.getInitialReadingDate() + " to " + this.userProfile.getReadingDate(), 48) + "\n");
@@ -94,9 +97,23 @@ public class StatementGenerator {
         List<String> result = new ArrayList();
         result.add(StringManager.rightJustify("PRES READING", 14) + StringManager.leftJustify(StringManager.rightJustify("PREV READING", 14) + StringManager.rightJustify("MULT.", 6) + StringManager.rightJustify("KWH USED", 14), 48) + "\n");
         if (this.reading.getFeedBackCode().equals("A")) {
-            result.add(StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " + StringManager.leftJustify(StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " + StringManager.rightJustify(String.valueOf(this.consumer.getMultiplier()), 5) + " " + StringManager.rightJustify(String.valueOf(this.compute.getKilowatthour()), 14), 48) + "\n");
+            result.add(StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " +
+                    StringManager.leftJustify(StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " +
+                            StringManager.rightJustify(String.valueOf(this.consumer.getMultiplier()), 5) + " " + StringManager.rightJustify(String.valueOf(this.compute.getKilowatthour()), 14), 48) + "\n");
         } else {
-            result.add(StringManager.rightJustify(String.valueOf(this.reading.getReading()), 13) + " " + StringManager.leftJustify(StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " + StringManager.rightJustify(String.valueOf(this.consumer.getMultiplier()), 5) + " " + StringManager.rightJustify(String.valueOf(this.compute.getKilowatthour()), 14), 48) + "\n");
+            result.add(
+                    StringManager.rightJustify(String.valueOf(this.reading.getReading()), 13) + " " +
+                            StringManager.leftJustify(
+                                    StringManager.rightJustify(String.valueOf(this.consumer.getInitialReading()), 13) + " " +
+                                            StringManager.rightJustify(String.valueOf(this.consumer.getMultiplier()), 5) + " " +
+                                            StringManager.rightJustify(
+                                                    String.valueOf(Math.round(this.reading.getReading() - this.consumer.getInitialReading())), 14
+                                            ),
+                                    48
+                            ) + "\n"
+            );
+
+
         }
         if (this.consumer.getChangeMeterKilowatthour() > 0.0d) {
             result.add("with Change Meter");
@@ -122,7 +139,7 @@ public class StatementGenerator {
         }
         if (this.compute.icera().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("ICERA", this.rate.getIcera(), this.compute.icera().doubleValue()) + "\n");
-        }             
+        }
         if (this.compute.powerActRateRed2().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), this.compute.powerActRateRed2().doubleValue()) + "\n");
         }
@@ -136,8 +153,8 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("System Loss Charge", this.rate.getSystemLoss(), this.compute.systemLoss().doubleValue()) + "\n");
         }
         if (this.consumer.getdaaRefund() != 0.0d) {
-        	result.add(bodyLineGenerator("DAA REFUND", this.consumer.getdaaRefund()) + "\n");
-        }	
+            result.add(bodyLineGenerator("DAA REFUND", this.consumer.getdaaRefund()) + "\n");
+        }
         result.add(PrinterControls.emphasized(true));
         result.add("DISTRIBUTION REVENUES\n");
         result.add(PrinterControls.emphasized(false));
@@ -165,9 +182,9 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
-        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
-        }
+//        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
+//            result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
+//        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
                 result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
@@ -185,9 +202,14 @@ public class StatementGenerator {
         result.add("GOVERMENT REVENUES\n");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.realPropertyTax() != 0.0d) {
-            result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax())+ "\n");
+            result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax()) + "\n");
         }
-        result.add(bodyLineGeneratorTwo("\nBusiness Tax Yr. 2024-25:", .0057 , .0057)+ "\n");
+        long diff = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+        double taxnew= Math.round(diff * 0.0057 * 100.0) / 100.0;
+
+        result.add(bodyLineGenerator("\nBusiness Tax Yr. 2024-25:  ", 0.0057, taxnew) + "\n");
+
+
 
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
@@ -218,18 +240,18 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("A/R (Materials)", this.consumer.getArMats()) + "\n");
         }
         if (this.consumer.getTransformerRental() != 0.0d) {
-            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n"); 
+            result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n");
         }
         if (this.compute.totalDsm() != 0.0d) {
-        	result.add(bodyLineGenerator("Franchise Tax", this.consumer.gettracTax(), this.compute.FTresult()) + "\n");
+            result.add(bodyLineGenerator("Franchise Tax", this.consumer.gettracTax(), this.compute.FTresult()) + "\n");
         }
         if (this.compute.locFranTax() != 0.0d) {
-        	result.add(bodyLineGenerator("Local Franchise Tax", this.consumer.getlocalFranchiseTax(), this.compute.locFranTax()) + "\n");
+            result.add(bodyLineGenerator("Local Franchise Tax", this.consumer.getlocalFranchiseTax(), this.compute.locFranTax()) + "\n");
         }
         if (this.compute.RptPrevTax() != 0.0d) {
-        	result.add(bodyLineGenerator("RPT Previous Year", this.consumer.getrptprevTax(), this.compute.RptPrevTax()) + "\n");
+            result.add(bodyLineGenerator("RPT Previous Year", this.consumer.getrptprevTax(), this.compute.RptPrevTax()) + "\n");
         }
-        
+
         if (this.compute.totalVat() != 0.0d) {
             result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
         }
@@ -243,8 +265,9 @@ public class StatementGenerator {
     private String bodyLineGenerator(String description, double rate, double amount) {
         return "" + StringManager.leftJustify(description, 29) + StringManager.rightJustify(this.rateFormat.format(rate), 8) + StringManager.rightJustify(this.amountFormat.format(amount), 11);
     }
+
     private String bodyLineGeneratorTwo(String description, double rate, double amount) {
-        return "" + StringManager.leftJustify(description, 29) + StringManager.rightJustify(this.rateFormat.format(rate), 8) +StringManager.rightJustify(this.rateFormat.format(rate), 8) ;
+        return "" + StringManager.leftJustify(description, 29) + StringManager.rightJustify(this.rateFormat.format(rate), 8) + StringManager.rightJustify(this.rateFormat.format(rate), 8);
     }
 
 
@@ -257,13 +280,16 @@ public class StatementGenerator {
     }
 
     private List<String> amountDueDetail() {
-        double valueTax = this.compute.getKilowatthour()* 0.0057;
-        double totalWithTax = this.compute.amountAfterDue().doubleValue() + valueTax;
+        double valueTax = this.compute.getKilowatthour() * 0.0057;
+
+        long diff = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+        double tax2025 = Math.round(diff * 0.0057 * 100.0) / 100.0;
+        double totalWithTax = this.compute.amountAfterDue().doubleValue() + tax2025;
         List<String> result = new ArrayList();
         result.add(PrinterControls.emphasized(true));
         result.add(footerTotalLineGenerator(
-                "TOTAL AMT DUE ON OR BEFOR DUE DATE",
-                this.compute.totalCharge() + this.compute.totalVat() + valueTax
+                "TOTAL AMT DUE ON OR BEFORE DUE DATE",
+                this.compute.totalCharge() + this.compute.totalVat() + tax2025
         ) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
         result.add(footerTotalLineGenerator("SERVICE FEE AND", this.compute.serviceFee()));
         result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + this.userProfile.getDueDate() + ")", this.compute.surcharge()) + "\n");
@@ -309,16 +335,15 @@ public class StatementGenerator {
         return result;
     }
 
-    private String pageBreak()
-    {
-      String str = "";
-      for (int i = 0; i <= 2; i++) {
-        str = str + "\n";
-      }
-      return str;
+    private String pageBreak() {
+        String str = "";
+        for (int i = 0; i <= 2; i++) {
+            str = str + "\n";
+        }
+        return str;
     }
 
-	public static String lineBreak(int numChar) {
+    public static String lineBreak(int numChar) {
         return "" + StringManager.leftJustify("", numChar).replace(" ", "-") + "\n";
     }
 }

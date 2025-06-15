@@ -165,9 +165,9 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
-        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
-        }
+       //        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
+       //            result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
+       //        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
                 result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
@@ -182,7 +182,7 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("(Over) / Under Recoveries", this.rate.getOverUnderRecovery(), this.compute.overUnderRecovery()) + "\n");
         }
         result.add(PrinterControls.emphasized(true));
-        result.add("GOVERMENT REVENUES\n");
+        result.add("GOVERMENT REVENUES");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.realPropertyTax() != 0.0d) {
             result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax())+ "\n");
