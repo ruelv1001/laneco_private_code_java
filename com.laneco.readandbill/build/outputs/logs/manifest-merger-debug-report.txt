@@ -1,233 +1,233 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-27:12
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-46:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-27:12
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-46:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:1-67:12
 	package
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:3:5-37
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:3:5-37
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:5:5-30
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:2:5-51
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:2:5-51
 	xmlns:android
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:1:11-69
 	android:versionCode
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:4:5-28
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
 uses-sdk
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
-INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-10:41
+INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:9:9-38
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:9:9-38
 	android:minSdkVersion
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:8:9-34
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
-		INJECTED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:8:9-34
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
+		INJECTED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:5-80
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-80
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-80
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-16:38
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-16:38
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:5-80
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-80
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-80
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-80
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-16:38
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-16:38
 	android:maxSdkVersion
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-35
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-35
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:10:22-77
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:5-81
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-81
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-81
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-19:38
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-19:38
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:11:5-81
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-81
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-81
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-81
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-19:38
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:5-19:38
 	android:maxSdkVersion
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-35
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-35
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:12:5-68
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-68
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-68
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-68
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-68
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:12:5-68
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-68
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-68
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-68
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-68
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:12:22-65
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:12:22-65
 uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:15:5-16:40
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-82
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-82
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:5-16:40
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-82
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-82
 	tools:ignore
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:16:9-37
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:16:9-37
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:15:22-79
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:15:22-79
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:18:5-74
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-74
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-74
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:5-74
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:5-74
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:18:5-74
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-74
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-74
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:5-74
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:21:5-74
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:18:22-71
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:18:22-71
 application
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:5-65:15
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:5-25:19
-MERGED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:5-25:19
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:5-44:19
-MERGED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:5-44:19
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:5-65:15
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:5-25:19
+MERGED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:5-25:19
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:5-44:19
+MERGED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:5-44:19
 	android:requestLegacyExternalStorage
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:113-156
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:113-156
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:45-77
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:45-77
 	android:icon
-		ADDED from [:com.generic.readandbill] D:\android codes\test code\laneco\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-53
+		ADDED from [:com.generic.readandbill] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.generic.readandbill\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-53
 	tools:targetApi
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:20:9-29
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:20:9-29
 	android:allowBackup
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:18-44
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:18-44
 	android:theme
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:19:78-109
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:19:78-109
 activity#com.laneco.readandbill.SplashScreen
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:5-27:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:22:5-27:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:22:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:48-71
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:22:48-71
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:22:73-123
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:22:73-123
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:23:9-26:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:23:9-26:25
 action#android.intent.action.MAIN
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:24:13-65
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:24:13-65
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:24:21-62
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:24:21-62
 category#android.intent.category.LAUNCHER
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:25:13-73
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:25:13-73
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:25:23-70
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:25:23-70
 activity#com.laneco.readandbill.MyReadingEntry
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:5-33:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:28:5-33:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:28:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:49-72
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:28:49-72
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:28:73-125
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:28:73-125
 intent-filter#action:name:android.intent.action.READINGENTRY+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:29:9-32:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:29:9-32:25
 action#android.intent.action.READINGENTRY
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:30:13-73
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:30:13-73
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:30:21-70
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:30:21-70
 category#android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:13-72
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:31:13-72
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:31:23-69
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:31:23-69
 activity#com.laneco.readandbill.MyFieldFindingEntry
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:5-39:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:34:5-39:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:34:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:49-72
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:34:49-72
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:34:73-130
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:34:73-130
 intent-filter#action:name:android.intent.action.FIELDFINDINGENTRY+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:35:9-38:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:35:9-38:25
 action#android.intent.action.FIELDFINDINGENTRY
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:36:13-78
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:36:13-78
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:36:21-75
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:36:21-75
 activity#com.laneco.readandbill.MyConsumerList
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:5-45:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:40:5-45:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:40:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:49-72
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:40:49-72
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:40:73-125
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:40:73-125
 intent-filter#action:name:android.intent.action.CONSUMERLIST+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:41:9-44:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:41:9-44:25
 action#android.intent.action.CONSUMERLIST
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:42:13-73
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:42:13-73
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:42:21-70
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:42:21-70
 activity#com.laneco.readandbill.SummaryList
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:5-51:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:46:5-51:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:46:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:49-72
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:46:49-72
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:46:73-122
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:46:73-122
 intent-filter#action:name:android.intent.action.SUMMARY+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:47:9-50:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:47:9-50:25
 action#android.intent.action.SUMMARY
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:48:13-68
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:48:13-68
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:48:21-65
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:48:21-65
 activity#com.lamerman.FileDialog
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:5-57:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:52:5-57:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:52:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:48-71
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:52:48-71
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:52:73-111
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:52:73-111
 intent-filter#action:name:android.intent.action.FILEDIALOG+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:53:9-56:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:53:9-56:25
 action#android.intent.action.FILEDIALOG
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:54:13-71
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:54:13-71
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:54:21-68
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:54:21-68
 activity#com.generic.readandbill.BatchPrintingSOA
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:5-63:16
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:58:5-63:16
 	android:label
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:15-47
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:58:15-47
 	android:exported
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:48-71
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:58:48-71
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:58:72-127
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:58:72-127
 intent-filter#action:name:android.intent.action.BATCHPRINTINGSOA+category:name:android.intent.category.DEFAULT
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:59:9-62:25
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:59:9-62:25
 action#android.intent.action.BATCHPRINTINGSOA
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:60:13-77
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:60:13-77
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:60:21-74
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:60:21-74
 activity#com.androidapp.mytools.AppPreferenceActivity
-ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:64:5-77
+ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:64:5-77
 	android:name
-		ADDED from D:\android codes\test code\laneco\com.laneco.readandbill\AndroidManifest.xml:64:15-74
+		ADDED from C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.laneco.readandbill\AndroidManifest.xml:64:15-74
 uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:5-26:36
+ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:5-26:36
 	android:required
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:9-33
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:9-33
 	android:name
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-60
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-60
 uses-permission#android.permission.BLUETOOTH_SCAN
-ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-29:36
+ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-29:36
 	android:required
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-33
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-33
 	android:name
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-57
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-57
 uses-permission#android.permission.BLUETOOTH_ADVERTISE
-ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:5-78
+ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:5-78
 	android:name
-		ADDED from [:com.androidapp.mytools] D:\android codes\test code\laneco\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:22-75
+		ADDED from [:com.androidapp.mytools] C:\Users\beak_\Desktop\IT-2022\read_and_bill\com.androidapp.mytools\build\intermediates\merged_manifest\debug\AndroidManifest.xml:32:22-75

@@ -22,7 +22,7 @@
     <content url="file://$MODULE_DIR$/../../../com.generic.readandbill/build/generated/source/buildConfig/androidTest/debug" />
     <content url="file://$MODULE_DIR$/../../../com.generic.readandbill/src/androidTest" />
     <content url="file://$MODULE_DIR$/../../../com.generic.readandbill/src/androidTestDebug" />
-    <orderEntry type="jdk" jdkName="Android API 34, extension level 7 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 33 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="read_and_bill.com.generic.readandbill.main" scope="TEST" />
     <orderEntry type="module" module-name="read_and_bill.com.androidapp.mytools.main" scope="TEST" />

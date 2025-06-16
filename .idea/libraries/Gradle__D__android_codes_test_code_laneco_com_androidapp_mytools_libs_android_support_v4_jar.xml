@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: D./android codes/test code/laneco/com.androidapp.mytools/libs/android-support-v4.jar" external-system-id="GRADLE">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/com.androidapp.mytools/libs/android-support-v4.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

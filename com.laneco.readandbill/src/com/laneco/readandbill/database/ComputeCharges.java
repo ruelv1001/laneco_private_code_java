@@ -228,8 +228,10 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 
 	    public double totalVat() {
-	        return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) + vatLifelineSubsidy()) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
-	    }
+	       // return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) + vatLifelineSubsidy()) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
+			return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) ) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
+
+		}
 
 	    public Double currentBill() {
 	        return Double.valueOf(totalCharge() + totalVat());
@@ -239,7 +241,8 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	        if (lanecoConsumer.getRateCode().equals("I") || lanecoConsumer.getRateCode().equals("H")) {
 	            if (lanecoConsumer.getRateCode().equals("I")) {
 	                lanecoConsumer.getClass();
-	                return 19.8d * getKilowattUsed();
+	              //  return 19.8d * getKilowattUsed();
+					return  getKilowattUsed();
 	            }
 	            lanecoConsumer.getClass();
 	            return 0.4d * dcDemand().doubleValue();
@@ -273,7 +276,8 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 
 	    public Double amountAfterDue() {
-	        return DoubleManager.rRound(Double.valueOf((((currentBill().doubleValue() + serviceFee()) + serviceFeeVat()) + surcharge()) + surchargeVat()));
+	       // return DoubleManager.rRound(Double.valueOf((((currentBill().doubleValue() + serviceFee()) + serviceFeeVat()) + surcharge()) + surchargeVat()));
+			return DoubleManager.rRound(Double.valueOf((((currentBill().doubleValue() + serviceFee()) + serviceFeeVat()) + surcharge()) + surchargeVat()));
 	    }
 
 	    public double getKilowattUsed() {
