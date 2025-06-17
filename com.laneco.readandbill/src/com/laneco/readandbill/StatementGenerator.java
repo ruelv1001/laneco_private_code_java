@@ -124,6 +124,8 @@ public class StatementGenerator {
         return result;
     }
 
+    // new calculation for 2025 no lifline
+
     protected List<String> soaBody() {
         List<String> result = new ArrayList();
         result.add(lineBreak(48));
@@ -132,25 +134,42 @@ public class StatementGenerator {
         result.add("GENERATION AND TRANSMISSION\n");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.genSys().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Generation System Charge", this.rate.getGenSys(), this.compute.genSys().doubleValue()) + "\n");
+           // result.add(bodyLineGenerator("Generation System Charge", this.rate.getGenSys(), this.compute.genSys().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double gentran = tempTotal * this.rate.getGenSys();
+            result.add(bodyLineGenerator("Generation System Charge", this.rate.getGenSys(),   gentran) + "\n");
         }
         if (this.compute.hostComm().doubleValue() != 0.0d) {
+            double gen = this.compute.getKilowatthour() * this.rate.getGenSys();
             result.add(bodyLineGenerator("Franchise & Ben. to Host Comm", this.rate.getHostComm(), this.compute.hostComm().doubleValue()) + "\n");
+
         }
         if (this.compute.icera().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("ICERA", this.rate.getIcera(), this.compute.icera().doubleValue()) + "\n");
         }
         if (this.compute.powerActRateRed2().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), this.compute.powerActRateRed2().doubleValue()) + "\n");
+           // result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), this.compute.powerActRateRed2().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double par = tempTotal * this.rate.getParr();
+            result.add(bodyLineGenerator("Power Act Reduction", this.rate.getParr(), par) + "\n");
         }
         if (this.compute.tcSystem().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), this.compute.tcSystem().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+
+
+            double trans = tempTotal * this.rate.getTcSystem();
+          //  result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), this.compute.tcSystem().doubleValue()) + "\n");
+            result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), trans) + "\n");
         }
         if (this.compute.tcDemand().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Transmission Dem. Charge", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
         }
         if (this.compute.systemLoss().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("System Loss Charge", this.rate.getSystemLoss(), this.compute.systemLoss().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+
+            double systemLoss = tempTotal * this.rate.getSystemLoss();
+           /// result.add(bodyLineGenerator("System Loss Charge", this.rate.getSystemLoss(), this.compute.systemLoss().doubleValue()) + "\n");
+            result.add(bodyLineGenerator("System Loss Charge", this.rate.getSystemLoss(), systemLoss) + "\n");
         }
         if (this.consumer.getdaaRefund() != 0.0d) {
             result.add(bodyLineGenerator("DAA REFUND", this.consumer.getdaaRefund()) + "\n");
@@ -159,25 +178,43 @@ public class StatementGenerator {
         result.add("DISTRIBUTION REVENUES\n");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.dcDistribution().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Distribution System Charge", this.rate.getDcDistribution(), this.compute.dcDistribution().doubleValue()) + "\n");
+
+            double tempTotal =Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double disSystemCharge = tempTotal * this.rate.getDcDistribution();
+            result.add(bodyLineGenerator("Distribution System Charge", this.rate.getDcDistribution(), disSystemCharge) + "\n");
         }
         if (this.compute.dcDemand().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Distribution Dem. Charge", this.rate.getDcDemand(), this.compute.dcDemand().doubleValue()) + "\n");
         }
         if (this.compute.scSupplySys().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Supply System Charge", this.rate.getScSupplySys(), this.compute.scSupplySys().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double supplySystem = tempTotal * this.rate.getScSupplySys();
+            result.add(bodyLineGenerator("Supply System Charge", this.rate.getScSupplySys(), supplySystem) + "\n");
         }
         if (this.compute.scRetailCust().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Supply Retail Cust. Charge", this.rate.getScRetailCust(), this.compute.scRetailCust().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double retailSupply = tempTotal * this.rate.getScRetailCust();
+          //  result.add(bodyLineGenerator("Supply Retail Cust. Charge", this.rate.getScRetailCust(), this.compute.scRetailCust().doubleValue()) + "\n");
+            result.add(bodyLineGenerator("Supply Retail Cust. Charge", retailSupply) + "\n");
         }
         if (this.compute.mcSystem().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Metering System Charge", this.rate.getMcSys(), this.compute.mcSystem().doubleValue()) + "\n");
+            //result.add(bodyLineGenerator("Metering System Charge", this.rate.getMcSys(), this.compute.mcSystem().doubleValue()) + "\n");
+            double tempTotal =Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double metringSystem = tempTotal * this.rate.getMcSys();
+            result.add(bodyLineGenerator("Metering System Charge", this.rate.getMcSys(), metringSystem) + "\n");
         }
         if (this.compute.mcRetailCust().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), this.compute.mcRetailCust().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getMcRetailCust();
+            //result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), this.compute.mcRetailCust().doubleValue()) + "\n");
+            result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), total) + "\n");
         }
         if (this.compute.reinvestmentFundSustCapex().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Reinvest. Fund For Sust.CAPEX", this.rate.getReinvestmentFundSustCapex(), this.compute.reinvestmentFundSustCapex().doubleValue()) + "\n");
+           // result.add(bodyLineGenerator("Reinvest. Fund For Sust.CAPEX", this.rate.getReinvestmentFundSustCapex(), this.compute.reinvestmentFundSustCapex().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getReinvestmentFundSustCapex();
+            result.add(bodyLineGenerator("Reinvest. Fund For Sust.CAPEX", this.rate.getReinvestmentFundSustCapex(), total) + "\n");
+
         }
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
@@ -187,9 +224,16 @@ public class StatementGenerator {
 //        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
-                result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
+                double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+                double total = tempTotal * this.rate.getSeniorCitizenSubsidy();
+               // result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
+                result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), total) + "\n");
             } else if (this.consumer.getSCSwitch()) {
-                result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.consumer.getSeniorCitizenDiscount(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
+                double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+                double total = tempTotal * this.rate.getSeniorCitizenDiscount();
+             //   result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.consumer.getSeniorCitizenDiscount(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
+                result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.consumer.getSeniorCitizenDiscount(), total) + "\n");
+
             }
         }
         if (this.compute.prevYearAdjPowerCost().doubleValue() != 0.0d) {
@@ -202,7 +246,10 @@ public class StatementGenerator {
         result.add("GOVERMENT REVENUES\n");
         result.add(PrinterControls.emphasized(false));
         if (this.compute.realPropertyTax() != 0.0d) {
-            result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getRealPropertyTax();
+           // result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax()) + "\n");
+            result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(),total) + "\n");
         }
         long diff = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
         double taxnew= Math.round(diff * 0.0057 * 100.0) / 100.0;
@@ -212,7 +259,11 @@ public class StatementGenerator {
 
 
         if (this.compute.ucme().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getUcme();
+           // result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
+            result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), total) + "\n");
+
         }
         if (this.compute.ucec().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Environmental Charge", this.rate.getUcec(), this.compute.ucec().doubleValue()) + "\n");
@@ -221,14 +272,23 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("Stranded Contract Cost", this.rate.getUcStrandedContractCost(), this.compute.ucStrandedContractCost()) + "\n");
         }
         if (this.compute.ucmeRed() != 0.0d) {
-            result.add(bodyLineGenerator("UC-ME (RED)", this.rate.getUcmeRed(), this.compute.ucmeRed()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getUcmeRed();
+           // result.add(bodyLineGenerator("UC-ME (RED)", this.rate.getUcmeRed(), this.compute.ucmeRed()) + "\n");
+            result.add(bodyLineGenerator("UC-ME (RED)", this.rate.getUcmeRed(),total) + "\n");
         }
         //UCSD Charge
         if (this.compute.ucsd() != 0.0d) {
-            result.add(bodyLineGenerator("UCSD Charge", this.rate.getUcsd(), this.compute.ucsd()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getUcsd();
+            //result.add(bodyLineGenerator("UCSD Charge", this.rate.getUcsd(), this.compute.ucsd()) + "\n");
+            result.add(bodyLineGenerator("UCSD Charge", this.rate.getUcsd(), total) + "\n");
         }
         if (this.compute.feedTariffAllowance() != 0.0d) {
-            result.add(bodyLineGenerator("Fit-All (Renewable)", this.rate.getFeedTariffAllowance(), this.compute.feedTariffAllowance()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.rate.getFeedTariffAllowance();
+           // result.add(bodyLineGenerator("Fit-All (Renewable)", this.rate.getFeedTariffAllowance(), this.compute.feedTariffAllowance()) + "\n");
+            result.add(bodyLineGenerator("Fit-All (Renewable)", this.rate.getFeedTariffAllowance(), total) + "\n");
         }
         if (this.consumer.getDifferentialBillRecovery() != 0.0d) {
             result.add(bodyLineGenerator("Differential Billing/Recover", this.consumer.getDifferentialBillRecovery()) + "\n");
@@ -237,7 +297,10 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("Other Charges (456/142/421)", this.consumer.getOtherCharges()) + "\n");
         }
         if (this.consumer.getArMats() != 0.0d) {
-            result.add(bodyLineGenerator("A/R (Materials)", this.consumer.getArMats()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.consumer.getArMats();
+           result.add(bodyLineGenerator("A/R (Materials)", this.consumer.getArMats()) + "\n");
+          //  result.add(bodyLineGenerator("A/R (Materials)", total) + "\n");
         }
         if (this.consumer.getTransformerRental() != 0.0d) {
             result.add(bodyLineGenerator("Transformer Rental", this.consumer.getTransformerRental()) + "\n");
@@ -246,14 +309,35 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("Franchise Tax", this.consumer.gettracTax(), this.compute.FTresult()) + "\n");
         }
         if (this.compute.locFranTax() != 0.0d) {
-            result.add(bodyLineGenerator("Local Franchise Tax", this.consumer.getlocalFranchiseTax(), this.compute.locFranTax()) + "\n");
+            double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+            double total = tempTotal * this.consumer.getlocalFranchiseTax();
+            //result.add(bodyLineGenerator("Local Franchise Tax", this.consumer.getlocalFranchiseTax(), this.compute.locFranTax()) + "\n");
+            result.add(bodyLineGenerator("Local Franchise Tax", this.consumer.getlocalFranchiseTax(), total) + "\n");
+
         }
         if (this.compute.RptPrevTax() != 0.0d) {
             result.add(bodyLineGenerator("RPT Previous Year", this.consumer.getrptprevTax(), this.compute.RptPrevTax()) + "\n");
         }
 
         if (this.compute.totalVat() != 0.0d) {
-            result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
+            //double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
+          //  double total = tempTotal * this.compute.totalVat();
+           // result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
+            double tempTotal = this.reading.getReading() - this.consumer.getInitialReading();
+            double gentran = tempTotal * 0.5335;
+            double trans = tempTotal * 0.1338;
+            double disSystemCharge = tempTotal * 0.1014;
+            double systemLoss = tempTotal * 0.0806;
+            double retailSupply = tempTotal * 0.0928;
+            double metringSystem = tempTotal * 0.0548;
+            double par = tempTotal * -0.0147;
+            double rcs = tempTotal * 0.6;
+            double supplySystem = tempTotal * this.rate.getScSupplySys();
+            double totalVatResidential = gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par +rcs;
+
+
+            //double totalVatResidential = gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par;
+            result.add(bodyLineGenerator("Vat amount", totalVatResidential) + "\n");
         }
         result.add(lineBreak(48));
         for (String string : amountDueDetail()) {

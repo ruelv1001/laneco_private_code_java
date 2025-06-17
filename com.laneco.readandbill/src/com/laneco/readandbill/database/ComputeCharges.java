@@ -22,20 +22,27 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	        return super.getKilowatthour() + lanecoConsumer.getTransLoss();
 	    }
 
-	    public double getLifelineKilowatthour() {
-	        double result = getKilowatthour();
-	        if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
-	            return result;
-	        }
-	        return result - (getLifelineDiscount(result) * result);
-	    }
+//	    public double getLifelineKilowatthour() {
+//	        double result = getKilowatthour();
+//	        if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
+//	            return result;
+//	        }
+//	        return result - (getLifelineDiscount(result) * result);
+//	    }
 
+	public double getLifelineKilowatthour() {
+		double result = getKilowatthour();
+		if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
+			return result;
+		}
+		return result - ((result) * result);
+	}
 	    public double getLifelineKilowatthourDisplay() {
 	        double result = getKilowatthour();
 	        if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
 	            return 0.0d;
 	        }
-	        return result - (getLifelineDiscount(result) * result);
+			return result - (getLifelineDiscount(result) * result);
 	    }
 
 	    public double getSeniorCitizenDiscountSubsidy() {
@@ -200,8 +207,10 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 	    }
 
 	    public double vatLifelineSubsidy() {
-	        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getVatLifelineSubsidy())).doubleValue();
-	    }
+	       // return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getVatLifelineSubsidy())).doubleValue();
+			return DoubleManager.rRound(Double.valueOf(getKilowatthour() )).doubleValue();
+
+		}
 
 	    public double vatSeniorCitizen() {
 	        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getVatSeniorCitizen())).doubleValue();
@@ -229,7 +238,7 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 
 	    public double totalVat() {
 	       // return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) + vatLifelineSubsidy()) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
-			return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) ) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
+			return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex())+ vatLifelineSubsidy() ) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
 
 		}
 
