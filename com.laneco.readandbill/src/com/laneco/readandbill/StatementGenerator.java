@@ -2,6 +2,7 @@ package com.laneco.readandbill;
 
 import android.content.Context;
 import android.text.format.Time;
+import android.util.Log;
 
 import com.androidapp.mytools.bluetooth.PrinterControls;
 import com.androidapp.mytools.objectmanager.StringManager;
@@ -206,8 +207,15 @@ public class StatementGenerator {
         if (this.compute.mcRetailCust().doubleValue() != 0.0d) {
             double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
             double total = tempTotal * this.rate.getMcRetailCust();
+
+            if (!"R".equalsIgnoreCase(this.consumer.getRateCode())) {
+                result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), this.compute.mcRetailCust().doubleValue()) + "\n");
+            }
+            else{
+                result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), this.rate.getMcRetailCust()) + "\n");
+            }
             //result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), this.compute.mcRetailCust().doubleValue()) + "\n");
-            result.add(bodyLineGenerator("Metering Retail Customer", this.rate.getMcRetailCust(), total) + "\n");
+
         }
         if (this.compute.reinvestmentFundSustCapex().doubleValue() != 0.0d) {
            // result.add(bodyLineGenerator("Reinvest. Fund For Sust.CAPEX", this.rate.getReinvestmentFundSustCapex(), this.compute.reinvestmentFundSustCapex().doubleValue()) + "\n");
@@ -324,15 +332,29 @@ public class StatementGenerator {
           //  double total = tempTotal * this.compute.totalVat();
            // result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
             double tempTotal = this.reading.getReading() - this.consumer.getInitialReading();
-            double gentran = tempTotal * 0.5335;
+//            double gentran = tempTotal * 0.5335;
+//            double trans = tempTotal * 0.1338;
+//            double disSystemCharge = tempTotal * 0.1014;
+//            double systemLoss = tempTotal * 0.0806;
+//            double retailSupply = tempTotal * 0.0928;
+//            double metringSystem = tempTotal * 0.0548;
+//            double par = tempTotal * -0.0147;
+//            double rcs = tempTotal * 0.6;
+
+     //       double supplySystem = tempTotal * this.rate.getScSupplySys();
+
+            double gentran = tempTotal *  0.5335;
             double trans = tempTotal * 0.1338;
             double disSystemCharge = tempTotal * 0.1014;
             double systemLoss = tempTotal * 0.0806;
             double retailSupply = tempTotal * 0.0928;
             double metringSystem = tempTotal * 0.0548;
             double par = tempTotal * -0.0147;
-            double rcs = tempTotal * 0.6;
-            double supplySystem = tempTotal * this.rate.getScSupplySys();
+            double rcs = 0;
+            if (!"R".equalsIgnoreCase(this.consumer.getRateCode())) {
+                rcs = tempTotal * 0.6;
+            }
+
             double totalVatResidential = gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par +rcs;
 
 
@@ -368,13 +390,55 @@ public class StatementGenerator {
 
         long diff = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
         double tax2025 = Math.round(diff * 0.0057 * 100.0) / 100.0;
+
+        double tempTotal = 68; // as given
+        Log.d("VAT", "tempTotal: " + tempTotal);
+
+        double gentran = tempTotal * 0.5335;
+        Log.d("VAT", "gentran: " + gentran);
+
+        double trans = tempTotal * 0.1338;
+        Log.d("VAT", "trans: " + trans);
+
+        double disSystemCharge = tempTotal * 0.1014;
+        Log.d("VAT", "disSystemCharge: " + disSystemCharge);
+
+        double systemLoss = tempTotal * 0.0806;
+        Log.d("VAT", "systemLoss: " + systemLoss);
+
+        double retailSupply = tempTotal * 0.0928;
+        Log.d("VAT", "retailSupply: " + retailSupply);
+
+        double metringSystem = tempTotal * 0.0548;
+        Log.d("VAT", "metringSystem: " + metringSystem);
+
+        double par = tempTotal * -0.0147;
+        Log.d("VAT", "par: " + par);
+
+        double ucsd = tempTotal * 0.0428;
+        Log.d("VAT", "par: " + ucsd);
+
+        double rcs = 0;
+        if (!"R".equalsIgnoreCase(this.consumer.getRateCode())) {
+            rcs = tempTotal * 0.6;
+        }
+        Log.d("VAT", "rcs: " + rcs);
+
+        double totalVatResidential = ucsd+ gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par + rcs;
+        Log.d("VAT", "totalVatResidential: " + totalVatResidential);
+
+
         double totalWithTax = this.compute.amountAfterDue().doubleValue() + tax2025;
         List<String> result = new ArrayList();
         result.add(PrinterControls.emphasized(true));
         result.add(footerTotalLineGenerator(
                 "TOTAL AMT DUE ON OR BEFORE DUE DATE",
-                this.compute.totalCharge() + this.compute.totalVat() + tax2025
-        ) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
+                this.compute.totalCharge() + totalVatResidential+ tax2025
+        ) + "\n");
+//        result.add(footerTotalLineGenerator(
+//                "TOTAL AMT DUE ON OR BEFORE DUE DATE",
+//                this.compute.totalCharge() + this.compute.totalVat() + tax2025
+//        ) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
         result.add(footerTotalLineGenerator("SERVICE FEE AND", this.compute.serviceFee()));
         result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + this.userProfile.getDueDate() + ")", this.compute.surcharge()) + "\n");
         result.add(footerTotalLineGenerator("ADD: VAT", this.compute.serviceFeeVat() + this.compute.surchargeVat()));
