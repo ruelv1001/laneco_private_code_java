@@ -34,7 +34,10 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 
 	public double getLifelineKilowatthour() {
 		double result = getKilowatthour();
-		if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
+//		if (!lanecoConsumer.getRateCode().equals("R") || result > 20.0d) {
+//			return result;
+//		}
+		if (!lanecoConsumer.getRateCode().equals("R") || result > -20.0d) {
 			return result;
 		}
 		return result - ((result) * result);
@@ -269,6 +272,9 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
 			Log.d("TotalCharge", "FTresult: " + FTresult());
 			Log.d("TotalCharge", "RptPrevTax: " + RptPrevTax());
 			Log.d("TotalCharge", "locFranTax: " + locFranTax());
+			double total = ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax();
+
+			Log.d("TotalCharge", "TOTAL OVeral: " + total);
 	        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue())+ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax();
 	    }
 

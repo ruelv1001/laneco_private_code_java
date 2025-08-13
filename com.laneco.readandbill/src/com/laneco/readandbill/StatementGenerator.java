@@ -331,35 +331,186 @@ public class StatementGenerator {
             //double tempTotal = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
           //  double total = tempTotal * this.compute.totalVat();
            // result.add(bodyLineGenerator("Vat amount", this.compute.totalVat()) + "\n");
-            double tempTotal = this.reading.getReading() - this.consumer.getInitialReading();
-//            double gentran = tempTotal * 0.5335;
-//            double trans = tempTotal * 0.1338;
-//            double disSystemCharge = tempTotal * 0.1014;
-//            double systemLoss = tempTotal * 0.0806;
-//            double retailSupply = tempTotal * 0.0928;
-//            double metringSystem = tempTotal * 0.0548;
-//            double par = tempTotal * -0.0147;
-//            double rcs = tempTotal * 0.6;
+            double tempTotalVat = this.reading.getReading() - this.consumer.getInitialReading();
+            int roundedTempTotal = (int) Math.round(tempTotalVat);
+            double tempTotal = roundedTempTotal;
+            double totalChargeVats = 0.00;
 
-     //       double supplySystem = tempTotal * this.rate.getScSupplySys();
+            //residential
+            double generationChargeRate = 0;
+            double transmissionChargeRate = 0;
+            double demandChargeRate = 0;
+            double supplyChargeRate =0;
+            double meteringChargeRate = 0;
+            double meteringSystemCharge = 0;
+            double seniorCitizenCharge = 0;
+            double parAdjustment = 0;
+            double slGenerationCharge = 0;
+            double slTransmissionCharge = 0;
 
-            double gentran = tempTotal *  0.5335;
-            double trans = tempTotal * 0.1338;
-            double disSystemCharge = tempTotal * 0.1014;
-            double systemLoss = tempTotal * 0.0806;
-            double retailSupply = tempTotal * 0.0928;
-            double metringSystem = tempTotal * 0.0548;
-            double par = tempTotal * -0.0147;
-            double rcs = 0;
-            if (!"R".equalsIgnoreCase(this.consumer.getRateCode())) {
-                rcs = tempTotal * 0.6;
+
+            //Commercial
+            double generationChargeRateCommercial = 0;
+            double powerActReductionCommercial = 0;
+            double transmissionSystemChargeCommercial = 0;
+            double systemLossChargeCommercial = 0;
+            double distributionSystemChargeCommercial = 0;
+            double supplySystemChargeCommercial = 0;
+            double meteringSystemChargeCommercial = 0;
+            double meteringRetailCustomerCommercial = 0;
+            double supplyRetailCommercial = 0;
+            double reinvestmentFundForCapexCommercial = 0;
+            double realPropertyTaxCommercial = 0;
+            double businessTaxCommercial = 0;
+            double ucMeNpcSpugCommercial = 0;
+            double ucMeRedCommercial = 0;
+            double ucsdChargeCommercial = 0;
+            double fitAllRenewableCommercial = 0;
+            double localFranchiseTaxCommercial = 0;
+
+
+
+            if ("P".equalsIgnoreCase(this.consumer.getRateCode()) || "R".equalsIgnoreCase(this.consumer.getRateCode())) {
+                 generationChargeRate = 0.5335 * tempTotal;
+                 transmissionChargeRate = 0.1338 * tempTotal;
+                 demandChargeRate = 0.1014 * tempTotal;
+                 supplyChargeRate = 0.0928 * tempTotal;
+                 meteringChargeRate = 0.0548 * tempTotal;
+                 meteringSystemCharge = 0.6 ;
+                 seniorCitizenCharge = 0.0001 * tempTotal;
+                 parAdjustment = -0.0147 * tempTotal;
+                 slGenerationCharge = 0.0671 * tempTotal;
+                 slTransmissionCharge = 0.0136 * tempTotal;
+
+
+
+                totalChargeVats = generationChargeRate + transmissionChargeRate
+                        + demandChargeRate + supplyChargeRate + meteringChargeRate
+                        + meteringSystemCharge + seniorCitizenCharge + parAdjustment
+                        + slGenerationCharge+slTransmissionCharge;
+                result.add(bodyLineGenerator("Vat amounts", totalChargeVats) + "\n");
+
             }
 
-            double totalVatResidential = gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par +rcs;
+            if ("C".equalsIgnoreCase(this.consumer.getRateCode()) ) {
 
 
-            //double totalVatResidential = gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par;
-            result.add(bodyLineGenerator("Vat amount", totalVatResidential) + "\n");
+
+                generationChargeRateCommercial       = 5.8599 * tempTotal;
+                powerActReductionCommercial          = -0.1229 * tempTotal;
+                transmissionSystemChargeCommercial   = 1.1597 * tempTotal;
+                systemLossChargeCommercial           = 0.8642 * tempTotal;
+                distributionSystemChargeCommercial   = 0.8449 * tempTotal;
+                supplySystemChargeCommercial         = 0.7732 * tempTotal;
+                meteringSystemChargeCommercial       = 0.4569 * tempTotal;
+                meteringRetailCustomerCommercial     = 28.7200 * tempTotal;
+                supplyRetailCommercial               = 40.1500 * tempTotal;
+                reinvestmentFundForCapexCommercial   = 0.5189 * tempTotal;
+                realPropertyTaxCommercial            = 0.0227 * tempTotal;
+                businessTaxCommercial                = 0.0057 * tempTotal;
+                ucMeNpcSpugCommercial                = 0.1949 * tempTotal;
+                ucMeRedCommercial                    = 0.0044 * tempTotal;
+                ucsdChargeCommercial                 = 0.0428 * tempTotal;
+                fitAllRenewableCommercial            = 0.1189 * tempTotal;
+                localFranchiseTaxCommercial          = 0.0104 * tempTotal;
+                totalChargeVats=
+                        generationChargeRateCommercial +
+                                powerActReductionCommercial +
+                                transmissionSystemChargeCommercial +
+                                systemLossChargeCommercial +
+                                distributionSystemChargeCommercial +
+                                supplySystemChargeCommercial +
+                                meteringSystemChargeCommercial +
+                                meteringRetailCustomerCommercial +
+                                supplyRetailCommercial +
+                                reinvestmentFundForCapexCommercial +
+                                realPropertyTaxCommercial +
+                                businessTaxCommercial +
+                                ucMeNpcSpugCommercial +
+                                ucMeRedCommercial +
+                                ucsdChargeCommercial +
+                                fitAllRenewableCommercial +
+                                localFranchiseTaxCommercial;
+
+
+                double generationChargeRateCommercialVat = 0;
+                double transmissionSystemChargeCommercialVat = 0;
+                double demandChargePerKwCommercialVat = 0;
+                double supplySystemCharge2CommercialVat = 0;
+                double meteringChargesCommercialVat = 0;
+                double meteringSystemChargeCommercialVat = 0;
+                double seniorCitizenSubsidyChargeCommercialVat = 0;
+                double powerActReductionAdjCommercialVat = 0;
+                double slGenerationCommercialVat = 0;
+                double slTransmissionCommercialVat = 0;
+
+// Assign values
+                generationChargeRateCommercialVat         = 0.5335 * tempTotal;
+                transmissionSystemChargeCommercialVat     = 0.1338 * tempTotal;
+                demandChargePerKwCommercialVat             = 0.1014 * tempTotal;
+                supplySystemCharge2CommercialVat           = 0.0928 * tempTotal;
+                meteringChargesCommercialVat               = 0.0548 * tempTotal;
+                meteringSystemChargeCommercialVat         = 8.2644 ;
+                seniorCitizenSubsidyChargeCommercialVat    = 0.0001 * tempTotal;
+                powerActReductionAdjCommercialVat          = -0.0147 * tempTotal;
+                slGenerationCommercialVat                  = 0.0671 * tempTotal;
+                slTransmissionCommercialVat                = 0.0136 * tempTotal;
+
+
+                totalChargeVats = generationChargeRate + transmissionChargeRate
+                        + demandChargeRate + supplyChargeRate + meteringChargeRate
+                        + meteringSystemCharge + seniorCitizenCharge + parAdjustment
+                        + slGenerationCharge+slTransmissionCharge;
+                result.add(bodyLineGenerator("Vat amounts", totalChargeVats) + "\n");
+            }
+
+            if ("H".equalsIgnoreCase(this.consumer.getRateCode()) ) {
+                double generationChargeH1 = 0.6174;
+                double transmissionSystemChargeH1 = 0.031;
+                double systemLossChargeH1 = 0.0914;
+                double distributionChargeH1 = 32.15;
+                double supplySystemChargeH1 = 4.818;
+                double meteringChargesH1 = 3.4466;
+                double lifelineRateDiscountH1 = 0.0084;
+                double mccRfscH1 = 0.0623;
+
+                double purchaceEnergy =tempTotal*420.00;
+                double demand =420*0.889;
+
+                double generationChargeHT = generationChargeH1 * purchaceEnergy;
+                double transmissionSystemChargeHT = transmissionSystemChargeH1 * demand;
+                double systemLossChargeHT = systemLossChargeH1 * purchaceEnergy;
+                double distributionChargeHT = distributionChargeH1 * demand;
+                double supplySystemChargeHT = supplySystemChargeH1;
+                double meteringChargesHT = meteringChargesH1;
+                double lifelineRateDiscountHT = lifelineRateDiscountH1 * purchaceEnergy;
+                double mccRfscHT = mccRfscH1 * purchaceEnergy;
+
+                totalChargeVats = generationChargeHT
+                        + transmissionSystemChargeHT
+                        + systemLossChargeHT
+                        + distributionChargeHT
+                        + supplySystemChargeHT
+                        + meteringChargesHT
+                        + lifelineRateDiscountHT
+                        + mccRfscHT;
+
+
+
+
+
+
+                result.add(bodyLineGenerator("Vat amounts", totalChargeVats) + "\n");
+            }
+            else{
+
+            }
+
+
+
+
+
+
         }
         result.add(lineBreak(48));
         for (String string : amountDueDetail()) {
@@ -385,47 +536,317 @@ public class StatementGenerator {
         return "" + StringManager.leftJustify(description, 34) + StringManager.rightJustify(this.amountFormat.format(amount), 14);
     }
 
+
     private List<String> amountDueDetail() {
         double valueTax = this.compute.getKilowatthour() * 0.0057;
 
         long diff = Math.round(this.reading.getReading() - this.consumer.getInitialReading());
         double tax2025 = Math.round(diff * 0.0057 * 100.0) / 100.0;
 
-        double tempTotal = 68; // as given
-        Log.d("VAT", "tempTotal: " + tempTotal);
+        double tempTotalVat = this.reading.getReading() - this.consumer.getInitialReading();
+        int roundedTempTotal = (int) Math.round(tempTotalVat);
+        double tempTotal = roundedTempTotal;
 
-        double gentran = tempTotal * 0.5335;
-        Log.d("VAT", "gentran: " + gentran);
 
-        double trans = tempTotal * 0.1338;
-        Log.d("VAT", "trans: " + trans);
+        double generationSystemCharge = 5.8599;
+        double powerActReduction = -0.1229;
+        double transmissionSystemCharge = 1.1597;
+        double systemLossCharge = 0.8642;
 
-        double disSystemCharge = tempTotal * 0.1014;
-        Log.d("VAT", "disSystemCharge: " + disSystemCharge);
+        double distributionSystemCharge = 0.8449;
+        double supplySystemCharge = 0.7732;
+        double meteringSystemCharget = 0.4569;
+        double meteringRetailCustomer = 5.0000;
+        double reinvestmentFundForSusCaPEX = 0.5189;
+        double realPropertyTax = 0.0227;
+        double businessTaxYr2024_2025 = 0.0057;
+        double ucMeNPC_SPUG = 0.1949;
+        double ucMeRED = 0.0044;
+        double ucSdCharge = 0.0428;
+        double fitAllRenewable = 0.1189;
+        double localFranchiseTax = 0.0104;
 
-        double systemLoss = tempTotal * 0.0806;
-        Log.d("VAT", "systemLoss: " + systemLoss);
+        double generationChargeRate = 0;
+        double transmissionChargeRate = 0;
+        double demandChargeRate = 0;
+        double supplyChargeRate =0;
+        double meteringChargeRate = 0;
+        double meteringSystemCharge = 0;
+        double seniorCitizenCharge = 0;
+        double parAdjustment = 0;
+        double slGenerationCharge = 0;
+        double slTransmissionCharge = 0;
 
-        double retailSupply = tempTotal * 0.0928;
-        Log.d("VAT", "retailSupply: " + retailSupply);
+        double totalChargeVats = 0.00;
+        double grandTotal=0;
+        if ("P".equalsIgnoreCase(this.consumer.getRateCode()) || "R".equalsIgnoreCase(this.consumer.getRateCode())) {
+            generationChargeRate = 0.5335 * tempTotal;
+            transmissionChargeRate = 0.1338 * tempTotal;
+            demandChargeRate = 0.1014 * tempTotal;
+            supplyChargeRate = 0.0928 * tempTotal;
+            meteringChargeRate = 0.0548 * tempTotal;
+            meteringSystemCharge = 0.6 ;
+            seniorCitizenCharge = 0.0001 * tempTotal;
+            parAdjustment = -0.0147 * tempTotal;
+            slGenerationCharge = 0.0671 * tempTotal;
+            slTransmissionCharge = 0.0136 * tempTotal;
 
-        double metringSystem = tempTotal * 0.0548;
-        Log.d("VAT", "metringSystem: " + metringSystem);
+            double totalGenerationSystemCharge = generationSystemCharge * tempTotal;
+            double totalPowerActReduction = powerActReduction * tempTotal;
+            double totalTransmissionSystemCharge = transmissionSystemCharge * tempTotal;
+            double totalSystemLossCharge = systemLossCharge * tempTotal;
 
-        double par = tempTotal * -0.0147;
-        Log.d("VAT", "par: " + par);
+            double totalDistributionSystemCharge = distributionSystemCharge * tempTotal;
+            double totalSupplySystemCharge = supplySystemCharge * tempTotal;
+            double totalMeteringSystemCharge = meteringSystemCharget * tempTotal;
+            double totalMeteringRetailCustomer = meteringRetailCustomer;
+            double totalReinvestmentFundForSusCaPEX = reinvestmentFundForSusCaPEX * tempTotal;
+            double totalRealPropertyTax = realPropertyTax * tempTotal;
+            double totalBusinessTaxYr2024_2025 = businessTaxYr2024_2025 * tempTotal;
+            double totalUcMeNPC_SPUG = ucMeNPC_SPUG * tempTotal;
+            double totalUcMeRED = ucMeRED * tempTotal;
+            double totalUcSdCharge = ucSdCharge * tempTotal;
+            double totalFitAllRenewable = fitAllRenewable * tempTotal;
+            double totalLocalFranchiseTax = localFranchiseTax * tempTotal;
+            System.out.println("Total Generation System Charge: " + totalGenerationSystemCharge);
+            System.out.println("Total Power Act Reduction: " + totalPowerActReduction);
+            System.out.println("Total Transmission System Charge: " + totalTransmissionSystemCharge);
+            System.out.println("Total System Loss Charge: " + totalSystemLossCharge);
+            System.out.println("Total Distribution System Charge: " + totalDistributionSystemCharge);
+            System.out.println("Total Supply System Charge: " + totalSupplySystemCharge);
+            System.out.println("Total Metering System Charge: " + totalMeteringSystemCharge);
+            System.out.println("Total Metering Retail Customer: " + totalMeteringRetailCustomer);
+            System.out.println("Total Reinvestment Fund for Sus. CaPEX: " + totalReinvestmentFundForSusCaPEX);
+            System.out.println("Total Real Property Tax: " + totalRealPropertyTax);
+            System.out.println("Total Business Tax Yr. 2024-2025: " + totalBusinessTaxYr2024_2025);
+            System.out.println("Total UC-ME (NPC-SPUG): " + totalUcMeNPC_SPUG);
+            System.out.println("Total UC-ME (RED): " + totalUcMeRED);
+            System.out.println("Total UCSD Charge: " + totalUcSdCharge);
+            System.out.println("Total Fit-All (Renewable): " + totalFitAllRenewable);
+            System.out.println("Total Local Franchise Tax: " + totalLocalFranchiseTax);
+             grandTotal = totalGenerationSystemCharge
+                    + totalPowerActReduction
+                    + totalTransmissionSystemCharge
+                    + totalSystemLossCharge
+                    + totalDistributionSystemCharge
+                    + totalSupplySystemCharge
+                    + totalMeteringSystemCharge
+                    + totalMeteringRetailCustomer
+                    + totalReinvestmentFundForSusCaPEX
+                    + totalRealPropertyTax
+                    + totalBusinessTaxYr2024_2025
+                    + totalUcMeNPC_SPUG
+                    + totalUcMeRED
+                    + totalUcSdCharge
+                    + totalFitAllRenewable
+                    + totalLocalFranchiseTax;
 
-        double ucsd = tempTotal * 0.0428;
-        Log.d("VAT", "par: " + ucsd);
+            grandTotal = Math.round(grandTotal * 100.0) / 100.0;
+            Log.d("Charge Calculation", "Temp total   vat 1: " + grandTotal);
+            totalChargeVats = generationChargeRate + transmissionChargeRate
+                    + demandChargeRate + supplyChargeRate + meteringChargeRate
+                    + meteringSystemCharge + seniorCitizenCharge + parAdjustment
+                    + slGenerationCharge+slTransmissionCharge;
 
-        double rcs = 0;
-        if (!"R".equalsIgnoreCase(this.consumer.getRateCode())) {
-            rcs = tempTotal * 0.6;
+
         }
-        Log.d("VAT", "rcs: " + rcs);
+        if ("C".equalsIgnoreCase(this.consumer.getRateCode()) ) {
+            double generationChargeRateCommercial = 0;
+            double powerActReductionCommercial = 0;
+            double transmissionSystemChargeCommercial = 0;
+            double systemLossChargeCommercial = 0;
+            double distributionSystemChargeCommercial = 0;
+            double supplySystemChargeCommercial = 0;
+            double meteringSystemChargeCommercial = 0;
+            double meteringRetailCustomerCommercial = 0;
+            double supplyRetailCommercial = 0;
+            double reinvestmentFundForCapexCommercial = 0;
+            double realPropertyTaxCommercial = 0;
+            double businessTaxCommercial = 0;
+            double ucMeNpcSpugCommercial = 0;
+            double ucMeRedCommercial = 0;
+            double ucsdChargeCommercial = 0;
+            double fitAllRenewableCommercial = 0;
+            double localFranchiseTaxCommercial = 0;
 
-        double totalVatResidential = ucsd+ gentran + trans + disSystemCharge + systemLoss + retailSupply + metringSystem + par + rcs;
-        Log.d("VAT", "totalVatResidential: " + totalVatResidential);
+            generationChargeRateCommercial       = 5.8599 * tempTotal;
+            powerActReductionCommercial          = -0.1229 * tempTotal;
+            transmissionSystemChargeCommercial   = 1.1597 * tempTotal;
+            systemLossChargeCommercial           = 0.8642 * tempTotal;
+            distributionSystemChargeCommercial   = 0.8449 * tempTotal;
+            supplySystemChargeCommercial         = 0.7732 * tempTotal;
+            meteringSystemChargeCommercial       = 0.4569 * tempTotal;
+            meteringRetailCustomerCommercial     = 28.72;
+            supplyRetailCommercial               = 40.15;
+            reinvestmentFundForCapexCommercial   = 0.5189 * tempTotal;
+            realPropertyTaxCommercial            = 0.0227 * tempTotal;
+            businessTaxCommercial                = 0.0057 * tempTotal;
+            ucMeNpcSpugCommercial                = 0.1949 * tempTotal;
+            ucMeRedCommercial                    = 0.0044 * tempTotal;
+            ucsdChargeCommercial                 = 0.0428 * tempTotal;
+            fitAllRenewableCommercial            = 0.1189 * tempTotal;
+            localFranchiseTaxCommercial          = 0.0104 * tempTotal;
+            grandTotal=
+                    generationChargeRateCommercial +
+                            powerActReductionCommercial +
+                            transmissionSystemChargeCommercial +
+                            systemLossChargeCommercial +
+                            distributionSystemChargeCommercial +
+                            supplySystemChargeCommercial +
+                            meteringSystemChargeCommercial +
+                            meteringRetailCustomerCommercial +
+                            supplyRetailCommercial +
+                            reinvestmentFundForCapexCommercial +
+                            realPropertyTaxCommercial +
+                            businessTaxCommercial +
+                            ucMeNpcSpugCommercial +
+                            ucMeRedCommercial +
+                            ucsdChargeCommercial +
+                            fitAllRenewableCommercial +
+                            localFranchiseTaxCommercial;
+
+            double generationChargeRateCommercialVat = 0;
+            double transmissionSystemChargeCommercialVat = 0;
+            double demandChargePerKwCommercialVat = 0;
+            double supplySystemCharge2CommercialVat = 0;
+            double meteringChargesCommercialVat = 0;
+            double meteringSystemChargeCommercialVat = 0;
+            double seniorCitizenSubsidyChargeCommercialVat = 0;
+            double powerActReductionAdjCommercialVat = 0;
+            double slGenerationCommercialVat = 0;
+            double slTransmissionCommercialVat = 0;
+
+// Assign values
+            generationChargeRateCommercialVat         = 0.5335 * tempTotal;
+            transmissionSystemChargeCommercialVat     = 0.1338 * tempTotal;
+            demandChargePerKwCommercialVat             = 0.1014 * tempTotal;
+            supplySystemCharge2CommercialVat           = 0.0928 * tempTotal;
+            meteringChargesCommercialVat               = 0.0548 * tempTotal;
+            meteringSystemChargeCommercialVat         = 8.2644 ;
+            seniorCitizenSubsidyChargeCommercialVat    = 0.0001 * tempTotal;
+            powerActReductionAdjCommercialVat          = -0.0147 * tempTotal;
+            slGenerationCommercialVat                  = 0.0671 * tempTotal;
+            slTransmissionCommercialVat                = 0.0136 * tempTotal;
+
+
+ totalChargeVats =
+                    generationChargeRateCommercialVat +
+                            transmissionSystemChargeCommercialVat +
+                            demandChargePerKwCommercialVat +
+                            supplySystemCharge2CommercialVat +
+                            meteringChargesCommercialVat +
+                            meteringSystemChargeCommercialVat +
+                            seniorCitizenSubsidyChargeCommercialVat +
+                            powerActReductionAdjCommercialVat +
+                            slGenerationCommercialVat +
+                            slTransmissionCommercialVat;
+        }
+        if ("H".equalsIgnoreCase(this.consumer.getRateCode()) ) {
+            double generationChargeH1 = 0.6174;
+            double transmissionSystemChargeH1 = 0.031;
+            double systemLossChargeH1 = 0.0914;
+            double distributionChargeH1 = 32.15;
+            double supplySystemChargeH1 = 4.818;
+            double meteringChargesH1 = 3.4466;
+            double lifelineRateDiscountH1 = 0.0084;
+            double mccRfscH1 = 0.0623;
+
+            double purchaceEnergy =tempTotal*420.00;
+            double demand =420*0.889;
+
+            double generationChargeHT = generationChargeH1 * purchaceEnergy;
+            double transmissionSystemChargeHT = transmissionSystemChargeH1 * demand;
+            double systemLossChargeHT = systemLossChargeH1 * purchaceEnergy;
+            double distributionChargeHT = distributionChargeH1 * demand;
+            double supplySystemChargeHT = supplySystemChargeH1;
+            double meteringChargesHT = meteringChargesH1;
+            double lifelineRateDiscountHT = lifelineRateDiscountH1 * purchaceEnergy;
+            double mccRfscHT = mccRfscH1 * purchaceEnergy;
+
+            totalChargeVats = generationChargeHT
+                    + transmissionSystemChargeHT
+                    + systemLossChargeHT
+                    + distributionChargeHT
+                    + supplySystemChargeHT
+                    + meteringChargesHT
+                    + lifelineRateDiscountHT
+                    + mccRfscHT;
+
+            // --- Second group of charges ---
+            double generationSystemChargeH1 = 7.7171;
+            double demandChargePerKwhH1 = 40.85;
+            double systemLossCharge2H1 = 1.1812;
+            double distributionChargesH1 = 267.90;
+            double supplySystemCharge2H1 = 40.1500;
+            double meteringCharge2H1 = 28.7200;
+            double lifelineRateDiscount2H1 = 0.0918;
+            double missionaryElectrificationH1 = 0.1977;
+            double meChargeForRenewableEnergyH1 = 0.0017;
+            double strandedDebtChargeH1 = 0.0428;
+            double rptPreviousYearsH1 = 0.1055;
+            double rptCurrentH1 = 0.025;
+            double localFranchiseTaxH1 = 0.0096;
+            double seniorCitizenSubChargeH1 = 0.0015;
+            double mccRfsc2H1 = 0.5189;
+
+            double generationSystemChargeHT = generationSystemChargeH1 * purchaceEnergy;
+            double demandChargePerKwhHT = demandChargePerKwhH1* demand;
+            double systemLossChargeHT2 = systemLossCharge2H1 * purchaceEnergy;
+            double distributionChargesHT = distributionChargesH1* demand;
+            double supplySystemChargeHT2 = supplySystemCharge2H1;
+            double meteringChargeHT2 = meteringCharge2H1 ;
+            double lifelineRateDiscountHT2 = lifelineRateDiscount2H1 * purchaceEnergy;
+            double missionaryElectrificationHT = missionaryElectrificationH1 * purchaceEnergy;
+            double meChargeForRenewableEnergyHT = meChargeForRenewableEnergyH1* purchaceEnergy;
+            double strandedDebtChargeHT = strandedDebtChargeH1 * purchaceEnergy;
+            double rptPreviousYearsHT = rptPreviousYearsH1 * purchaceEnergy;
+            double rptCurrentHT = rptCurrentH1* purchaceEnergy;
+            double localFranchiseTaxH2 = localFranchiseTaxH1 * purchaceEnergy;
+            double seniorCitizenSubChargeHT = seniorCitizenSubChargeH1* purchaceEnergy;
+            double mccRfscHT2 = mccRfsc2H1 * purchaceEnergy;
+
+            Log.d("BillingDebug", "generationSystemChargeHT: " + generationSystemChargeHT);
+            Log.d("BillingDebug", "demandChargePerKwhHT: " + demandChargePerKwhHT);
+            Log.d("BillingDebug", "systemLossChargeHT2: " + systemLossChargeHT2);
+            Log.d("BillingDebug", "distributionChargesHT: " + distributionChargesHT);
+            Log.d("BillingDebug", "supplySystemChargeHT2: " + supplySystemChargeHT2);
+            Log.d("BillingDebug", "meteringChargeHT2: " + meteringChargeHT2);
+            Log.d("BillingDebug", "lifelineRateDiscountHT2: " + lifelineRateDiscountHT2);
+            Log.d("BillingDebug", "missionaryElectrificationHT: " + missionaryElectrificationHT);
+            Log.d("BillingDebug", "meChargeForRenewableEnergyHT: " + meChargeForRenewableEnergyHT);
+            Log.d("BillingDebug", "strandedDebtChargeHT: " + strandedDebtChargeHT);
+            Log.d("BillingDebug", "rptPreviousYearsHT: " + rptPreviousYearsHT);
+            Log.d("BillingDebug", "rptCurrentHT: " + rptCurrentHT);
+            Log.d("BillingDebug", "localFranchiseTaxH2: " + localFranchiseTaxH2);
+
+            Log.d("BillingDebug", "seniorCitizenSubChargeHT: " + seniorCitizenSubChargeHT);
+            Log.d("BillingDebug", "mccRfscHT2: " + mccRfscHT2);
+
+            grandTotal = generationSystemChargeHT
+                    + demandChargePerKwhHT
+                    + systemLossChargeHT2
+                    + distributionChargesHT
+                    + supplySystemChargeHT2
+                    + meteringChargeHT2
+                    + lifelineRateDiscountHT2
+                    + missionaryElectrificationHT
+                    + meChargeForRenewableEnergyHT
+                    + strandedDebtChargeHT
+                    + rptPreviousYearsHT
+                    + rptCurrentHT
+                    + localFranchiseTaxH2
+                    + seniorCitizenSubChargeHT
+                    + mccRfscHT2;
+
+            Log.d("BillingDebug", "grandTotal: " + grandTotal);
+
+
+            // --- Grand Total ---
+          //  grandTotal= totalChargeHT1 + totalChargeHT2;
+        }
+        else{
+
+        }
 
 
         double totalWithTax = this.compute.amountAfterDue().doubleValue() + tax2025;
@@ -433,18 +854,48 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(footerTotalLineGenerator(
                 "TOTAL AMT DUE ON OR BEFORE DUE DATE",
-                this.compute.totalCharge() + totalVatResidential+ tax2025
+                grandTotal + totalChargeVats
         ) + "\n");
 //        result.add(footerTotalLineGenerator(
 //                "TOTAL AMT DUE ON OR BEFORE DUE DATE",
 //                this.compute.totalCharge() + this.compute.totalVat() + tax2025
 //        ) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
-        result.add(footerTotalLineGenerator("SERVICE FEE AND", this.compute.serviceFee()));
-        result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + this.userProfile.getDueDate() + ")", this.compute.surcharge()) + "\n");
+
+        double finalTotal = grandTotal + totalChargeVats;
+        double finalTempTotal = (grandTotal + totalChargeVats) * 0.03 * 1.12;
+        double grandSum = 0.0;
+        double serviceFeeTemp= 0.0;
+        double surchargeTemp= 0.0;
+        double demandTemp=0.889;
+        double multiplier=420.0;
+        double finalDemad=multiplier*demandTemp;//373.38
+        double distriTemp=267.9*finalDemad;
+
+        double distriCharge= distriTemp* 0.04 * 1.12;
+        if ("H".equalsIgnoreCase(this.consumer.getRateCode())) {
+            serviceFeeTemp = distriCharge;
+            surchargeTemp = finalTotal * 0.03 * 1.12;
+            grandSum = surchargeTemp + serviceFeeTemp + finalTotal;
+
+            Log.d("BillingDebug", "Rate Code: " + this.consumer.getRateCode());
+            Log.d("BillingDebug", "distriCharge: " + distriCharge);
+            Log.d("BillingDebug", "finalTotal: " + finalTotal);
+            Log.d("BillingDebug", "serviceFeeTemp: " + serviceFeeTemp);
+            Log.d("BillingDebug", "surchargeTemp: " + surchargeTemp);
+            Log.d("BillingDebug", "grandSum: " + grandSum);
+        }
+        else{
+            surchargeTemp=finalTempTotal;
+            serviceFeeTemp=112.00;
+            grandSum = finalTotal + finalTempTotal + 112.00;
+        }
+
+        result.add(footerTotalLineGenerator("SERVICE FEE AND", serviceFeeTemp));
+        result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + surchargeTemp + ")", surchargeTemp) + "\n");
         result.add(footerTotalLineGenerator("ADD: VAT", this.compute.serviceFeeVat() + this.compute.surchargeVat()));
         result.add(lineBreak(48));
 
-        result.add(footerTotalLineGenerator("TOTAL AMOUNT AFTER DUE DATE", totalWithTax) + "\n");
+        result.add(footerTotalLineGenerator("TOTAL AMOUNT AFTER DUE DATE", grandSum) + "\n");
         result.add(StringManager.rightJustify("==============", 48) + "\n");
         if (this.consumer.getArrears() != 0.0d) {
             result.add("ARREARS " + String.valueOf(this.consumer.getNumberOfArrears()) + "(surcharge & service fee " + "inclusive)\n");
