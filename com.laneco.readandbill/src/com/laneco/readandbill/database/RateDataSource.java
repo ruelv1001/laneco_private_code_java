@@ -7,10 +7,11 @@ import com.generic.readandbill.database.UserProfileDataSource;
 import java.util.List;
 
 public class RateDataSource extends com.generic.readandbill.database.RateDataSource{
-	public static final String FEED_TARIFF_ALLOWANCE = "feedtariffallowance";
+    public static final String FEED_TARIFF_ALLOWANCE = "feedtariffallowance";
     public static final String ICERA = "icera";
     public static final String OVERUNDERRECOVERY = "overunderrecovery";
     public static final String REAL_PROPERTY_TAX = "realpropertytax";
+    public static final String BUSINESS_TAX = "businesstax";
     public static final String SYSTEMLOSS_TRANSMISSION = "systemlosstransmission";
     public static final String UCMERED = "ucmered";
     public static final String UCSTRANDEDCONTRACTCOST = "ucstrandedcontractcost";
@@ -45,6 +46,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rateFields.add("icera real not null, ");
         rateFields.add("overunderrecovery real not null, ");
         rateFields.add("realpropertytax real not null, ");
+        rateFields.add("businesstax real not null, ");
         rateFields.add("vatgensys real not null, ");
         rateFields.add("vathostcomm real not null, ");
         rateFields.add("vatsystemloss real not null, ");
@@ -68,7 +70,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
 
     public RateDataSource(Context context) {
         super(new ReadandBillDatabaseHelper(context), context);
-        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST};
+        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST};
         this.dbHelper = new ReadandBillDatabaseHelper(context);
         this.allColumns = ArrayManager.concat(this.allColumns, this.lAllColumns);
     }
@@ -82,6 +84,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         values.put(ICERA, Double.valueOf(rate.getIcera()));
         values.put(OVERUNDERRECOVERY, Double.valueOf(rate.getOverUnderRecovery()));
         values.put(REAL_PROPERTY_TAX, Double.valueOf(rate.getRealPropertyTax()));
+        values.put(BUSINESS_TAX, Double.valueOf(rate.getBusinessTax()));
         values.put(VAT_GENSYS, Double.valueOf(rate.getVatGensys()));
         values.put(VAT_HOSTCOMM, Double.valueOf(rate.getVatHostComm()));
         values.put(VAT_SYSTEMLOSS, Double.valueOf(rate.getVatSystemLoss()));
@@ -140,6 +143,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rate.setUcmeRed(cursor.getDouble(cursor.getColumnIndex(UCMERED)));
         rate.setIcera(cursor.getDouble(cursor.getColumnIndex(ICERA)));
         rate.setRealPropertyTax(cursor.getDouble(cursor.getColumnIndex(REAL_PROPERTY_TAX)));
+        rate.setBusinessTax(cursor.getDouble(cursor.getColumnIndex(BUSINESS_TAX)));
         rate.setVatGensys(cursor.getDouble(cursor.getColumnIndex(VAT_GENSYS)));
         rate.setVatHostComm(cursor.getDouble(cursor.getColumnIndex(VAT_HOSTCOMM)));
         rate.setVatSystemLoss(cursor.getDouble(cursor.getColumnIndex(VAT_SYSTEMLOSS)));

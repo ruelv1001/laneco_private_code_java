@@ -5,6 +5,9 @@ public class Rates extends com.generic.readandbill.database.Rates{
     protected double icera;
     protected double overUnderRecovery;
     protected double realPropertyTax;
+
+
+    protected double businessTax;
     protected double systemLossTransmission;
     protected double ucStrandedContractCost;
     private double ucmeRed;
@@ -39,6 +42,7 @@ public class Rates extends com.generic.readandbill.database.Rates{
         this.vatSystemLoss = 0.0d;
         this.vatIcera = 0.0d;
         this.vatPARR = 0.0d;
+        this.businessTax=0.0d;
         this.realPropertyTax = 0.0d;
         this.vatTcSystem = 0.0d;
         this.vatSystemLossTransmission = 0.0d;
@@ -173,6 +177,14 @@ public class Rates extends com.generic.readandbill.database.Rates{
 
     public void setRealPropertyTax(double realPropertyTax) {
         this.realPropertyTax = realPropertyTax;
+    }
+
+    public double getBusinessTax() {
+        return businessTax;
+    }
+
+    public void setBusinessTax(double businessTax) {
+        this.businessTax = businessTax;
     }
 
     public double getVatScRetail() {

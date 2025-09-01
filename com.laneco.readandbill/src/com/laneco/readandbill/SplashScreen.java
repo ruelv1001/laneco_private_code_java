@@ -456,6 +456,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
 			rate.setVatSystemLossTransmission(Double.parseDouble(data[79]));
 			rate.setUcmeRed(Double.parseDouble(data[92]));
 			rate.setRealPropertyTax(Double.parseDouble(data[96]));
+			rate.setBusinessTax(Double.parseDouble(data[100]));
 			this.dsRates.createRates(rate);
 		}
 		return consumer;
