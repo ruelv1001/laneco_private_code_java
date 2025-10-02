@@ -8,6 +8,8 @@ public class Rates extends com.generic.readandbill.database.Rates{
 
 
     protected double businessTax;
+
+    protected double transmissionSystemCharge;
     protected double systemLossTransmission;
     protected double ucStrandedContractCost;
     private double ucmeRed;
@@ -43,6 +45,7 @@ public class Rates extends com.generic.readandbill.database.Rates{
         this.vatIcera = 0.0d;
         this.vatPARR = 0.0d;
         this.businessTax=0.0d;
+        this.transmissionSystemCharge=0.0d;
         this.realPropertyTax = 0.0d;
         this.vatTcSystem = 0.0d;
         this.vatSystemLossTransmission = 0.0d;
@@ -185,6 +188,14 @@ public class Rates extends com.generic.readandbill.database.Rates{
 
     public void setBusinessTax(double businessTax) {
         this.businessTax = businessTax;
+    }
+
+    public double getTransmissionSystemCharge() {
+        return transmissionSystemCharge;
+    }
+
+    public void setTransmissionSystemCharge(double transmissionSystemCharge) {
+        this.transmissionSystemCharge = transmissionSystemCharge;
     }
 
     public double getVatScRetail() {

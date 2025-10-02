@@ -90,6 +90,10 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         Log.d("Businestax Temp", String.valueOf(this.rate.getBusinessTax()));
         return DoubleManager.rRound(Double.valueOf(getLifelineKilowatthour() * this.rate.getBusinessTax()));
     }
+    public Double transmissionSystemCharge() {
+        Log.d("Trans nako", String.valueOf(this.rate.getTransmissionSystemCharge()));
+        return DoubleManager.rRound(Double.valueOf(getKilowattUsed() * this.rate.getTransmissionSystemCharge()));
+    }
 
     public Double genSys() {
         return DoubleManager.rRound(Double.valueOf(getLifelineKilowatthour() * this.rate.getGenSys()));
@@ -157,8 +161,6 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
     }
 
 
-
-
     public double overUnderRecovery() {
         return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getOverUnderRecovery())).doubleValue();
     }
@@ -212,7 +214,10 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
     }
 
     public double vatTcDemand() {
+        Rates rate = this.dsRates.getConsumerRate(lanecoConsumer.getRateCode());
+
         return DoubleManager.rRound(Double.valueOf(getKilowattUsed() * rate.getVatTcDemand())).doubleValue();
+
     }
 
     public double vatDcDemand() {
@@ -289,10 +294,11 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         Log.d("TotalCharge", "RptPrevTax: " + RptPrevTax());
         Log.d("TotalCharge", "locFranTax: " + locFranTax());
         Log.d("TotalCharge", "businesstax: " + businessTax());
-        double total = ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax();
+        Log.d("TotalCharge", "transmission system charge: " + transmissionSystemCharge());
+        double total = ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax()+transmissionSystemCharge();
 
         Log.d("TotalCharge", "TOTAL OVeral: " + total);
-        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax()+businessTax();
+        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax() + businessTax();
     }
 
     public double totalVat() {
@@ -316,7 +322,14 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         double prevYearAdj = vatPrevYearAdjPowerCost();
         double overUnderRecovery = vatOverUnderRecovery();
 
-// Log each component
+        // ✅ New condition for Rate Code "H"
+        double transmissionSystemCharge = 0.0;
+        if ("H".equalsIgnoreCase(lanecoConsumer.getRateCode())) {
+            transmissionSystemCharge = transmissionSystemCharge();
+            Log.d("VATCalculation", "vatTransmissionSystemCharge = " + transmissionSystemCharge);
+        }
+
+        // Log each component
         Log.d("VATCalculation", "vatGensys = " + gensys);
         Log.d("VATCalculation", "vatHostComm = " + hostComm);
         Log.d("VATCalculation", "vatIcera = " + icera);
@@ -337,26 +350,27 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         Log.d("VATCalculation", "vatPrevYearAdjPowerCost = " + prevYearAdj);
         Log.d("VATCalculation", "vatOverUnderRecovery = " + overUnderRecovery);
 
-        // return (((((((((((((((((vatGensys() + vatHostComm()) + vatIcera()) + vatPARR()) + vatTcSystem()) + vatTcDemand()) + vatSystemLoss()) + vatDcDistribution()) + vatDcDemand()) + vatSystemLossTransmission()) + vatScSupply()) + vatScRetail()) + vatMcSystem()) + vatMcRetail()) + vatReinvestmentFundSustCapex()) + vatLifelineSubsidy()) + vatSeniorCitizen()) + vatPrevYearAdjPowerCost()) + vatOverUnderRecovery();
-        return vatGensys()
-                + vatHostComm()
-                + vatIcera()
-                + vatPARR()
-                + vatTcSystem()
-                + vatTcDemand()
-                + vatSystemLoss()
-                + vatDcDistribution()
-                + vatDcDemand()
-                + vatSystemLossTransmission()
-                + vatScSupply()
-                + vatScRetail()
-                + vatMcSystem()
-                + vatMcRetail()
-                + vatReinvestmentFundSustCapex()
-                + vatSeniorCitizen()
-                + vatPrevYearAdjPowerCost()
-                + vatOverUnderRecovery();
+        return gensys
+                + hostComm
+                + icera
+                + parr
+                + tcSystem
+                + tcDemand
+                + systemLoss
+                + dcDistribution
+                + dcDemand
+                + systemLossTransmission
+                + scSupply
+                + scRetail
+                + mcSystem
+                + mcRetail
+                + reinvestmentFund
+                + seniorCitizen
+                + prevYearAdj
+                + overUnderRecovery
+                + transmissionSystemCharge;
     }
+
 
     public Double currentBill() {
         return Double.valueOf(totalCharge() + totalVat());
