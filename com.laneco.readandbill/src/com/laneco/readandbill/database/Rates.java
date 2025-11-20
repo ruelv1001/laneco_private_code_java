@@ -1,7 +1,7 @@
 package com.laneco.readandbill.database;
 
-public class Rates extends com.generic.readandbill.database.Rates{
-	private double feedTariffAllowance;
+public class Rates extends com.generic.readandbill.database.Rates {
+    private double feedTariffAllowance;
     protected double icera;
     protected double overUnderRecovery;
     protected double realPropertyTax;
@@ -33,6 +33,8 @@ public class Rates extends com.generic.readandbill.database.Rates{
     protected double vatTcDemand;
     protected double vatTcSystem;
 
+    protected String isLifeLine;
+
     public Rates() {
         this.systemLoss = 0.0d;
         this.feedTariffAllowance = 0.0d;
@@ -44,8 +46,8 @@ public class Rates extends com.generic.readandbill.database.Rates{
         this.vatSystemLoss = 0.0d;
         this.vatIcera = 0.0d;
         this.vatPARR = 0.0d;
-        this.businessTax=0.0d;
-        this.transmissionSystemCharge=0.0d;
+        this.businessTax = 0.0d;
+        this.transmissionSystemCharge = 0.0d;
         this.realPropertyTax = 0.0d;
         this.vatTcSystem = 0.0d;
         this.vatSystemLossTransmission = 0.0d;
@@ -60,6 +62,7 @@ public class Rates extends com.generic.readandbill.database.Rates{
         this.vatReinvestmentFundSustCapex = 0.0d;
         this.vatPrevYearAdjPowerCost = 0.0d;
         this.vatOverUnderRecovery = 0.0d;
+        this.isLifeLine = "";
     }
 
     public double getSystemLossTransmission() {
@@ -284,5 +287,13 @@ public class Rates extends com.generic.readandbill.database.Rates{
 
     public void setFeedTariffAllowance(double feedTariffAllowance) {
         this.feedTariffAllowance = feedTariffAllowance;
+    }
+
+    public String getIsLifeLine() {
+        return isLifeLine;
+    }
+
+    public void setIsLifeLine(String isLifeLine) {
+        this.isLifeLine = isLifeLine;
     }
 }

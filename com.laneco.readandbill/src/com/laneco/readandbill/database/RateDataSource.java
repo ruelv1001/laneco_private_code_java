@@ -35,6 +35,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
     public static final String VAT_SYSTEMLOSSTRANSMISSION = "vatsystemlosstransmission";
     public static final String VAT_TCDEMAND = "vattcdemand";
     public static final String VAT_TCSYSTEM = "vattcsystem";
+    public static final String ISLIFELINE = "islifeline";
     private ReadandBillDatabaseHelper dbHelper;
     private String[] lAllColumns;
 
@@ -67,13 +68,14 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rateFields.add("vatlifelinesubsidy real not null, ");
         rateFields.add("vatseniorcitizen real not null, ");
         rateFields.add("vatreinvestmentfundsustcapex real not null, ");
-        rateFields.add("vatprevyearadjpowercost real not null");
+        rateFields.add("vatprevyearadjpowercost real not null, ");
+        rateFields.add("islifeline text not null");
         return rateFields;
     }
 
     public RateDataSource(Context context) {
         super(new ReadandBillDatabaseHelper(context), context);
-        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX,TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST};
+        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX,TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST,ISLIFELINE};
         this.dbHelper = new ReadandBillDatabaseHelper(context);
         this.allColumns = ArrayManager.concat(this.allColumns, this.lAllColumns);
     }
@@ -95,6 +97,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         values.put(VAT_ICERA, Double.valueOf(rate.getVatIcera()));
         values.put(VAT_PARR, Double.valueOf(rate.getVatPARR()));
         values.put(VAT_TCSYSTEM, Double.valueOf(rate.getVatTcSystem()));
+        values.put(ISLIFELINE, rate.getIsLifeLine());
         values.put(VAT_TCDEMAND, Double.valueOf(rate.getVatTcDemand()));
         values.put(VAT_SYSTEMLOSSTRANSMISSION, Double.valueOf(rate.getVatSystemLossTransmission()));
         values.put(VAT_DCDEMAND, Double.valueOf(rate.getVatDcDemand()));
@@ -154,6 +157,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rate.setVatSystemLoss(cursor.getDouble(cursor.getColumnIndex(VAT_SYSTEMLOSS)));
         rate.setVatPARR(cursor.getDouble(cursor.getColumnIndex(VAT_PARR)));
         rate.setVatTcSystem(cursor.getDouble(cursor.getColumnIndex(VAT_TCSYSTEM)));
+        rate.setIsLifeLine(cursor.getString(cursor.getColumnIndex(ISLIFELINE)));
         rate.setVatSystemLossTransmission(cursor.getDouble(cursor.getColumnIndex(VAT_SYSTEMLOSSTRANSMISSION)));
         rate.setVatDcDemand(cursor.getDouble(cursor.getColumnIndex(VAT_DCDEMAND)));
         rate.setVatDcDistribution(cursor.getDouble(cursor.getColumnIndex(VAT_DCDISTRIBUTION)));

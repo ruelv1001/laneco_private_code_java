@@ -1,4 +1,4 @@
-#Wed Sep 17 15:19:36 PST 2025
-base.0=C\:\\Users\\beak_\\Desktop\\IT-2022\\read_and_bill\\com.laneco.readandbill\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
+#Thu Nov 20 16:10:01 PST 2025
+base.0=C\:\\Users\\User\\StudioProjects\\laneco_private_code_java\\com.laneco.readandbill\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

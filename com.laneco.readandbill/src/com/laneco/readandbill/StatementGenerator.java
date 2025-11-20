@@ -2,6 +2,7 @@ package com.laneco.readandbill;
 
 import android.content.Context;
 import android.text.format.Time;
+import android.util.Log;
 
 import com.androidapp.mytools.bluetooth.PrinterControls;
 import com.androidapp.mytools.objectmanager.StringManager;
@@ -168,9 +169,14 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
-        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
-        }
+        Log.d("IF belong life sub",this.compute.lifelineDiscSubs().toString());
+//        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
+        Log.d("IF belong life sub",rate.getIsLifeLine().toString().toString());
+            if (rate.getIsLifeLine().toString().equals("N")) {
+
+                result.add(bodyLineGenerator("LifeLine (Discount) Subsidy", this.rate.getLifeLineSubsidy(), this.compute.lifelineDiscSubs().doubleValue()) + "\n");
+            }
+//        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
                 result.add(bodyLineGenerator("Senior Citizen (Disc.) Subs.", this.rate.getSeniorCitizenSubsidy(), this.compute.getSeniorCitizenDiscountSubsidy()) + "\n");
