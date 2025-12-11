@@ -168,7 +168,7 @@ public class StatementGenerator {
         }
         result.add(PrinterControls.emphasized(true));
         result.add(StringManager.leftJustify("OTHERS", 48) + "\n");
-        result.add(PrinterControls.emphasized(false));
+//        result.add(PrinterControls.emphasized(false));
         Log.d("IF belong life sub", this.compute.lifelineDiscSubs().toString());
 //        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
         Log.d("IF belong life sub", rate.getIsLifeLine().toString().toString());

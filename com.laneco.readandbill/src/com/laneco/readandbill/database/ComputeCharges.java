@@ -72,6 +72,7 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         if (!lanecoConsumer.getRateCode().equals("R")) {
             return 0.0d;
         }
+
         if (kilowattHour < 15.0d) {
             return 0.25d;
         }
