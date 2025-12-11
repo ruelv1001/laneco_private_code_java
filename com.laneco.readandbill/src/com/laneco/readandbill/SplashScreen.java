@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SplashScreen extends com.generic.readandbill.SplashScreen {
@@ -90,7 +91,6 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             }
         }
     }
-
 
     // Create infiles directory in internal storage
     private void createInfilesDirectory() {
@@ -265,6 +265,55 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         return true;
     }
 
+    // Helper method to safely get field values
+    private String getField(String[] data, int index, String defaultValue) {
+        if (index >= 0 && index < data.length) {
+            String value = data[index].trim();
+            return value.isEmpty() ? defaultValue : value;
+        }
+        return defaultValue;
+    }
+
+    // Helper method to safely parse double values
+    private double parseDoubleSafe(String value, double defaultValue) {
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Double.parseDouble(value.trim().replace(",", ""));
+        } catch (NumberFormatException e) {
+            Log.e("ParseError", "Invalid double value: " + value);
+            return defaultValue;
+        }
+    }
+
+    // Helper method to safely parse integer values
+    private int parseIntSafe(String value, int defaultValue) {
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Integer.parseInt(value.trim());
+        } catch (NumberFormatException e) {
+            Log.e("ParseError", "Invalid integer value: " + value);
+            return defaultValue;
+        }
+    }
+
+    // Helper method to safely parse boolean values
+    private boolean parseBooleanSafe(String value, boolean defaultValue) {
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        String trimmed = value.trim().toUpperCase();
+        if (trimmed.equals("Y") || trimmed.equals("T") || trimmed.equals("TRUE") || trimmed.equals("1")) {
+            return true;
+        } else if (trimmed.equals("N") || trimmed.equals("F") || trimmed.equals("FALSE") || trimmed.equals("0")) {
+            return false;
+        }
+        return defaultValue;
+    }
+
     // Updated method for retrieving data from file
     protected boolean retrieveData(String path) {
         if (new File(path).exists()) {
@@ -359,7 +408,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         }
     }
 
-    // The rest of your existing methods remain unchanged
+    // The main parsing method with fixes for field count issues
     private void processRawData(List<String> rawData) {
         this.barProgressDialog = ProgressDialogMaker.myProgressBar(this, "Processing " + this.dsUserProfile.getUserProfile().getRoute(), "Processing text file please wait..", rawData.size());
         this.barProgressDialog.show();
@@ -367,111 +416,140 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
     }
 
     private Consumer listToConsumer(String rawData) {
+        // Trim the raw data first to remove any leading/trailing whitespace
+        rawData = rawData.trim();
+
         String[] data = StringManager.listTrimmer(rawData.split("~"));
 
-// Log data count
+        // Log data count for debugging
         Log.d("Parser", "Total fields: " + data.length);
 
-// Log each index + value
-        for (int i = 0; i < data.length; i++) {
-            Log.d("Parser", "Index " + i + " = [" + data[i] + "]");
+        // Expected field count is 102 (0-101)
+        if (data.length != 102) {
+            Log.w("Parser", "Unexpected field count: " + data.length + " (expected 102)");
+            Log.w("Parser", "Record start: " + rawData.substring(0, Math.min(50, rawData.length())));
+
+            // For MERLYN ALVAREZ specifically, log all fields
+            if (rawData.contains("MERLYN ALVAREZ")) {
+                Log.w("Parser", "=== MERLYN ALVAREZ DEBUG ===");
+                Log.w("Parser", "Full record: " + rawData);
+                for (int i = 0; i < data.length; i++) {
+                    Log.w("Parser", "Field[" + i + "] = [" + data[i] + "]");
+                }
+                Log.w("Parser", "Last field (index " + (data.length - 1) + ") = [" + data[data.length - 1] + "]");
+            }
+
+            // Handle missing fields by padding the array
+            if (data.length < 102) {
+                String[] paddedData = new String[102];
+                System.arraycopy(data, 0, paddedData, 0, data.length);
+                for (int i = data.length; i < 102; i++) {
+                    paddedData[i] = "";
+                }
+                data = paddedData;
+                Log.w("Parser", "Padded data to 102 fields");
+            } else if (data.length > 102) {
+                // Truncate if there are too many fields
+                data = Arrays.copyOf(data, 102);
+                Log.w("Parser", "Truncated data to 102 fields");
+            }
         }
 
         Consumer consumer = new Consumer();
-        consumer.setAccountNumber(data[0]);
-        consumer.setConnCode(data[1]);
-        consumer.setInitialReading(Double.parseDouble(data[2].trim().replace(",", "")));
-        consumer.setMeterSerial(data[3]);
-        consumer.setRateCode(data[4]);
-        consumer.setName(data[5]);
-        consumer.setAddress(data[6]);
-        consumer.setContracted(data[7].equals("Y"));
-        try {
-            consumer.setMultiplier(Double.parseDouble(data[8]));
-        } catch (NumberFormatException e) {
-            consumer.setMultiplier(0.0); // or any sensible default
-            Log.e("ParseError", "Invalid multiplier value: " + data[8]);
-        }
-        consumer.setCoreLoss(Double.parseDouble(data[43]));
-        consumer.setTransformerLostTestResult(Double.parseDouble(data[44]));
-        consumer.setDemandMultiplier(Double.parseDouble(data[49]));
-        consumer.setDemandMin(Double.parseDouble(data[50]));
-        consumer.setDemandMax(Double.parseDouble(data[51]));
-        consumer.setArMats(Double.parseDouble(data[56].replace(",", "")));
-        consumer.setScap(Double.parseDouble(data[57].replace(",", "")));
-        consumer.setRefund(Double.parseDouble(data[58].replace(",", "")));
-        consumer.setHelp(Double.parseDouble(data[59].replace(",", "")));
-        consumer.setPilfer(Double.parseDouble(data[60].replace(",", "")));
-        consumer.setSCSwitch(data[61].equals("T"));
-        consumer.setNumberOfArrears(Integer.parseInt(data[62]));
-        consumer.setArrears(Double.parseDouble(data[63].replace(",", "")));
-        consumer.setAveKwh(Double.parseDouble(data[80].replace(",", "")));
-        consumer.setDateEnergized(data[81]);
-        consumer.setMeterBrand(data[82]);
-        consumer.setTransformerNumber(data[83]);
-        consumer.setKw(Double.parseDouble(data[84].trim()));
-        consumer.setTransformerRental(Double.parseDouble(data[86].trim().replace(",", "")));
-        consumer.setDemandCharge(Double.parseDouble(data[85].trim().replace(",", "")));
-        consumer.setDisco(Double.parseDouble(data[87].trim().replace(",", "")));
-        consumer.setIncentives(Double.parseDouble(data[88].trim().replace(",", "")));
-        consumer.setMaterial(Double.parseDouble(data[89].trim().replace(",", "")));
-        consumer.setEquiptment(Double.parseDouble(data[90].trim().replace(",", "")));
-        consumer.setOthersSurcharge(Double.parseDouble(data[91].trim().replace(",", "")));
-        consumer.setdaaRefund(Double.parseDouble(data[97].replace(",", "")));
-        consumer.setlocalFranchiseTax(Double.parseDouble(data[98].replace(",", "")));
-        consumer.setrptprevTax(Double.parseDouble(data[99].trim().replace(",", "")));
+        consumer.setAccountNumber(getField(data, 0, ""));
+        consumer.setConnCode(getField(data, 1, ""));
+        consumer.setInitialReading(parseDoubleSafe(getField(data, 2, "0"), 0.0));
+        consumer.setMeterSerial(getField(data, 3, ""));
+        consumer.setRateCode(getField(data, 4, ""));
+        consumer.setName(getField(data, 5, ""));
+        consumer.setAddress(getField(data, 6, ""));
+        consumer.setContracted(parseBooleanSafe(getField(data, 7, "N"), false));
+        consumer.setMultiplier(parseDoubleSafe(getField(data, 8, "1.0"), 1.0));
+        consumer.setCoreLoss(parseDoubleSafe(getField(data, 43, "0"), 0.0));
+        consumer.setTransformerLostTestResult(parseDoubleSafe(getField(data, 44, "0"), 0.0));
+        consumer.setDemandMultiplier(parseDoubleSafe(getField(data, 49, "0"), 0.0));
+        consumer.setDemandMin(parseDoubleSafe(getField(data, 50, "0"), 0.0));
+        consumer.setDemandMax(parseDoubleSafe(getField(data, 51, "0"), 0.0));
+        consumer.setArMats(parseDoubleSafe(getField(data, 56, "0"), 0.0));
+        consumer.setScap(parseDoubleSafe(getField(data, 57, "0"), 0.0));
+        consumer.setRefund(parseDoubleSafe(getField(data, 58, "0"), 0.0));
+        consumer.setHelp(parseDoubleSafe(getField(data, 59, "0"), 0.0));
+        consumer.setPilfer(parseDoubleSafe(getField(data, 60, "0"), 0.0));
+        consumer.setSCSwitch(parseBooleanSafe(getField(data, 61, "F"), false));
+        consumer.setNumberOfArrears(parseIntSafe(getField(data, 62, "0"), 0));
+        consumer.setArrears(parseDoubleSafe(getField(data, 63, "0"), 0.0));
+        consumer.setAveKwh(parseDoubleSafe(getField(data, 80, "0"), 0.0));
+        consumer.setDateEnergized(getField(data, 81, ""));
+        consumer.setMeterBrand(getField(data, 82, ""));
+        consumer.setTransformerNumber(getField(data, 83, ""));
+        consumer.setKw(parseDoubleSafe(getField(data, 84, "0"), 0.0));
+        consumer.setTransformerRental(parseDoubleSafe(getField(data, 86, "0"), 0.0));
+        consumer.setDemandCharge(parseDoubleSafe(getField(data, 85, "0"), 0.0));
+        consumer.setDisco(parseDoubleSafe(getField(data, 87, "0"), 0.0));
+        consumer.setIncentives(parseDoubleSafe(getField(data, 88, "0"), 0.0));
+        consumer.setMaterial(parseDoubleSafe(getField(data, 89, "0"), 0.0));
+        consumer.setEquiptment(parseDoubleSafe(getField(data, 90, "0"), 0.0));
+        consumer.setOthersSurcharge(parseDoubleSafe(getField(data, 91, "0"), 0.0));
+        consumer.setdaaRefund(parseDoubleSafe(getField(data, 97, "0"), 0.0));
+        consumer.setlocalFranchiseTax(parseDoubleSafe(getField(data, 98, "0"), 0.0));
+        consumer.setrptprevTax(parseDoubleSafe(getField(data, 99, "0"), 0.0));
 
         Rates rate = this.dsRates.getConsumerRate(consumer.getRateCode());
         if (rate.getId() == -1) {
             rate.setScSwitch(Boolean.valueOf(consumer.isScSwitch()));
             rate.setRateCode(consumer.getRateCode());
-            rate.setGenSys(Double.parseDouble(data[9]));
-            rate.setHostComm(Double.parseDouble(data[REQUEST_LOAD]));
-            rate.setIcera(Double.parseDouble(data[11].trim().replace(",", "")));
-            rate.setTcDemand(Double.parseDouble(data[12]));
-            rate.setTcSystem(Double.parseDouble(data[13]));
-            rate.setSystemLoss(Double.parseDouble(data[14]));
-            rate.setDcDemand(Double.parseDouble(data[15]));
-            rate.setDcDistribution(Double.parseDouble(data[16]));
-            rate.setScSupplySys(Double.parseDouble(data[17]));
-            rate.setScRetailCust(Double.parseDouble(data[18]));
-            rate.setMcSys(Double.parseDouble(data[19]));
-            rate.setMcRetailCust(Double.parseDouble(data[REQUEST_SAVE]));
-            rate.setUcsd(Double.parseDouble(data[23]));
-            rate.setUcme(Double.parseDouble(data[24]));
-            rate.setUcStrandedContractCost(Double.parseDouble(data[25]));
-            rate.setUcec(Double.parseDouble(data[26]));
-            rate.setFeedTariffAllowance(Double.parseDouble(data[27]));
-            rate.setParr(Double.parseDouble(data[29]));
-            rate.setLifeLineSubsidy(Double.parseDouble(data[30]));
-            rate.setSeniorCitizenDiscount(Double.parseDouble(data[32]));
-            rate.setSeniorCitizenSubsidy(Double.parseDouble(data[33]));
-            rate.setfranchiseTax(Double.parseDouble(data[35]));
-            rate.setPrevYearAdjPowerCost(Double.parseDouble(data[36]));
-            rate.setReinvestmentFundSustCapex(Double.parseDouble(data[37]));
-            rate.setVatGensys(Double.parseDouble(data[64]));
-            rate.setVatPARR(Double.parseDouble(data[65]));
-            rate.setVatIcera(Double.parseDouble(data[66]));
-            rate.setVatTcSystem(Double.parseDouble(data[67]));
-            rate.setVatTcDemand(Double.parseDouble(data[68]));
-            rate.setVatDcDistribution(Double.parseDouble(data[69]));
-            rate.setVatDcDemand(Double.parseDouble(data[70]));
-            rate.setVatScSupply(Double.parseDouble(data[71]));
-            rate.setVatMcSystem(Double.parseDouble(data[72]));
-            rate.setVatLifelineSubsidy(Double.parseDouble(data[73]));
-            rate.setVatReinvestmentFundSustCapex(Double.parseDouble(data[74]));
-            rate.setVatSeniorCitizen(Double.parseDouble(data[75]));
-            rate.setVatScRetail(Double.parseDouble(data[76]));
-            rate.setVatMcRetail(Double.parseDouble(data[77]));
-            rate.setVatSystemLoss(Double.parseDouble(data[78]));
-            rate.setVatSystemLossTransmission(Double.parseDouble(data[79]));
-            rate.setUcmeRed(Double.parseDouble(data[92]));
-            rate.setRealPropertyTax(Double.parseDouble(data[96]));
-            rate.setTransmissionSystemCharge(Double.parseDouble(data[68]));
-            String line100 = data[100];
-            String numericPart = line100.replaceAll("[^0-9.+-Ee]", "");
-            rate.setBusinessTax(Double.parseDouble(numericPart));
-            rate.setIsLifeLine(data[102]);
+            rate.setGenSys(parseDoubleSafe(getField(data, 9, "0"), 0.0));
+            rate.setHostComm(parseDoubleSafe(getField(data, 10, "0"), 0.0));
+            rate.setIcera(parseDoubleSafe(getField(data, 11, "0"), 0.0));
+            rate.setTcDemand(parseDoubleSafe(getField(data, 12, "0"), 0.0));
+            rate.setTcSystem(parseDoubleSafe(getField(data, 13, "0"), 0.0));
+            rate.setSystemLoss(parseDoubleSafe(getField(data, 14, "0"), 0.0));
+            rate.setDcDemand(parseDoubleSafe(getField(data, 15, "0"), 0.0));
+            rate.setDcDistribution(parseDoubleSafe(getField(data, 16, "0"), 0.0));
+            rate.setScSupplySys(parseDoubleSafe(getField(data, 17, "0"), 0.0));
+            rate.setScRetailCust(parseDoubleSafe(getField(data, 18, "0"), 0.0));
+            rate.setMcSys(parseDoubleSafe(getField(data, 19, "0"), 0.0));
+            rate.setMcRetailCust(parseDoubleSafe(getField(data, 20, "0"), 0.0));
+            rate.setUcsd(parseDoubleSafe(getField(data, 23, "0"), 0.0));
+            rate.setUcme(parseDoubleSafe(getField(data, 24, "0"), 0.0));
+            rate.setUcStrandedContractCost(parseDoubleSafe(getField(data, 25, "0"), 0.0));
+            rate.setUcec(parseDoubleSafe(getField(data, 26, "0"), 0.0));
+            rate.setFeedTariffAllowance(parseDoubleSafe(getField(data, 27, "0"), 0.0));
+            rate.setParr(parseDoubleSafe(getField(data, 29, "0"), 0.0));
+            rate.setLifeLineSubsidy(parseDoubleSafe(getField(data, 30, "0"), 0.0));
+            rate.setSeniorCitizenDiscount(parseDoubleSafe(getField(data, 32, "0"), 0.0));
+            rate.setSeniorCitizenSubsidy(parseDoubleSafe(getField(data, 33, "0"), 0.0));
+            rate.setfranchiseTax(parseDoubleSafe(getField(data, 35, "0"), 0.0));
+            rate.setPrevYearAdjPowerCost(parseDoubleSafe(getField(data, 36, "0"), 0.0));
+            rate.setReinvestmentFundSustCapex(parseDoubleSafe(getField(data, 37, "0"), 0.0));
+            rate.setVatGensys(parseDoubleSafe(getField(data, 64, "0"), 0.0));
+            rate.setVatPARR(parseDoubleSafe(getField(data, 65, "0"), 0.0));
+            rate.setVatIcera(parseDoubleSafe(getField(data, 66, "0"), 0.0));
+            rate.setVatTcSystem(parseDoubleSafe(getField(data, 67, "0"), 0.0));
+            rate.setVatTcDemand(parseDoubleSafe(getField(data, 68, "0"), 0.0));
+            rate.setVatDcDistribution(parseDoubleSafe(getField(data, 69, "0"), 0.0));
+            rate.setVatDcDemand(parseDoubleSafe(getField(data, 70, "0"), 0.0));
+            rate.setVatScSupply(parseDoubleSafe(getField(data, 71, "0"), 0.0));
+            rate.setVatMcSystem(parseDoubleSafe(getField(data, 72, "0"), 0.0));
+            rate.setVatLifelineSubsidy(parseDoubleSafe(getField(data, 73, "0"), 0.0));
+            rate.setVatReinvestmentFundSustCapex(parseDoubleSafe(getField(data, 74, "0"), 0.0));
+            rate.setVatSeniorCitizen(parseDoubleSafe(getField(data, 75, "0"), 0.0));
+            rate.setVatScRetail(parseDoubleSafe(getField(data, 76, "0"), 0.0));
+            rate.setVatMcRetail(parseDoubleSafe(getField(data, 77, "0"), 0.0));
+            rate.setVatSystemLoss(parseDoubleSafe(getField(data, 78, "0"), 0.0));
+            rate.setVatSystemLossTransmission(parseDoubleSafe(getField(data, 79, "0"), 0.0));
+            rate.setUcmeRed(parseDoubleSafe(getField(data, 92, "0"), 0.0));
+            rate.setRealPropertyTax(parseDoubleSafe(getField(data, 96, "0"), 0.0));
+            rate.setTransmissionSystemCharge(parseDoubleSafe(getField(data, 68, "0"), 0.0));
+
+            // FIXED: Use getField helper method instead of direct array access
+            String last = getField(data, 101, "N"); // Default to "N" if field is missing
+            rate.setIsLifeLine(last);
+
+            // Log the lifeline value for debugging
+            if (rawData.contains("MERLYN ALVAREZ")) {
+                Log.d("Parser", "MERLYN ALVAREZ lifeline field = [" + last + "]");
+            }
 
             this.dsRates.createRates(rate);
         }
@@ -481,10 +559,10 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
     protected UserProfile listToUserProfile(String dataValues) {
         String[] data = StringManager.listTrimmer(dataValues.split("~"));
         UserProfile up = new UserProfile();
-        up.setRoute(data[0]);
-        up.setReadingDate(data[1]);
-        up.setInitialReadingDate(data[2]);
-        up.setName(data[3]);
+        up.setRoute(getField(data, 0, ""));
+        up.setReadingDate(getField(data, 1, ""));
+        up.setInitialReadingDate(getField(data, 2, ""));
+        up.setName(getField(data, 3, ""));
         return up;
     }
 
