@@ -172,13 +172,54 @@ public class StatementGenerator {
         Log.d("IF belong life sub", this.compute.lifelineDiscSubs().toString());
 //        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
         Log.d("IF belong life sub", rate.getIsLifeLine().toString().toString());
-        if ("Y".equals(rate.getIsLifeLine())) {
+//        if ("Y".equals(rate.getIsLifeLine())) {
+//            result.add(bodyLineGenerator(
+//                    "LifeLine (Discount) Subsidy",
+//                    this.rate.getLifeLineSubsidy(),
+//                    this.compute.lifelineDiscSubs().doubleValue()
+//            ) + "\n");
+//        }
+        double kwh = this.compute.getKilowatthour();
+
+
+        String isLifeLine = this.rate.getIsLifeLine();
+
+
+        boolean shouldPrintLifeline = false;
+        String lifelineType = "";
+
+        if ("Y".equals(isLifeLine)) {
+            if (kwh < 20) {
+
+                shouldPrintLifeline = false;
+            } else if (kwh >= 20) {
+
+                shouldPrintLifeline = true;
+                lifelineType = "LifeLine (Discount) Subsidy ";
+            }
+        } else if ("N".equals(isLifeLine)) {
+            if (kwh < 20) {
+
+                shouldPrintLifeline = true;
+                lifelineType = "LifeLine (Discount) Subsidy ";
+            } else if (kwh >= 20) {
+
+                shouldPrintLifeline = true;
+                lifelineType = "LifeLine (Discount) Subsidy";
+            }
+        }
+
+// Print lifeline subsidy if applicable
+        if (shouldPrintLifeline) {
             result.add(bodyLineGenerator(
-                    "LifeLine (Discount) Subsidy",
+                    lifelineType,
                     this.rate.getLifeLineSubsidy(),
                     this.compute.lifelineDiscSubs().doubleValue()
             ) + "\n");
         }
+
+
+
 //        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
