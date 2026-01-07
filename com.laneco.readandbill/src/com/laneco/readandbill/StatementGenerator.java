@@ -219,7 +219,6 @@ public class StatementGenerator {
         }
 
 
-
 //        }
         if (this.compute.getSeniorCitizenDiscountSubsidy() != 0.0d) {
             if (!this.consumer.getSCSwitch()) {
@@ -237,12 +236,16 @@ public class StatementGenerator {
         result.add(PrinterControls.emphasized(true));
         result.add("GOVERMENT REVENUES\n");
         result.add(PrinterControls.emphasized(false));
+
+
         if (this.compute.realPropertyTax() != 0.0d) {
             result.add(bodyLineGenerator("Real Property Tax", this.rate.getRealPropertyTax(), this.compute.realPropertyTax()) + "\n");
         }
-        if (this.compute.businessTax() != 0.0d) {
-            result.add(bodyLineGenerator("Business Tax Yr. 2024-25", this.rate.getBusinessTax(), this.compute.businessTax()) + "\n");
-        }
+
+        result.add(bodyLineGenerator("Business Tax Yr. 2024-25", this.rate.getBusinessTax(), this.compute.businessTax()) + "\n");
+
+
+        result.add(bodyLineGenerator("GEA-All (Renewable)", this.rate.getGeaAll(), this.rate.getGeaAll()) + "\n");
 
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");

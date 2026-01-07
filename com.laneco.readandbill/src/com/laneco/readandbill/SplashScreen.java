@@ -424,9 +424,9 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         // Log data count for debugging
         Log.d("Parser", "Total fields: " + data.length);
 
-        // Expected field count is 102 (0-101)
-        if (data.length != 102) {
-            Log.w("Parser", "Unexpected field count: " + data.length + " (expected 102)");
+        // Expected field count is 103 (0-102)
+        if (data.length != 103) {
+            Log.w("Parser", "Unexpected field count: " + data.length + " (expected 103)");
             Log.w("Parser", "Record start: " + rawData.substring(0, Math.min(50, rawData.length())));
 
             // For MERLYN ALVAREZ specifically, log all fields
@@ -440,18 +440,18 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             }
 
             // Handle missing fields by padding the array
-            if (data.length < 102) {
-                String[] paddedData = new String[102];
+            if (data.length < 103) {
+                String[] paddedData = new String[103];
                 System.arraycopy(data, 0, paddedData, 0, data.length);
-                for (int i = data.length; i < 102; i++) {
+                for (int i = data.length; i < 103; i++) {
                     paddedData[i] = "";
                 }
                 data = paddedData;
-                Log.w("Parser", "Padded data to 102 fields");
-            } else if (data.length > 102) {
+                Log.w("Parser", "Padded data to 103 fields");
+            } else if (data.length > 103) {
                 // Truncate if there are too many fields
-                data = Arrays.copyOf(data, 102);
-                Log.w("Parser", "Truncated data to 102 fields");
+                data = Arrays.copyOf(data, 103);
+                Log.w("Parser", "Truncated data to 103 fields");
             }
         }
 
@@ -542,14 +542,16 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             rate.setRealPropertyTax(parseDoubleSafe(getField(data, 96, "0"), 0.0));
             rate.setTransmissionSystemCharge(parseDoubleSafe(getField(data, 68, "0"), 0.0));
 
-            // FIXED: Use getField helper method instead of direct array access
-            String last = getField(data, 101, "N"); // Default to "N" if field is missing
-            rate.setIsLifeLine(last);
+            // Get the IsLifeLine value at index 101
+            String islifeline = getField(data, 101, "N");
+            rate.setIsLifeLine(islifeline);
 
-            // Log the lifeline value for debugging
-            if (rawData.contains("MERLYN ALVAREZ")) {
-                Log.d("Parser", "MERLYN ALVAREZ lifeline field = [" + last + "]");
-            }
+            // Get the last value (0.0371) at index 102
+            double geaAllValue = parseDoubleSafe(getField(data, 102, "0"), 0.0);
+            rate.setGeaAll(geaAllValue);
+
+            // Log the last value
+            Log.d("last nako", String.valueOf(geaAllValue));
 
             this.dsRates.createRates(rate);
         }

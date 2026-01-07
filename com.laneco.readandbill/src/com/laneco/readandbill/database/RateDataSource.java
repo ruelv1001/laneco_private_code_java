@@ -36,6 +36,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
     public static final String VAT_TCDEMAND = "vattcdemand";
     public static final String VAT_TCSYSTEM = "vattcsystem";
     public static final String ISLIFELINE = "islifeline";
+    public static final String GEA_ALL = "geaall";
     private ReadandBillDatabaseHelper dbHelper;
     private String[] lAllColumns;
 
@@ -69,13 +70,14 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rateFields.add("vatseniorcitizen real not null, ");
         rateFields.add("vatreinvestmentfundsustcapex real not null, ");
         rateFields.add("vatprevyearadjpowercost real not null, ");
-        rateFields.add("islifeline text not null");
+        rateFields.add("islifeline text not null, ");
+        rateFields.add("geaall real not null");
         return rateFields;
     }
 
     public RateDataSource(Context context) {
         super(new ReadandBillDatabaseHelper(context), context);
-        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX,TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST,ISLIFELINE};
+        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX,TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST,ISLIFELINE,GEA_ALL};
         this.dbHelper = new ReadandBillDatabaseHelper(context);
         this.allColumns = ArrayManager.concat(this.allColumns, this.lAllColumns);
     }
@@ -110,6 +112,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         values.put(VAT_SENIORCITIZEN, Double.valueOf(rate.getVatSeniorCitizen()));
         values.put(VAT_REINVESTMENTFUNDSUSTCAPEX, Double.valueOf(rate.getVatReinvestmentFundSustCapex()));
         values.put(VAT_PREVYEARADJPOWERCOST, Double.valueOf(rate.getVatPrevYearAdjPowerCost()));
+        values.put(GEA_ALL, Double.valueOf(rate.getGeaAll()));
         return values;
     }
 
@@ -169,6 +172,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rate.setVatSeniorCitizen(cursor.getDouble(cursor.getColumnIndex(VAT_SENIORCITIZEN)));
         rate.setVatReinvestmentFundSustCapex(cursor.getDouble(cursor.getColumnIndex(VAT_REINVESTMENTFUNDSUSTCAPEX)));
         rate.setVatPrevYearAdjPowerCost(cursor.getDouble(cursor.getColumnIndex(VAT_PREVYEARADJPOWERCOST)));
+        rate.setGeaAll(cursor.getDouble(cursor.getColumnIndex(GEA_ALL)));
         return rate;
     }
 

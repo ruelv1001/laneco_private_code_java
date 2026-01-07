@@ -34,6 +34,7 @@ public class Rates extends com.generic.readandbill.database.Rates {
     protected double vatTcSystem;
 
     protected String isLifeLine;
+    protected double geaAll;
 
     public Rates() {
         this.systemLoss = 0.0d;
@@ -63,6 +64,7 @@ public class Rates extends com.generic.readandbill.database.Rates {
         this.vatPrevYearAdjPowerCost = 0.0d;
         this.vatOverUnderRecovery = 0.0d;
         this.isLifeLine = "";
+        this.geaAll = 0.0d;
     }
 
     public double getSystemLossTransmission() {
@@ -292,6 +294,14 @@ public class Rates extends com.generic.readandbill.database.Rates {
     public String getIsLifeLine() {
         return isLifeLine;
     }
+    public double getGeaAll(){
+        return geaAll;
+    }
+
+    public void setGeaAll(double geaAll) {
+        this.geaAll = geaAll;
+    }
+
 
     public void setIsLifeLine(String isLifeLine) {
         this.isLifeLine = isLifeLine;
