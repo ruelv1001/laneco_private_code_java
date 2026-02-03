@@ -541,7 +541,117 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             rate.setUcmeRed(parseDoubleSafe(getField(data, 92, "0"), 0.0));
             rate.setRealPropertyTax(parseDoubleSafe(getField(data, 96, "0"), 0.0));
             rate.setTransmissionSystemCharge(parseDoubleSafe(getField(data, 68, "0"), 0.0));
+            String line100 = data[100];
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            String numericPart = line100.replaceAll("[^0-9.+-Ee]", "");
+
+            rate.setBusinessTax(Double.parseDouble(numericPart));
+            rate.setIsLifeLine(data[101]);
             // Get the IsLifeLine value at index 101
             String islifeline = getField(data, 101, "N");
             rate.setIsLifeLine(islifeline);

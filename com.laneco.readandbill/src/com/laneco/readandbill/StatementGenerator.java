@@ -245,7 +245,7 @@ public class StatementGenerator {
         result.add(bodyLineGenerator("Business Tax Yr. 2024-25", this.rate.getBusinessTax(), this.compute.businessTax()) + "\n");
 
 
-        result.add(bodyLineGenerator("GEA-All (Renewable)", this.rate.getGeaAll(), this.rate.getGeaAll()) + "\n");
+        result.add(bodyLineGenerator("GEA-All (Renewable)", this.rate.getGeaAll(), this.compute.geaAll()) + "\n");
 
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
