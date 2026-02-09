@@ -493,6 +493,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         consumer.setdaaRefund(parseDoubleSafe(getField(data, 97, "0"), 0.0));
         consumer.setlocalFranchiseTax(parseDoubleSafe(getField(data, 98, "0"), 0.0));
         consumer.setrptprevTax(parseDoubleSafe(getField(data, 99, "0"), 0.0));
+        consumer.setIsLifeLine(getField(data, 101, ""));
 
         Rates rate = this.dsRates.getConsumerRate(consumer.getRateCode());
         if (rate.getId() == -1) {
@@ -544,116 +545,13 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             String line100 = data[100];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             String numericPart = line100.replaceAll("[^0-9.+-Ee]", "");
 
             rate.setBusinessTax(Double.parseDouble(numericPart));
             rate.setIsLifeLine(data[101]);
             // Get the IsLifeLine value at index 101
             String islifeline = getField(data, 101, "N");
+
             rate.setIsLifeLine(islifeline);
 
             // Get the last value (0.0371) at index 102
@@ -661,7 +559,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             rate.setGeaAll(geaAllValue);
 
             // Log the last value
-            Log.d("last nako", String.valueOf(geaAllValue));
+            Log.d("last nako", String.valueOf(rate.getIsLifeLine()));
 
             this.dsRates.createRates(rate);
         }

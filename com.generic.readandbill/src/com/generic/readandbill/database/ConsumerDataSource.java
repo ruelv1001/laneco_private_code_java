@@ -17,6 +17,7 @@ public class ConsumerDataSource {
     public static final String READINGDATE = "readingdate";
     public static final String TABLE_CONSUMERS = "consumers";
     public static final String TRANSFORMER_RENTAL = "transformerrental";
+    public static final String ISLIFELINE = "islifeline";
     protected String[] allColumns;
     protected SQLiteDatabase db;
     protected ReadandBillDatabaseHelper dbHelper;
@@ -32,17 +33,18 @@ public class ConsumerDataSource {
         consumerFields.add("readingdate text not null, ");
         consumerFields.add("initialreading real not null, ");
         consumerFields.add("transformerrental real not null, ");
-        consumerFields.add("multiplier real not null");
+        consumerFields.add("multiplier real not null, ");
+        consumerFields.add("islifeline text not null");
         return consumerFields;
     }
 
     public ConsumerDataSource(Context context) {
-        this.allColumns = new String[]{ID, ACCOUNTNUMBER, NAME, ADDRESS, RATECODE, METERSERIAL, READINGDATE, INITIALREADING, MULTIPLIER, TRANSFORMER_RENTAL};
+        this.allColumns = new String[]{ID, ACCOUNTNUMBER, NAME, ADDRESS, RATECODE, METERSERIAL, READINGDATE, INITIALREADING, MULTIPLIER, TRANSFORMER_RENTAL,ISLIFELINE};
         this.dbHelper = new ReadandBillDatabaseHelper(context);
     }
 
     public ConsumerDataSource(ReadandBillDatabaseHelper dbHelper, Context context) {
-        this.allColumns = new String[]{ID, ACCOUNTNUMBER, NAME, ADDRESS, RATECODE, METERSERIAL, READINGDATE, INITIALREADING, MULTIPLIER, TRANSFORMER_RENTAL};
+        this.allColumns = new String[]{ID, ACCOUNTNUMBER, NAME, ADDRESS, RATECODE, METERSERIAL, READINGDATE, INITIALREADING, MULTIPLIER, TRANSFORMER_RENTAL,ISLIFELINE};
         this.dbHelper = dbHelper;
         if (this.dbHelper == null) {
             ConsumerDataSource consumerDataSource = new ConsumerDataSource(context);
@@ -67,6 +69,7 @@ public class ConsumerDataSource {
         values.put(READINGDATE, consumer.getInitialReadingDate());
         values.put(INITIALREADING, Double.valueOf(consumer.getInitialReading()));
         values.put(TRANSFORMER_RENTAL, Double.valueOf(consumer.getTransformerRental()));
+        values.put(ISLIFELINE, consumer.getIsLifeLine());
         return values;
     }
 
@@ -124,6 +127,7 @@ public class ConsumerDataSource {
         consumer.setInitialReading(cursor.getDouble(cursor.getColumnIndex(INITIALREADING)));
         consumer.setMultiplier(cursor.getDouble(cursor.getColumnIndex(MULTIPLIER)));
         consumer.setTransformerRental(cursor.getDouble(cursor.getColumnIndex(TRANSFORMER_RENTAL)));
+        consumer.setIsLifeLine(cursor.getString(cursor.getColumnIndex(ISLIFELINE)));
         return consumer;
     }
 

@@ -346,7 +346,14 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
                     + transmissionSystemCharge()
                     +  businessTax()
                     + geaAll();
-        } else {
+        } if ("Y".equals(rate.getIsLifeLine())
+                && getKilowattUsed() >= 0
+                && getKilowattUsed() <= 19) {
+
+            newTotal = 0.0;
+        }
+
+        else {
             newTotal =
                     genSys().doubleValue()
                             + hostComm().doubleValue()
@@ -386,6 +393,7 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         }
 
         Log.d("TotalCharge", "TOTAL OVeral: " + newTotal);
+        Log.d("Y or N: ",   rate.getIsLifeLine().toString());
         return newTotal;
 //        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax() + businessTax();
     }

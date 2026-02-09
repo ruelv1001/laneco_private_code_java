@@ -1,115 +1,125 @@
 package com.generic.readandbill.database;
 
 public class Consumer {
-	  protected String accountNumber;
-	    protected String address;
-	    protected long id;
-	    protected double initialReading;
-	    protected String initialReadingDate;
-	    protected String meterSerial;
-	    protected double multiplier;
-	    protected String name;
-	    protected String rateCode;
-	    protected double transformerRental;
+    protected String accountNumber;
+    protected String address;
+    protected long id;
+    protected double initialReading;
+    protected String initialReadingDate;
+    protected String meterSerial;
+    protected double multiplier;
+    protected String name;
+    protected String rateCode;
+    protected double transformerRental;
+    protected String isLifeLine;
 
-	    public Consumer() {
-	        this.id = 0;
-	        this.accountNumber = "";
-	        this.name = "";
-	        this.address = "";
-	        this.rateCode = "";
-	        this.meterSerial = "";
-	        this.initialReadingDate = "";
-	        this.initialReading = 0.000d;
-	        this.multiplier = 0.0d;
-	        this.transformerRental = 0.0d;
-	    }
+    public Consumer() {
+        this.id = 0;
+        this.accountNumber = "";
+        this.name = "";
+        this.address = "";
+        this.rateCode = "";
+        this.meterSerial = "";
+        this.initialReadingDate = "";
+        this.initialReading = 0.000d;
+        this.multiplier = 0.0d;
+        this.transformerRental = 0.0d;
+        this.isLifeLine="";
+    }
 
-	    public long getId() {
-	        return id;
-	    }
+    public String getIsLifeLine() {
+        return isLifeLine;
+    }
 
-	    public void setId(long id) {
-	        this.id = id;
-	    }
+    public void setIsLifeLine(String isLifeLine) {
+        this.isLifeLine = isLifeLine;
+    }
 
-	    public String getAccountNumber() {
-	        return accountNumber;
-	    }
+    public long getId() {
+        return id;
+    }
 
-	    public void setAccountNumber(String accountNumber) {
-	        this.accountNumber = accountNumber;
-	    }
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	    public String getName() {
-	        return name;
-	    }
+    public String getAccountNumber() {
+        return accountNumber;
+    }
 
-	    public void setName(String name) {
-	        this.name = name;
-	    }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
-	    public String getAddress() {
-	        return address;
-	    }
+    public String getName() {
+        return name;
+    }
 
-	    public void setAddress(String address) {
-	        this.address = address;
-	    }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	    public String getRateCode() {
-	        return rateCode;
-	    }
+    public String getAddress() {
+        return address;
+    }
 
-	    public void setRateCode(String rateRef) {
-	        this.rateCode = rateRef;
-	    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	    public String getMeterSerial() {
-	        return meterSerial;
-	    }
+    public String getRateCode() {
+        return rateCode;
+    }
 
-	    public void setMeterSerial(String meterSerial) {
-	        this.meterSerial = meterSerial;
-	    }
+    public void setRateCode(String rateRef) {
+        this.rateCode = rateRef;
+    }
 
-	    public double getInitialReading() {
-	        return initialReading;
-	    }
+    public String getMeterSerial() {
+        return meterSerial;
+    }
 
-	    public void setInitialReading(double initialReading) {
-	        this.initialReading = initialReading;
-	    }
+    public void setMeterSerial(String meterSerial) {
+        this.meterSerial = meterSerial;
+    }
 
-	    public String getInitialReadingDate() {
-	        return initialReadingDate;
-	    }
+    public double getInitialReading() {
+        return initialReading;
+    }
 
-	    public void setInitialReadingDate(String initialReadingDate) {
-	        this.initialReadingDate = initialReadingDate;
-	    }
+    public void setInitialReading(double initialReading) {
+        this.initialReading = initialReading;
+    }
 
-	    public double getMultiplier() {
-	        return multiplier;
-	    }
+    public String getInitialReadingDate() {
+        return initialReadingDate;
+    }
 
-	    public void setMultiplier(double multiplier) {
-	        if (multiplier == 0.0d) {
-	            this.multiplier = 1.0d;
-	        } else {
-	            this.multiplier = multiplier;
-	        }
-	    }
+    public void setInitialReadingDate(String initialReadingDate) {
+        this.initialReadingDate = initialReadingDate;
+    }
 
-	    public double getTransformerRental() {
-	        return transformerRental;
-	    }
+    public double getMultiplier() {
+        return multiplier;
+    }
 
-	    public void setTransformerRental(double transformerRental) {
-	        this.transformerRental = transformerRental;
-	    }
-	    
-	    public String toString() {
-	        return String.valueOf(id);
-	    }
+    public void setMultiplier(double multiplier) {
+        if (multiplier == 0.0d) {
+            this.multiplier = 1.0d;
+        } else {
+            this.multiplier = multiplier;
+        }
+    }
+
+    public double getTransformerRental() {
+        return transformerRental;
+    }
+
+    public void setTransformerRental(double transformerRental) {
+        this.transformerRental = transformerRental;
+    }
+
+    public String toString() {
+        return String.valueOf(id);
+    }
 }

@@ -171,7 +171,7 @@ public class StatementGenerator {
 //        result.add(PrinterControls.emphasized(false));
         Log.d("IF belong life sub", this.compute.lifelineDiscSubs().toString());
 //        if (this.compute.lifelineDiscSubs().doubleValue() != 0.0d) {
-        Log.d("IF belong life sub", rate.getIsLifeLine().toString().toString());
+        Log.d("IF belong Y or N", rate.getIsLifeLine().toString().toString());
 //        if ("Y".equals(rate.getIsLifeLine())) {
 //            result.add(bodyLineGenerator(
 //                    "LifeLine (Discount) Subsidy",
@@ -313,12 +313,52 @@ public class StatementGenerator {
     private List<String> amountDueDetail() {
         List<String> result = new ArrayList();
         result.add(PrinterControls.emphasized(true));
-        result.add(footerTotalLineGenerator("TOTAL AMT DUE ON OR BEFOR DUE DATE", this.compute.totalCharge() + this.compute.totalVat()) + "\n"); // this.compute.FTresult() + this.compute.RptPrevTax()) + "\n");
+
+        if ("Y".equals(consumer.getIsLifeLine())
+                && this.compute.getKilowatthour() >= 0
+                && this.compute.getKilowatthour() <= 19) {
+
+            result.add(
+                    footerTotalLineGenerator(
+                            "TOTAL AMT DUE ON OR BEFOR DUE DATE",
+                            0.0
+                    ) + "\n"
+            );
+
+        } else {
+
+            result.add(
+                    footerTotalLineGenerator(
+                            "TOTAL AMT DUE ON OR BEFOR DUE DATE",
+                            this.compute.totalCharge() + this.compute.totalVat()
+                    ) + "\n"
+            );
+        }
+
+
         result.add(footerTotalLineGenerator("SERVICE FEE AND", this.compute.serviceFee()));
         result.add(footerTotalLineGenerator("SURCHARGE AFTER DUE(" + this.userProfile.getDueDate() + ")", this.compute.surcharge()) + "\n");
         result.add(footerTotalLineGenerator("ADD: VAT", this.compute.serviceFeeVat() + this.compute.surchargeVat()));
         result.add(lineBreak(48));
-        result.add(footerTotalLineGenerator("TOTAL AMOUNT AFTER DUE DATE", this.compute.amountAfterDue().doubleValue()) + "\n");
+        double totalAfterDue;
+
+        if ("Y".equals(consumer.getIsLifeLine())
+                && this.compute.getKilowatthour() >= 0
+                && this.compute.getKilowatthour() <= 19) {
+
+            totalAfterDue = 0.0;
+
+        } else {
+
+            totalAfterDue = this.compute.amountAfterDue().doubleValue();
+        }
+
+        result.add(
+                footerTotalLineGenerator(
+                        "TOTAL AMOUNT AFTER DUE DATE",
+                        totalAfterDue
+                ) + "\n"
+        );
         result.add(StringManager.rightJustify("==============", 48) + "\n");
         if (this.consumer.getArrears() != 0.0d) {
             result.add("ARREARS " + String.valueOf(this.consumer.getNumberOfArrears()) + "(surcharge & service fee " + "inclusive)\n");
