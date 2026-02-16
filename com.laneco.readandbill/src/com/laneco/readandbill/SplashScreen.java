@@ -557,6 +557,8 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             // Get the last value (0.0371) at index 102
             double geaAllValue = parseDoubleSafe(getField(data, 102, "0"), 0.0);
             rate.setGeaAll(geaAllValue);
+            double setTempRec = parseDoubleSafe(getField(data, 103, ".0045"), 0.0);
+            rate.setRec(setTempRec);
 
             // Log the last value
             Log.d("last nako", String.valueOf(rate.getIsLifeLine()));

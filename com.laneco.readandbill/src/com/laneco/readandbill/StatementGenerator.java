@@ -246,6 +246,7 @@ public class StatementGenerator {
 
 
         result.add(bodyLineGenerator("GEA-All (Renewable)", this.rate.getGeaAll(), this.compute.geaAll()) + "\n");
+        result.add(bodyLineGenerator("\n" + "REC (Renewable)", this.rate.getRec(), this.compute.getRec()) + "\n");
 
         if (this.compute.ucme().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("UC-ME (NPC-SPUG)", this.rate.getUcme(), this.compute.ucme().doubleValue()) + "\n");
