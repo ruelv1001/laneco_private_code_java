@@ -559,9 +559,11 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             rate.setGeaAll(geaAllValue);
             double setTempRec = parseDoubleSafe(getField(data, 103, ".0045"), 0.0);
             rate.setRec(setTempRec);
-
+            rate.setRegulatedNGCPCharge(parseDoubleSafe(getField(data, 104, "0"), 0.0));
+            rate.setAncillaryServiceCharge(parseDoubleSafe(getField(data, 105, "0"), 0.0));
+            Log.d("last nak1o", getField(data, 106, "0"));
             // Log the last value
-            Log.d("last nako", String.valueOf(rate.getIsLifeLine()));
+            Log.d("last nako2",getField(data, 107, "0"));
 
             this.dsRates.createRates(rate);
         }

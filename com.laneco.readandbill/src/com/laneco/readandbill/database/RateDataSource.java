@@ -1,18 +1,21 @@
 package com.laneco.readandbill.database;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+
 import com.androidapp.mytools.objectmanager.ArrayManager;
 import com.generic.readandbill.database.UserProfileDataSource;
+
 import java.util.List;
 
-public class RateDataSource extends com.generic.readandbill.database.RateDataSource{
+public class RateDataSource extends com.generic.readandbill.database.RateDataSource {
     public static final String FEED_TARIFF_ALLOWANCE = "feedtariffallowance";
     public static final String ICERA = "icera";
     public static final String OVERUNDERRECOVERY = "overunderrecovery";
     public static final String REAL_PROPERTY_TAX = "realpropertytax";
     public static final String BUSINESS_TAX = "businesstax";
-    public static final String TRANSMISSIONSYSTEMCHARGE  = "transmissionsystemcharge";
+    public static final String TRANSMISSIONSYSTEMCHARGE = "transmissionsystemcharge";
 
     public static final String SYSTEMLOSS_TRANSMISSION = "systemlosstransmission";
     public static final String UCMERED = "ucmered";
@@ -38,6 +41,9 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
     public static final String ISLIFELINE = "islifeline";
     public static final String GEA_ALL = "geaall";
     public static final String REC = "rec";
+    public static final String REGULATEDNGCPCHARGE = "regulatedngcpcharge";
+
+    public static final String ANCILLARYSERVICECHARGE = "ancillaryservicecharge";
     private ReadandBillDatabaseHelper dbHelper;
     private String[] lAllColumns;
 
@@ -73,13 +79,15 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rateFields.add("vatprevyearadjpowercost real not null, ");
         rateFields.add("islifeline text not null, ");
         rateFields.add("geaall real not null, ");
-        rateFields.add("rec real not null");
+        rateFields.add("rec real not null, ");
+        rateFields.add("regulatedngcpcharge real not null,");
+        rateFields.add("ancillaryservicecharge real not null");
         return rateFields;
     }
 
     public RateDataSource(Context context) {
         super(new ReadandBillDatabaseHelper(context), context);
-        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX,BUSINESS_TAX,TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST,ISLIFELINE,GEA_ALL,REC};
+        this.lAllColumns = new String[]{SYSTEMLOSS_TRANSMISSION, FEED_TARIFF_ALLOWANCE, UCSTRANDEDCONTRACTCOST, UCMERED, ICERA, OVERUNDERRECOVERY, REAL_PROPERTY_TAX, BUSINESS_TAX, TRANSMISSIONSYSTEMCHARGE, VAT_GENSYS, VAT_HOSTCOMM, VAT_SYSTEMLOSS, VAT_ICERA, VAT_PARR, VAT_TCSYSTEM, VAT_TCDEMAND, VAT_SYSTEMLOSSTRANSMISSION, VAT_DCDEMAND, VAT_DCDISTRIBUTION, VAT_SCRETAIL, VAT_SCSUPPLY, VAT_MCRETAIL, VAT_MCSYSTEM, VAT_LIFELINESUBSIDY, VAT_SENIORCITIZEN, VAT_REINVESTMENTFUNDSUSTCAPEX, VAT_PREVYEARADJPOWERCOST, ISLIFELINE, GEA_ALL, REC,REGULATEDNGCPCHARGE,ANCILLARYSERVICECHARGE};
         this.dbHelper = new ReadandBillDatabaseHelper(context);
         this.allColumns = ArrayManager.concat(this.allColumns, this.lAllColumns);
     }
@@ -115,7 +123,9 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         values.put(VAT_REINVESTMENTFUNDSUSTCAPEX, Double.valueOf(rate.getVatReinvestmentFundSustCapex()));
         values.put(VAT_PREVYEARADJPOWERCOST, Double.valueOf(rate.getVatPrevYearAdjPowerCost()));
         values.put(GEA_ALL, Double.valueOf(rate.getGeaAll()));
-        values.put(REC, Double.valueOf(rate.getGeaAll()));
+        values.put(REC, Double.valueOf(rate.getRec()));
+        values.put(REGULATEDNGCPCHARGE, Double.valueOf(rate.getRegulatedNGCPCharge()));
+        values.put(ANCILLARYSERVICECHARGE, Double.valueOf(rate.getAncillaryServiceCharge()));
         return values;
     }
 
@@ -177,6 +187,8 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rate.setVatPrevYearAdjPowerCost(cursor.getDouble(cursor.getColumnIndex(VAT_PREVYEARADJPOWERCOST)));
         rate.setGeaAll(cursor.getDouble(cursor.getColumnIndex(GEA_ALL)));
         rate.setRec(cursor.getDouble(cursor.getColumnIndex(REC)));
+        rate.setRegulatedNGCPCharge(cursor.getDouble(cursor.getColumnIndex(REGULATEDNGCPCHARGE)));
+        rate.setAncillaryServiceCharge(cursor.getDouble(cursor.getColumnIndex(ANCILLARYSERVICECHARGE)));
         return rate;
     }
 

@@ -133,6 +133,12 @@ public class StatementGenerator {
         if (this.compute.tcSystem().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), this.compute.tcSystem().doubleValue()) + "\n");
         }
+        if (this.compute.tcSystem().doubleValue() != 0.0d) {
+            result.add(bodyLineGenerator("Regulated NGCP Charge-KW", this.rate.getRegulatedNGCPCharge(), this.compute.regulatedNGCPCharge()) + "\n");
+        }
+        if (this.compute.tcSystem().doubleValue() != 0.0d) {
+            result.add(bodyLineGenerator("Ancillary Service Charge KW", this.rate.getAncillaryServiceCharge(), this.compute.ancillaryServiceCharge()) + "\n");
+        }
         if (this.compute.tcDemand().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Transmission Dem. Charge", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
         }
@@ -189,20 +195,20 @@ public class StatementGenerator {
         String lifelineType = "";
 
         if ("Y".equals(isLifeLine)) {
-            if (kwh < 20) {
+            if (kwh < 50) {
 
                 shouldPrintLifeline = false;
-            } else if (kwh >= 20) {
+            } else if (kwh >= 50) {
 
                 shouldPrintLifeline = true;
-                lifelineType = "LifeLine (Discount) Subsidy ";
+                lifelineType = "LifeLine Subsidy ";
             }
         } else if ("N".equals(isLifeLine)) {
-            if (kwh < 20) {
+            if (kwh < 50) {
 
                 shouldPrintLifeline = true;
                 lifelineType = "LifeLine (Discount) Subsidy ";
-            } else if (kwh >= 20) {
+            } else if (kwh >= 50) {
 
                 shouldPrintLifeline = true;
                 lifelineType = "LifeLine (Discount) Subsidy";
@@ -317,7 +323,7 @@ public class StatementGenerator {
 
         if ("Y".equals(consumer.getIsLifeLine())
                 && this.compute.getKilowatthour() >= 0
-                && this.compute.getKilowatthour() <= 19) {
+                && this.compute.getKilowatthour() <= 50) {
 
             result.add(
                     footerTotalLineGenerator(
@@ -345,7 +351,7 @@ public class StatementGenerator {
 
         if ("Y".equals(consumer.getIsLifeLine())
                 && this.compute.getKilowatthour() >= 0
-                && this.compute.getKilowatthour() <= 19) {
+                && this.compute.getKilowatthour() <= 50) {
 
             totalAfterDue = 0.0;
 

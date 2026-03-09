@@ -36,6 +36,24 @@ public class Rates extends com.generic.readandbill.database.Rates {
     protected String isLifeLine;
     protected double geaAll;
     protected double rec;
+    protected double regulatedNGCPCharge;
+    protected double ancillaryServiceCharge;
+
+    public double getRegulatedNGCPCharge() {
+        return regulatedNGCPCharge;
+    }
+
+    public void setRegulatedNGCPCharge(double regulatedNGCPCharge) {
+        this.regulatedNGCPCharge = regulatedNGCPCharge;
+    }
+
+    public double getAncillaryServiceCharge() {
+        return ancillaryServiceCharge;
+    }
+
+    public void setAncillaryServiceCharge(double ancillaryServiceCharge) {
+        this.ancillaryServiceCharge = ancillaryServiceCharge;
+    }
 
     public Rates() {
         this.systemLoss = 0.0d;
@@ -67,6 +85,8 @@ public class Rates extends com.generic.readandbill.database.Rates {
         this.isLifeLine = "";
         this.geaAll = 0.0d;
         this.rec = 0.0d;
+        this. regulatedNGCPCharge= 0.0d;
+        this. ancillaryServiceCharge= 0.0d;
     }
 
     public double getSystemLossTransmission() {

@@ -269,51 +269,22 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getVatOverUnderRecovery())).doubleValue();
     }
 
+    public double regulatedNGCPCharge() {
+        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getRegulatedNGCPCharge())).doubleValue();
+    }
+
+    public double ancillaryServiceCharge() {
+        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getAncillaryServiceCharge())).doubleValue();
+    }
+
     public double ucmeRed() {
         return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getUcmeRed())).doubleValue();
     }
 
     public double totalCharge() {
-        Log.d("TotalCharge", "genSys: " + genSys().doubleValue());
-        Log.d("TotalCharge", "hostComm: " + hostComm().doubleValue());
-        Log.d("TotalCharge", "icera: " + icera());
-        Log.d("TotalCharge", "powerActRateRed2: " + powerActRateRed2().doubleValue());
-        Log.d("TotalCharge", "tcSystem: " + tcSystem().doubleValue());
-        Log.d("TotalCharge", "tcDemand: " + tcDemand().doubleValue());
-        Log.d("TotalCharge", "systemLoss: " + systemLoss().doubleValue());
-        Log.d("TotalCharge", "dcDistribution: " + dcDistribution().doubleValue());
-        Log.d("TotalCharge", "dcDemand: " + dcDemand().doubleValue());
-        Log.d("TotalCharge", "systemLossTransmission: " + systemLossTransmission());
-        Log.d("TotalCharge", "scSupplySys: " + scSupplySys().doubleValue());
-        Log.d("TotalCharge", "scRetailCust: " + scRetailCust().doubleValue());
-        Log.d("TotalCharge", "mcSystem: " + mcSystem().doubleValue());
-        Log.d("TotalCharge", "mcRetailCust: " + mcRetailCust().doubleValue());
-        Log.d("TotalCharge", "reinvestmentFundSustCapex: " + reinvestmentFundSustCapex().doubleValue());
-        Log.d("TotalCharge", "lifelineDiscSubs: " + lifelineDiscSubs().doubleValue());
-        Log.d("TotalCharge", "feedTariffAllowance: " + feedTariffAllowance());
-        Log.d("TotalCharge", "seniorCitizenDiscountSubsidy: " + getSeniorCitizenDiscountSubsidy());
-        Log.d("TotalCharge", "prevYearAdjPowerCost: " + prevYearAdjPowerCost().doubleValue());
-        Log.d("TotalCharge", "overUnderRecovery: " + overUnderRecovery());
-        Log.d("TotalCharge", "ucme: " + ucme().doubleValue());
-        Log.d("TotalCharge", "ucsd: " + ucsd());
-        Log.d("TotalCharge", "ucec: " + ucec().doubleValue());
-        Log.d("TotalCharge", "ucStrandedContractCost: " + ucStrandedContractCost());
-        Log.d("TotalCharge", "ucmeRed: " + ucmeRed());
-        Log.d("TotalCharge", "realPropertyTax: " + realPropertyTax());
-        Log.d("TotalCharge", "differentialBillRecovery: " + lanecoConsumer.getDifferentialBillRecovery());
-        Log.d("TotalCharge", "otherCharges: " + lanecoConsumer.getOtherCharges());
-        Log.d("TotalCharge", "transformerRental: " + lanecoConsumer.getTransformerRental());
-        Log.d("TotalCharge", "daaRefund: " + lanecoConsumer.getdaaRefund());
-        Log.d("TotalCharge", "arMats: " + lanecoConsumer.getArMats());
-        Log.d("TotalCharge", "FTresult: " + FTresult());
-        Log.d("TotalCharge", "RptPrevTax: " + RptPrevTax());
-        Log.d("TotalCharge", "locFranTax: " + locFranTax());
-        Log.d("TotalCharge", "businesstax: " + businessTax());
-        Log.d("TotalCharge", "transmission system charge: " + transmissionSystemCharge());
+
         Double newTotal = 0.00;
 
-        Log.d("Life line ni siya ", "if life line siya: " + rate.getIsLifeLine().toString());
-        Log.d("Account nymber ", "if life line siya: " + lanecoConsumer.getName());
         if (rate.isLifeLine.toString().equals("N")) {
             newTotal = ((((((((((((((((((((((((((((genSys().doubleValue()
                     + hostComm().doubleValue())
@@ -350,7 +321,9 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
                     + locFranTax()
                     + transmissionSystemCharge()
                     + businessTax()
-                    + geaAll();
+                    + geaAll()
+                    + getRec() + regulatedNGCPCharge() + ancillaryServiceCharge();
+
         }
         if ("Y".equals(rate.getIsLifeLine())
                 && getKilowattUsed() >= 0
@@ -393,11 +366,12 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
                             + FTresult()
                             + RptPrevTax()
                             + locFranTax()
-                            + transmissionSystemCharge() + geaAll() + businessTax();
+                            + transmissionSystemCharge() + geaAll() + businessTax() + getRec() + regulatedNGCPCharge() + ancillaryServiceCharge();
 
         }
 
-        Log.d("TotalCharge", "TOTAL OVeral: " + newTotal);
+        Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + regulatedNGCPCharge());
+        Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + ancillaryServiceCharge());
         Log.d("Y or N: ", rate.getIsLifeLine().toString());
         return newTotal;
 //        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax() + businessTax();
