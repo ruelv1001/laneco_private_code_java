@@ -44,6 +44,9 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
     public static final String REGULATEDNGCPCHARGE = "regulatedngcpcharge";
 
     public static final String ANCILLARYSERVICECHARGE = "ancillaryservicecharge";
+    public static final String ANCILLARYTRANSMISSIONDEMANDCHARGE = "ancillarytransmissiondemandcharge";
+
+
     private ReadandBillDatabaseHelper dbHelper;
     private String[] lAllColumns;
 
@@ -81,7 +84,9 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rateFields.add("geaall real not null, ");
         rateFields.add("rec real not null, ");
         rateFields.add("regulatedngcpcharge real not null,");
-        rateFields.add("ancillaryservicecharge real not null");
+        rateFields.add("ancillaryservicecharge real not null ");
+       // rateFields.add("ancillarytransmissiondemandcharge real not null");
+
         return rateFields;
     }
 
@@ -125,7 +130,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         values.put(GEA_ALL, Double.valueOf(rate.getGeaAll()));
         values.put(REC, Double.valueOf(rate.getRec()));
         values.put(REGULATEDNGCPCHARGE, Double.valueOf(rate.getRegulatedNGCPCharge()));
-        values.put(ANCILLARYSERVICECHARGE, Double.valueOf(rate.getAncillaryServiceCharge()));
+       // values.put(ANCILLARYSERVICECHARGE, Double.valueOf(rate.getancillaryTransmissionDemandCharge()));
         return values;
     }
 
@@ -189,6 +194,7 @@ public class RateDataSource extends com.generic.readandbill.database.RateDataSou
         rate.setRec(cursor.getDouble(cursor.getColumnIndex(REC)));
         rate.setRegulatedNGCPCharge(cursor.getDouble(cursor.getColumnIndex(REGULATEDNGCPCHARGE)));
         rate.setAncillaryServiceCharge(cursor.getDouble(cursor.getColumnIndex(ANCILLARYSERVICECHARGE)));
+       // rate.setancillaryTransmissionDemandCharge(cursor.getDouble(cursor.getColumnIndex(ANCILLARYTRANSMISSIONDEMANDCHARGE)));
         return rate;
     }
 

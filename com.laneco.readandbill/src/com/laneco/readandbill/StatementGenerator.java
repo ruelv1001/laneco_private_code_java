@@ -133,15 +133,19 @@ public class StatementGenerator {
         if (this.compute.tcSystem().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), this.compute.tcSystem().doubleValue()) + "\n");
         }
-        if (this.compute.tcSystem().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Regulated NGCP Charge-KW", this.rate.getRegulatedNGCPCharge(), this.compute.regulatedNGCPCharge()) + "\n");
-        }
-        if (this.compute.tcSystem().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Ancillary Service Charge KW", this.rate.getAncillaryServiceCharge(), this.compute.ancillaryServiceCharge()) + "\n");
-        }
-        if (this.compute.tcDemand().doubleValue() != 0.0d) {
-            result.add(bodyLineGenerator("Transmission Dem. Charge", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
-        }
+
+        result.add(bodyLineGenerator("Regulated NGCP Charge-KW", this.rate.getRegulatedNGCPCharge(), this.compute.regulatedNGCPCharge()) + "\n");
+
+
+        result.add(bodyLineGenerator("Ancillary Service Charge KW", this.rate.getAncillaryServiceCharge(), this.compute.ancillaryServiceCharge()) + "\n");
+
+
+        result.add(bodyLineGenerator("Regulated Trans. Dem. Charge", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
+
+
+//        result.add(bodyLineGenerator("ANCILLARY Transmission Demand Charge", this.rate.getancillaryTransmissionDemandCharge(), this.compute.ancillaryTransmissionDemandCharge()) + "\n");
+
+
         if (this.compute.systemLoss().doubleValue() != 0.0d) {
             result.add(bodyLineGenerator("System Loss Charge", this.rate.getSystemLoss(), this.compute.systemLoss().doubleValue()) + "\n");
         }

@@ -276,6 +276,9 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
     public double ancillaryServiceCharge() {
         return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getAncillaryServiceCharge())).doubleValue();
     }
+//    public double ancillaryTransmissionDemandCharge() {
+//        return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getancillaryTransmissionDemandCharge())).doubleValue();
+//    }
 
     public double ucmeRed() {
         return DoubleManager.rRound(Double.valueOf(getKilowatthour() * rate.getUcmeRed())).doubleValue();

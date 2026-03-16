@@ -425,7 +425,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         Log.d("Parser", "Total fields: " + data.length);
 
         // Expected field count is 103 (0-102)
-        if (data.length != 103) {
+        if (data.length != 106) {
             Log.w("Parser", "Unexpected field count: " + data.length + " (expected 103)");
             Log.w("Parser", "Record start: " + rawData.substring(0, Math.min(50, rawData.length())));
 
@@ -440,17 +440,17 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             }
 
             // Handle missing fields by padding the array
-            if (data.length < 103) {
-                String[] paddedData = new String[103];
+            if (data.length < 107) {
+                String[] paddedData = new String[107];
                 System.arraycopy(data, 0, paddedData, 0, data.length);
-                for (int i = data.length; i < 103; i++) {
+                for (int i = data.length; i < 107; i++) {
                     paddedData[i] = "";
                 }
                 data = paddedData;
                 Log.w("Parser", "Padded data to 103 fields");
-            } else if (data.length > 103) {
+            } else if (data.length > 107) {
                 // Truncate if there are too many fields
-                data = Arrays.copyOf(data, 103);
+                data = Arrays.copyOf(data, 107);
                 Log.w("Parser", "Truncated data to 103 fields");
             }
         }
@@ -559,11 +559,16 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             rate.setGeaAll(geaAllValue);
             double setTempRec = parseDoubleSafe(getField(data, 103, ".0045"), 0.0);
             rate.setRec(setTempRec);
-            rate.setRegulatedNGCPCharge(parseDoubleSafe(getField(data, 104, "0"), 0.0));
-            rate.setAncillaryServiceCharge(parseDoubleSafe(getField(data, 105, "0"), 0.0));
-            Log.d("last nak1o", getField(data, 106, "0"));
+            double setTempRegulated = parseDoubleSafe(getField(data, 104, "0"), 0.0);
+            rate.setRegulatedNGCPCharge(setTempRegulated);
+            double AncillaryServiceCharge = parseDoubleSafe(getField(data, 105, "0"), 0.0);
+            rate.setAncillaryServiceCharge(AncillaryServiceCharge);
+
+//            double AncillaryTransmissionCharge = parseDoubleSafe(getField(data, 106, "0"), 0.0);
+//            rate.setancillaryTransmissionDemandCharge(AncillaryTransmissionCharge);
+            Log.d("last nak1o", String.valueOf(setTempRegulated));
             // Log the last value
-            Log.d("last nako2",getField(data, 107, "0"));
+            Log.d("last nako2",String.valueOf(AncillaryServiceCharge));
 
             this.dsRates.createRates(rate);
         }
