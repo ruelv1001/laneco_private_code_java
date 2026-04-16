@@ -79,7 +79,7 @@ public class StatementGenerator {
         result.add(StringManager.centerJustify("TEL. NO. (063)341-5231 FAX NO. (063)341-5210", 48) + "\n");
         result.add('\035' + StringManager.centerJustify("E-MAIL: laneco_energy@yahoo.com", 48) + "\n");
         result.add(PrinterControls.emphasized(true));
-        result.add(StringManager.centerJustify("\038 STATEMENT OF ACCOUNT", 48) + "\n");
+        result.add(StringManager.centerJustify("NOTICE OF BILLING", 48) + "\n");
         result.add(PrinterControls.emphasized(false));
         result.add(StringManager.centerJustify(this.userProfile.getBillingPeriod(), 48) + "\n");
         result.add(StringManager.centerJustify("Billing Period " + this.userProfile.getInitialReadingDate() + " to " + this.userProfile.getReadingDate(), 48) + "\n");
@@ -134,16 +134,16 @@ public class StatementGenerator {
             result.add(bodyLineGenerator("Transmission System Charge", this.rate.getTcSystem(), this.compute.tcSystem().doubleValue()) + "\n");
         }
 
-        result.add(bodyLineGenerator("Regulated NGCP Charge-KW", this.rate.getRegulatedNGCPCharge(), this.compute.regulatedNGCPCharge()) + "\n");
+        result.add(bodyLineGenerator("Regulated Transmission Charge", this.rate.getRegulatedNGCPCharge(), this.compute.regulatedNGCPCharge()) + "\n");
 
 
-        result.add(bodyLineGenerator("Ancillary Service Charge KW", this.rate.getAncillaryServiceCharge(), this.compute.ancillaryServiceCharge()) + "\n");
+        result.add(bodyLineGenerator("Ancillary Service Charge", this.rate.getAncillaryServiceCharge(), this.compute.ancillaryServiceCharge()) + "\n");
 
 
-        result.add(bodyLineGenerator("Regulated Trans. Dem. Charge", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
+        result.add(bodyLineGenerator("Regulated Trans. Dem.Chrge-KW", this.rate.getTcDemand(), this.compute.tcDemand().doubleValue()) + "\n");
 
 
-//        result.add(bodyLineGenerator("ANCILLARY Transmission Demand Charge", this.rate.getancillaryTransmissionDemandCharge(), this.compute.ancillaryTransmissionDemandCharge()) + "\n");
+        result.add(bodyLineGenerator("Ancillary Trans. Dem.Chrge-KW", this.rate.getancillaryTransmissionDemandCharge(), this.compute.ancillaryTransmissionDemandCharge()) + "\n");
 
 
         if (this.compute.systemLoss().doubleValue() != 0.0d) {
@@ -337,7 +337,7 @@ public class StatementGenerator {
             );
 
         } else {
-
+            Log.d("Test totalCharge", "dre ang sayop= " + this.compute.totalCharge() );
             result.add(
                     footerTotalLineGenerator(
                             "TOTAL AMT DUE ON OR BEFOR DUE DATE",

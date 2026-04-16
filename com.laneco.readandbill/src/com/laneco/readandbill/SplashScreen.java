@@ -425,7 +425,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
         Log.d("Parser", "Total fields: " + data.length);
 
         // Expected field count is 103 (0-102)
-        if (data.length != 106) {
+        if (data.length != 107) {
             Log.w("Parser", "Unexpected field count: " + data.length + " (expected 103)");
             Log.w("Parser", "Record start: " + rawData.substring(0, Math.min(50, rawData.length())));
 
@@ -564,9 +564,9 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             double AncillaryServiceCharge = parseDoubleSafe(getField(data, 105, "0"), 0.0);
             rate.setAncillaryServiceCharge(AncillaryServiceCharge);
 
-//            double AncillaryTransmissionCharge = parseDoubleSafe(getField(data, 106, "0"), 0.0);
-//            rate.setancillaryTransmissionDemandCharge(AncillaryTransmissionCharge);
-            Log.d("last nak1o", String.valueOf(setTempRegulated));
+            double AncillaryTransmissionCharge = parseDoubleSafe(getField(data, 106, "0"), 0.0);
+            rate.setancillaryTransmissionDemandCharge(AncillaryTransmissionCharge);
+            Log.d("last nak1o", String.valueOf(AncillaryTransmissionCharge));
             // Log the last value
             Log.d("last nako2",String.valueOf(AncillaryServiceCharge));
 

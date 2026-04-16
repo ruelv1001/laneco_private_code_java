@@ -42,13 +42,13 @@ public class Rates extends com.generic.readandbill.database.Rates {
 
     protected double ancillaryTransmissionDemandCharge;
 
-//    public double getancillaryTransmissionDemandCharge() {
-//        return ancillaryTransmissionDemandCharge;
-//    }
-//
-//    public void setancillaryTransmissionDemandCharge(double ancillaryTransmissionDemandCharge) {
-//        this.ancillaryTransmissionDemandCharge = ancillaryTransmissionDemandCharge;
-//    }
+    public double getancillaryTransmissionDemandCharge() {
+        return ancillaryTransmissionDemandCharge;
+    }
+
+    public void setancillaryTransmissionDemandCharge(double ancillaryTransmissionDemandCharge) {
+        this.ancillaryTransmissionDemandCharge = ancillaryTransmissionDemandCharge;
+    }
 
     public double getAncillaryServiceCharge() {
         return ancillaryServiceCharge;
@@ -89,7 +89,7 @@ public class Rates extends com.generic.readandbill.database.Rates {
         this.geaAll = 0.0d;
         this.rec = 0.0d;
         this. regulatedNGCPCharge= 0.0d;
-//        this. ancillaryServiceCharge= 0.0d;
+        this. ancillaryServiceCharge= 0.0d;
     }
 
     public double getSystemLossTransmission() {
