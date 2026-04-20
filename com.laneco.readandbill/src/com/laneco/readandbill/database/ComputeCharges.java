@@ -317,192 +317,159 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
     public double totalCharge() {
 
         Double newTotal = 0.00;
+        String isLifeLine = lanecoConsumer.getIsLifeLine();
 
-        if (rate.isLifeLine.toString().equals("N")) {
+        // Compute all values once
+        double genSysVal = genSys().doubleValue();
+        double hostCommVal = hostComm().doubleValue();
+        double iceraVal = icera();
+        double powerActVal = powerActRateRed2().doubleValue();
+        double tcSystemVal = tcSystem().doubleValue();
+        double tcDemandVal = tcDemand().doubleValue();
+        double systemLossVal = systemLoss().doubleValue();
+        double dcDistVal = dcDistribution().doubleValue();
+        double dcDemandVal = dcDemand().doubleValue();
+        double sysLossTransVal = systemLossTransmission();
+        double scSupplyVal = scSupplySys().doubleValue();
+        double scRetailVal = scRetailCust().doubleValue();
+        double mcSystemVal = mcSystem().doubleValue();
+        double mcRetailVal = mcRetailCust().doubleValue();
+        double reinvestVal = reinvestmentFundSustCapex().doubleValue();
+        double lifelineVal = lifelineDiscSubs().doubleValue();
+        double fitVal = feedTariffAllowance();
+        double seniorVal = getSeniorCitizenDiscountSubsidy();
+        double prevAdjVal = prevYearAdjPowerCost().doubleValue();
+        double overUnderVal = overUnderRecovery();
+        double ucmeVal = ucme().doubleValue();
+        double ucsdVal = ucsd();
+        double ucecVal = ucec().doubleValue();
+        double strandedVal = ucStrandedContractCost();
+        double ucmeRedVal = ucmeRed();
+        double rptVal = realPropertyTax();
+        double diffVal = lanecoConsumer.getDifferentialBillRecovery();
+        double otherVal = lanecoConsumer.getOtherCharges();
+        double transformerVal = lanecoConsumer.getTransformerRental();
+        double daaVal = lanecoConsumer.getdaaRefund();
+        double armatsVal = lanecoConsumer.getArMats();
+        double ftVal = FTresult();
+        double rptPrevVal = RptPrevTax();
+        double locFranVal = locFranTax();
+        double transVal = transmissionSystemCharge();
+        double businessTaxVal = businessTax();
+        double geaVal = geaAll();
+        double recVal = getRec();
+        double ngcpVal = regulatedNGCPCharge();
+        double ancillaryVal = ancillaryServiceCharge();
+        double ancillaryDemandVal = ancillaryTransmissionDemandCharge();
 
+        // 🔍 LOG EVERYTHING
+        Log.d("TotalCharge", "genSys: " + genSysVal);
+        Log.d("TotalCharge", "hostComm: " + hostCommVal);
+        Log.d("TotalCharge", "icera: " + iceraVal);
+        Log.d("TotalCharge", "powerAct: " + powerActVal);
+        Log.d("TotalCharge", "tcSystem: " + tcSystemVal);
+        Log.d("TotalCharge", "tcDemand: " + tcDemandVal);
+        Log.d("TotalCharge", "systemLoss: " + systemLossVal);
+        Log.d("TotalCharge", "dcDistribution: " + dcDistVal);
+        Log.d("TotalCharge", "dcDemand: " + dcDemandVal);
+        Log.d("TotalCharge", "systemLossTransmission: " + sysLossTransVal);
+        Log.d("TotalCharge", "scSupplySys: " + scSupplyVal);
+        Log.d("TotalCharge", "scRetailCust: " + scRetailVal);
+        Log.d("TotalCharge", "mcSystem: " + mcSystemVal);
+        Log.d("TotalCharge", "mcRetailCust: " + mcRetailVal);
+        Log.d("TotalCharge", "reinvestmentFund: " + reinvestVal);
+        Log.d("TotalCharge", "lifelineDiscSubs: " + lifelineVal);
+        Log.d("TotalCharge", "feedTariff: " + fitVal);
+        Log.d("TotalCharge", "seniorCitizen: " + seniorVal);
+        Log.d("TotalCharge", "prevYearAdj: " + prevAdjVal);
+        Log.d("TotalCharge", "overUnderRecovery: " + overUnderVal);
+        Log.d("TotalCharge", "ucme: " + ucmeVal);
+        Log.d("TotalCharge", "ucsd: " + ucsdVal);
+        Log.d("TotalCharge", "ucec: " + ucecVal);
+        Log.d("TotalCharge", "ucStranded: " + strandedVal);
+        Log.d("TotalCharge", "ucmeRed: " + ucmeRedVal);
+        Log.d("TotalCharge", "realPropertyTax: " + rptVal);
+        Log.d("TotalCharge", "DifferentialBill: " + diffVal);
+        Log.d("TotalCharge", "OtherCharges: " + otherVal);
+        Log.d("TotalCharge", "TransformerRental: " + transformerVal);
+        Log.d("TotalCharge", "DAARefund: " + daaVal);
+        Log.d("TotalCharge", "ArMats: " + armatsVal);
+        Log.d("TotalCharge", "FTresult: " + ftVal);
+        Log.d("TotalCharge", "RptPrevTax: " + rptPrevVal);
+        Log.d("TotalCharge", "LocFranTax: " + locFranVal);
+        Log.d("TotalCharge", "Transmission: " + transVal);
+        Log.d("TotalCharge", "BusinessTax: " + businessTaxVal);
+        Log.d("TotalCharge", "GEA: " + geaVal);
+        Log.d("TotalCharge", "REC: " + recVal);
+        Log.d("TotalCharge", "NGCP: " + ngcpVal);
+        Log.d("TotalCharge", "Ancillary: " + ancillaryVal);
+        Log.d("TotalCharge", "AncillaryDemand: " + ancillaryDemandVal);
 
-            double genSysVal = genSys().doubleValue();
-            double hostCommVal = hostComm().doubleValue();
-            double iceraVal = icera();
-            double powerActVal = powerActRateRed2().doubleValue();
-            double tcSystemVal = tcSystem().doubleValue();
-            double tcDemandVal = tcDemand().doubleValue();
-            double systemLossVal = systemLoss().doubleValue();
-            double dcDistVal = dcDistribution().doubleValue();
-            double dcDemandVal = dcDemand().doubleValue();
-            double sysLossTransVal = systemLossTransmission();
-            double scSupplyVal = scSupplySys().doubleValue();
-            double scRetailVal = scRetailCust().doubleValue();
-            double mcSystemVal = mcSystem().doubleValue();
-            double mcRetailVal = mcRetailCust().doubleValue();
-            double reinvestVal = reinvestmentFundSustCapex().doubleValue();
-            double lifelineVal = lifelineDiscSubs().doubleValue();
-            double fitVal = feedTariffAllowance();
-            double seniorVal = getSeniorCitizenDiscountSubsidy();
-            double prevAdjVal = prevYearAdjPowerCost().doubleValue();
-            double overUnderVal = overUnderRecovery();
-            double ucmeVal = ucme().doubleValue();
-            double ucsdVal = ucsd();
-            double ucecVal = ucec().doubleValue();
-            double strandedVal = ucStrandedContractCost();
-            double ucmeRedVal = ucmeRed();
-            double rptVal = realPropertyTax();
-            double diffVal = this.lanecoConsumer.getDifferentialBillRecovery();
-            double otherVal = this.lanecoConsumer.getOtherCharges();
-            double transformerVal = this.lanecoConsumer.getTransformerRental();
-            double daaVal = this.lanecoConsumer.getdaaRefund();
-            double armatsVal = this.lanecoConsumer.getArMats();
-            double ftVal = FTresult();
-            double rptPrevVal = RptPrevTax();
-            double locFranVal = locFranTax();
-            double transVal = transmissionSystemCharge();
-            double businessTaxVal = businessTax();
-            double geaVal = geaAll();
-            double recVal = getRec();
-            double ngcpVal = regulatedNGCPCharge();
-            double ancillaryVal = ancillaryServiceCharge();
-            double ancillaryDemandVal = ancillaryTransmissionDemandCharge();
+        // Base total
+        double baseTotal =
+                genSysVal
+                        + hostCommVal
+                        + iceraVal
+                        + powerActVal
+                        + tcSystemVal
+                        + tcDemandVal
+                        + systemLossVal
+                        + dcDistVal
+                        + dcDemandVal
+                        + sysLossTransVal
+                        + scSupplyVal
+                        + scRetailVal
+                        + mcSystemVal
+                        + mcRetailVal
+                        + reinvestVal
+                        + fitVal
+                        + seniorVal
+                        + prevAdjVal
+                        + overUnderVal
+                        + ucmeVal
+                        + ucsdVal
+                        + ucecVal
+                        + strandedVal
+                        + ucmeRedVal
+                        + rptVal
+                        + diffVal
+                        + otherVal
+                        + transformerVal
+                        + daaVal
+                        + armatsVal
+                        + ftVal
+                        + rptPrevVal
+                        + locFranVal
+                        + transVal
+                        + businessTaxVal
+                        + geaVal
+                        + recVal
+                        + ngcpVal
+                        + ancillaryVal
+                        + ancillaryDemandVal;
 
-// 🔍 LOG EVERYTHING
-            Log.d("TotalCharge", "genSys: " + genSysVal);
-            Log.d("TotalCharge", "hostComm: " + hostCommVal);
-            Log.d("TotalCharge", "icera: " + iceraVal);
-            Log.d("TotalCharge", "powerAct: " + powerActVal);
-            Log.d("TotalCharge", "tcSystem: " + tcSystemVal);
-            Log.d("TotalCharge", "tcDemand: " + tcDemandVal);
-            Log.d("TotalCharge", "systemLoss: " + systemLossVal);
-            Log.d("TotalCharge", "dcDistribution: " + dcDistVal);
-            Log.d("TotalCharge", "dcDemand: " + dcDemandVal);
-            Log.d("TotalCharge", "systemLossTransmission: " + sysLossTransVal);
-            Log.d("TotalCharge", "scSupplySys: " + scSupplyVal);
-            Log.d("TotalCharge", "scRetailCust: " + scRetailVal);
-            Log.d("TotalCharge", "mcSystem: " + mcSystemVal);
-            Log.d("TotalCharge", "mcRetailCust: " + mcRetailVal);
-            Log.d("TotalCharge", "reinvestmentFund: " + reinvestVal);
-            Log.d("TotalCharge", "lifelineDiscSubs: " + lifelineVal);
-            Log.d("TotalCharge", "feedTariff: " + fitVal);
-            Log.d("TotalCharge", "seniorCitizen: " + seniorVal);
-            Log.d("TotalCharge", "prevYearAdj: " + prevAdjVal);
-            Log.d("TotalCharge", "overUnderRecovery: " + overUnderVal);
-            Log.d("TotalCharge", "ucme: " + ucmeVal);
-            Log.d("TotalCharge", "ucsd: " + ucsdVal);
-            Log.d("TotalCharge", "ucec: " + ucecVal);
-            Log.d("TotalCharge", "ucStranded: " + strandedVal);
-            Log.d("TotalCharge", "ucmeRed: " + ucmeRedVal);
-            Log.d("TotalCharge", "realPropertyTax: " + rptVal);
-            Log.d("TotalCharge", "DifferentialBill: " + diffVal);
-            Log.d("TotalCharge", "OtherCharges: " + otherVal);
-            Log.d("TotalCharge", "TransformerRental: " + transformerVal);
-            Log.d("TotalCharge", "DAARefund: " + daaVal);
-            Log.d("TotalCharge", "ArMats: " + armatsVal);
-            Log.d("TotalCharge", "FTresult: " + ftVal);
-            Log.d("TotalCharge", "RptPrevTax: " + rptPrevVal);
-            Log.d("TotalCharge", "LocFranTax: " + locFranVal);
-            Log.d("TotalCharge", "Transmission: " + transVal);
-            Log.d("TotalCharge", "BusinessTax: " + businessTaxVal);
-            Log.d("TotalCharge", "GEA: " + geaVal);
-            Log.d("TotalCharge", "REC: " + recVal);
-            Log.d("TotalCharge", "NGCP: " + ngcpVal);
-            Log.d("TotalCharge", "Ancillary: " + ancillaryVal);
-            Log.d("TotalCharge", "AncillaryDemand: " + ancillaryDemandVal);
+        // Lifeline logic
+        if ("N".equals(isLifeLine)) {
+            newTotal = baseTotal + lifelineVal;
+            Log.d("sureball", "TOTAL VAT = " + newTotal);
 
-
-            newTotal = ((((((((((((((((((((((((((((genSys().doubleValue()
-                    + hostComm().doubleValue())
-                    + icera())
-                    + powerActRateRed2().doubleValue())
-                    + tcSystem().doubleValue())
-                    + tcDemand().doubleValue())
-                    + systemLoss().doubleValue())
-                    + dcDistribution().doubleValue())
-                    + dcDemand().doubleValue())
-                    + systemLossTransmission())
-                    + scSupplySys().doubleValue())
-                    + scRetailCust().doubleValue())
-                    + mcSystem().doubleValue())
-                    + mcRetailCust().doubleValue())
-                    + reinvestmentFundSustCapex().doubleValue())
-                    + lifelineDiscSubs().doubleValue())
-                    + feedTariffAllowance())
-                    + getSeniorCitizenDiscountSubsidy())
-                    + prevYearAdjPowerCost().doubleValue())
-                    + overUnderRecovery()) + ucme().doubleValue())
-                    + ucsd())
-                    + ucec().doubleValue())
-                    + ucStrandedContractCost())
-                    + ucmeRed())
-                    + realPropertyTax())
-                    + this.lanecoConsumer.getDifferentialBillRecovery())
-                    + this.lanecoConsumer.getOtherCharges())
-                    + this.lanecoConsumer.getTransformerRental())
-                    + this.lanecoConsumer.getdaaRefund()
-                    + this.lanecoConsumer.getArMats()
-                    + FTresult()
-                    + RptPrevTax()
-                    + locFranTax()
-                    + transmissionSystemCharge()
-                    + businessTax()
-                    + geaAll()
-                    + getRec() + regulatedNGCPCharge() + ancillaryServiceCharge()+ancillaryTransmissionDemandCharge();
-            Log.d(" sureball", "TOTAL VAT = " + newTotal);
-        }
-        if ("Y".equals(rate.getIsLifeLine())
+        } else if ("Y".equals(isLifeLine)
                 && getKilowattUsed() >= 0
                 && getKilowattUsed() <= 19) {
 
             newTotal = 0.0;
-        } else {
-            newTotal =
-                    genSys().doubleValue()
-                            + hostComm().doubleValue()
-                            + icera()
-                            + powerActRateRed2().doubleValue()
-                            + tcSystem().doubleValue()
-                            + tcDemand().doubleValue()
-                            + systemLoss().doubleValue()
-                            + dcDistribution().doubleValue()
-                            + dcDemand().doubleValue()
-                            + systemLossTransmission()
-                            + scSupplySys().doubleValue()
-                            + scRetailCust().doubleValue()
-                            + mcSystem().doubleValue()
-                            + mcRetailCust().doubleValue()
-                            + reinvestmentFundSustCapex().doubleValue()
-                            + feedTariffAllowance()
-                            + getSeniorCitizenDiscountSubsidy()
-                            + prevYearAdjPowerCost().doubleValue()
-                            + overUnderRecovery()
-                            + lifelineDiscSubs()
-                            + ucme().doubleValue()
-                            + ucsd()
-                            + ucec().doubleValue()
-                            + ucStrandedContractCost()
-                            + ucmeRed()
-                            + realPropertyTax()
-                            + this.lanecoConsumer.getDifferentialBillRecovery()
-                            + this.lanecoConsumer.getOtherCharges()
-                            + this.lanecoConsumer.getTransformerRental()
-                            + this.lanecoConsumer.getdaaRefund()
-                            + this.lanecoConsumer.getArMats()
-                            + FTresult()
-                            + RptPrevTax()
-                            + locFranTax()
-                            + transmissionSystemCharge() + geaAll() + businessTax() + getRec() + regulatedNGCPCharge() + ancillaryServiceCharge()+ancillaryTransmissionDemandCharge();
 
+        } else {
+            newTotal = baseTotal + lifelineVal;
         }
 
-        Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + regulatedNGCPCharge());
-        Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + ancillaryServiceCharge());
-        Log.d("Y or N: ", rate.getIsLifeLine().toString());
-
-
-
-
-
+        Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + ngcpVal);
+        Log.d("TotalCharge", "TOTAL total charge: " + newTotal);
+        Log.d("TotalCharge", "Y or N: " + isLifeLine);
 
         return newTotal;
-//        return ((((((((((((((((((((((((((((genSys().doubleValue() + hostComm().doubleValue()) + icera()) + powerActRateRed2().doubleValue()) + tcSystem().doubleValue()) + tcDemand().doubleValue()) + systemLoss().doubleValue()) + dcDistribution().doubleValue()) + dcDemand().doubleValue()) + systemLossTransmission()) + scSupplySys().doubleValue()) + scRetailCust().doubleValue()) + mcSystem().doubleValue()) + mcRetailCust().doubleValue()) + reinvestmentFundSustCapex().doubleValue()) + lifelineDiscSubs().doubleValue()) + feedTariffAllowance()) + getSeniorCitizenDiscountSubsidy()) + prevYearAdjPowerCost().doubleValue()) + overUnderRecovery()) + ucme().doubleValue()) + ucsd()) + ucec().doubleValue()) + ucStrandedContractCost()) + ucmeRed()) + realPropertyTax()) + this.lanecoConsumer.getDifferentialBillRecovery()) + this.lanecoConsumer.getOtherCharges()) + this.lanecoConsumer.getTransformerRental()) + this.lanecoConsumer.getdaaRefund() + this.lanecoConsumer.getArMats() + FTresult() + RptPrevTax() + locFranTax() + businessTax();
     }
+
 
     public double totalVat() {
         double gensys = vatGensys();

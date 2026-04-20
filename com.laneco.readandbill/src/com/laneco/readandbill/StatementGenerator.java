@@ -337,7 +337,7 @@ public class StatementGenerator {
             );
 
         } else {
-            Log.d("Test totalCharge", "dre ang sayop= " + this.compute.totalCharge() );
+
             result.add(
                     footerTotalLineGenerator(
                             "TOTAL AMT DUE ON OR BEFOR DUE DATE",

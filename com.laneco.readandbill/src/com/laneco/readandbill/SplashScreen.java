@@ -552,6 +552,7 @@ public class SplashScreen extends com.generic.readandbill.SplashScreen {
             // Get the IsLifeLine value at index 101
             String islifeline = getField(data, 101, "N");
 
+            Log.d("ParserDebug", "Field[101] = [" + islifeline + "]");
             rate.setIsLifeLine(islifeline);
 
             // Get the last value (0.0371) at index 102
