@@ -451,16 +451,18 @@ public class ComputeCharges extends com.generic.readandbill.database.ComputeChar
         // Lifeline logic
         if ("N".equals(isLifeLine)) {
             newTotal = baseTotal + lifelineVal;
-            Log.d("sureball", "TOTAL VAT = " + newTotal);
+            Log.d("sureball", "TOTAL VAT 1= " + newTotal);
 
         } else if ("Y".equals(isLifeLine)
-                && getKilowattUsed() >= 0
-                && getKilowattUsed() <= 19) {
+                && getKilowatthour() >= 0
+                && getKilowatthour() <= 50) {
 
             newTotal = 0.0;
-
+            Log.d("DEBUG", "kWh final= " + getKilowatthour());
+            Log.d("sureball", "TOTAL VAT2 = " + newTotal);
         } else {
             newTotal = baseTotal + lifelineVal;
+            Log.d("sureball", "TOTAL VAT 3= " + newTotal);
         }
 
         Log.d("TotalCharge", "TOTAL regulatedNGCPCharge: " + ngcpVal);
